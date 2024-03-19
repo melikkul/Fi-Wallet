@@ -1,0 +1,11 @@
+<RCC>
+  <qresource prefix="img">
+    <file>img/Fewallet.svg</file>
+  </qresource>
+  <qresource prefix="yeniÖnek">
+    <file>img/external-link (1).svg</file>
+  </qresource>
+  <qresource>
+    <file>img/backtologin.drawio.svg</file>
+  </qresource>
+</RCC>
