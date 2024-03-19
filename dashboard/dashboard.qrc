@@ -1,0 +1,35 @@
+<RCC>
+  <qresource prefix="img">
+    <file>img/calculator.svg</file>
+    <file>img/bell.svg</file>
+    <file>img/maximize-2.svg</file>
+    <file>img/target.svg</file>
+    <file>img/award.svg</file>
+    <file>img/edit-3.svg</file>
+    <file>img/dark_wallet.svg</file>
+    <file>img/green_wallet.png</file>
+    <file>img/square.svg</file>
+    <file>img/window_screen.svg</file>
+    <file>img/window_minimize.png</file>
+    <file>img/x.svg</file>
+    <file>img/search.svg</file>
+    <file>img/toggle-right.svg</file>
+    <file>img/fi_wallet.svg</file>
+    <file>img/chevron-up.svg</file>
+    <file>img/chevron-down.svg</file>
+    <file>img/default_profile.svg</file>
+    <file>img/log-out.svg</file>
+    <file>img/settings.svg</file>
+    <file>img/toggle-left.svg</file>
+    <file>img/wallet.svg</file>
+    <file>img/crosshair.svg</file>
+    <file>img/bills.svg</file>
+    <file>img/news.svg</file>
+    <file>img/currency.svg</file>
+    <file>img/analist.svg</file>
+    <file>img/performance.svg</file>
+    <file>img/grid.svg</file>
+    <file>img/menu.svg</file>
+    <file>img/home.svg</file>
+  </qresource>
+</RCC>

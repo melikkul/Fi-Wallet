@@ -1,12 +1,12 @@
 from PySide6.QtWidgets import *
-from ui_login_screen import Ui_MainWindow  
+from ui_dashboard import Ui_MainWindow
 from PySide6.QtCore import Qt
 from PySide6.QtGui import * 
 
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowFlag(Qt.FramelessWindowHint)
+        #self.setWindowFlag(Qt.FramelessWindowHint)
         
         # Arayüzü oluşturmak için Ui_MainWindow sınıfından bir örnek oluşturun
         self.ui = Ui_MainWindow()
