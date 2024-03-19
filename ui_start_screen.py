@@ -64,4 +64,3 @@ class Ui_Form(object):
         self.label.setText(QCoreApplication.translate("Form", u"Fi-Wallet", None))
         self.label_2.setText("")
     # retranslateUi
-

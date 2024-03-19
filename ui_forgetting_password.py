@@ -141,3 +141,11 @@ class Ui_en_main_widget(object):
         self.back_login.setText(QCoreApplication.translate("en_main_widget", u"    Back to Login", None))
     # retranslateUi
 
+if __name__ == "__main__":
+    import sys
+    app = QApplication(sys.argv)
+    MainWindow = QMainWindow()
+    ui = Ui_en_main_widget()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())
