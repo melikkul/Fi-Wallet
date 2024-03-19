@@ -6,7 +6,7 @@ from PySide6.QtGui import *
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowFlag(Qt.FramelessWindowHint)
+        #self.setWindowFlag(Qt.FramelessWindowHint)
         
         # Arayüzü oluşturmak için Ui_MainWindow sınıfından bir örnek oluşturun
         self.ui = Ui_en_main_widget()
