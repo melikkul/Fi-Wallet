@@ -91,16 +91,15 @@ color: white;
     <widget class="QLabel" name="label_2">
      <property name="geometry">
       <rect>
-       <x>195</x>
-       <y>130</y>
-       <width>381</width>
-       <height>331</height>
+       <x>109</x>
+       <y>50</y>
+       <width>551</width>
+       <height>451</height>
       </rect>
      </property>
      <property name="styleSheet">
       <string notr="true">background-color: transparent;
-
-</string>
+image: url(:/img/img/logo.drawio.svg);</string>
      </property>
      <property name="text">
       <string/>
@@ -116,7 +115,7 @@ color: white;
   </widget>
  </widget>
  <resources>
-  <include location="FiWallet.qrc"/>
+  <include location="start_screen.qrc"/>
  </resources>
  <connections/>
 </ui>
