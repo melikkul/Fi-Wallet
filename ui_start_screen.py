@@ -24,7 +24,7 @@ class Ui_Form(object):
         if not Form.objectName():
             Form.setObjectName(u"Form")
         Form.resize(770, 590)
-        Form.setStyleSheet(u"background-color:transparent;")
+        Form.setAttribute(Qt.WidgetAttribute.WA_TranslucentBackground)
         self.FiWalletIntro = QFrame(Form)
         self.FiWalletIntro.setObjectName(u"FiWalletIntro")
         self.FiWalletIntro.setGeometry(QRect(0, 0, 770, 590))
