@@ -1,0 +1,13 @@
+<RCC>
+  <qresource prefix="img">
+    <file>img/check-circle (1).svg</file>
+    <file>img/circle.svg</file>
+    <file>img/arrow-right-circle.svg</file>
+    <file>img/log-in.svg</file>
+    <file>img/eye-off.svg</file>
+    <file>img/eye (1).svg</file>
+    <file>img/log-in.svg</file>
+    <file>img/arrow-right-circle (1).svg</file>
+    <file>img/logo.drawio.svg</file>
+  </qresource>
+</RCC>
