@@ -50,7 +50,7 @@ class Ui_en_main_widget(object):
         self.logo.setIconSize(QSize(150, 150))
         self.forget_widget = QLabel(self.normal_widget)
         self.forget_widget.setObjectName(u"forget_widget")
-        self.forget_widget.setGeometry(QRect(290, 170, 211, 41))
+        self.forget_widget.setGeometry(QRect(310, 170, 211, 41))
         font1 = QFont()
         font1.setFamilies([u"Poppins"])
         font1.setPointSize(15)
