@@ -1,0 +1,7 @@
+<RCC>
+  <qresource prefix="img">
+    <file>img/eye-off (1).svg</file>
+    <file>img/eye.svg</file>
+    <file>img/icon.drawio.svg</file>
+  </qresource>
+</RCC>

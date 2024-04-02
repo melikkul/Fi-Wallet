@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>anasayfa</class>
+ <widget class="QMainWindow" name="anasayfa">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>780</width>
+    <height>590</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>780</width>
+    <height>590</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>780</width>
+    <height>590</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="sayfa2">
+   <widget class="QWidget" name="sayfa3" native="true">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>780</width>
+      <height>590</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>780</width>
+      <height>590</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>780</width>
+      <height>590</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>25</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: qlineargradient(spread:reflect, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(83, 92, 145, 255), stop:1 rgba(27, 26, 85, 255));</string>
+    </property>
+    <widget class="QPushButton" name="pushButton">
+     <property name="geometry">
+      <rect>
+       <x>260</x>
+       <y>0</y>
+       <width>291</width>
+       <height>141</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Poppins</family>
+       <pointsize>25</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:transparent;
+color:rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>Fi-Wallet</string>
+     </property>
+     <property name="icon">
+      <iconset resource="register.qrc">
+       <normaloff>:/img/img/icon.drawio.svg</normaloff>:/img/img/icon.drawio.svg</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>150</width>
+       <height>150</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QLabel" name="aciklama">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>150</y>
+       <width>691</width>
+       <height>111</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Poppins</family>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:transparent;
+color:white;</string>
+     </property>
+     <property name="text">
+      <string>To register,you must fill in the boxes below completely.</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="registerbaslik">
+     <property name="geometry">
+      <rect>
+       <x>350</x>
+       <y>120</y>
+       <width>111</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Poppins</family>
+       <pointsize>20</pointsize>
+       <kerning>true</kerning>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:transparent;
+color:white;</string>
+     </property>
+     <property name="text">
+      <string>Register</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="firstname">
+     <property name="geometry">
+      <rect>
+       <x>250</x>
+       <y>260</y>
+       <width>101</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>9</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:transparent;
+color:white;</string>
+     </property>
+     <property name="text">
+      <string>First Name</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lastname">
+     <property name="geometry">
+      <rect>
+       <x>450</x>
+       <y>260</y>
+       <width>91</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>9</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:transparent;
+color:white;</string>
+     </property>
+     <property name="text">
+      <string>Last Name</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="email">
+     <property name="geometry">
+      <rect>
+       <x>250</x>
+       <y>310</y>
+       <width>101</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>9</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:transparent;
+color:white;</string>
+     </property>
+     <property name="text">
+      <string>Email</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="password">
+     <property name="geometry">
+      <rect>
+       <x>250</x>
+       <y>360</y>
+       <width>101</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>9</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:transparent;
+color:white;</string>
+     </property>
+     <property name="text">
+      <string>Password</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="isim">
+     <property name="geometry">
+      <rect>
+       <x>250</x>
+       <y>290</y>
+       <width>113</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Poppins</family>
+       <pointsize>8</pointsize>
+      </font>
+     </property>
+     <property name="accessibleName">
+      <string/>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:white;
+border-radius:5px;</string>
+     </property>
+     <property name="placeholderText">
+      <string>John</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="soyadi">
+     <property name="geometry">
+      <rect>
+       <x>450</x>
+       <y>290</y>
+       <width>111</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Poppins</family>
+       <pointsize>8</pointsize>
+      </font>
+     </property>
+     <property name="accessibleName">
+      <string/>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:white;
+border-radius:5px;</string>
+     </property>
+     <property name="placeholderText">
+      <string>Stone</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="mail">
+     <property name="geometry">
+      <rect>
+       <x>250</x>
+       <y>340</y>
+       <width>311</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Poppins</family>
+       <pointsize>8</pointsize>
+      </font>
+     </property>
+     <property name="accessibleName">
+      <string/>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:white;
+border-radius:5px;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="placeholderText">
+      <string>johnstone@gmail.com</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="onayla">
+     <property name="geometry">
+      <rect>
+       <x>260</x>
+       <y>420</y>
+       <width>351</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Poppins</family>
+       <pointsize>8</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:transparent;
+color:white;</string>
+     </property>
+     <property name="text">
+      <string>I agree to all the Term, Privacy Policy and Fees.</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="sifre">
+     <property name="geometry">
+      <rect>
+       <x>250</x>
+       <y>390</y>
+       <width>311</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Poppins</family>
+       <pointsize>8</pointsize>
+      </font>
+     </property>
+     <property name="accessibleName">
+      <string/>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:white;
+border-radius:5px;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="echoMode">
+      <enum>QLineEdit::Password</enum>
+     </property>
+     <property name="placeholderText">
+      <string>*************</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="kayitbuton">
+     <property name="geometry">
+      <rect>
+       <x>340</x>
+       <y>460</y>
+       <width>111</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Poppins</family>
+       <pointsize>15</pointsize>
+       <underline>false</underline>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:#9290C3;
+color:white;
+border-radius:5px;</string>
+     </property>
+     <property name="text">
+      <string>Register</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="sifregoster">
+     <property name="geometry">
+      <rect>
+       <x>530</x>
+       <y>390</y>
+       <width>21</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QCheckBox{
+    background-color:white;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-align: center;
+}
+QCheckBox::indicator{
+
+    width:18px;
+    height:18px;
+}
+QCheckBox::indicator:checked{
+    
+	image: url(:/img/img/eye-off (1).svg);
+ 
+}
+QCheckBox::indicator:unchecked{
+	image: url(:/img/img/eye.svg);
+    
+
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources>
+  <include location="register.qrc"/>
+ </resources>
+ <connections/>
+</ui>
