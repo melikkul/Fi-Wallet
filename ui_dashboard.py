@@ -21,7 +21,7 @@ from PySide6.QtWidgets import (QApplication, QCheckBox, QComboBox, QGridLayout,
     QStackedWidget, QVBoxLayout, QWidget)
 import dashboard_rc
 
-class Ui_MainWindow(object):
+class Ui_Dashboard(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
@@ -2651,6 +2651,7 @@ class Ui_MainWindow(object):
         self.full_screen_button.setAutoExclusive(True)
 
         self.horizontalLayout_4.addWidget(self.full_screen_button)
+        self.full_screen_button.clicked.connect(self.setFull)
 
         self.screen_minimize_button = QPushButton(self.top_bar_widget)
         self.screen_minimize_button.setObjectName(u"screen_minimize_button")
@@ -2690,6 +2691,8 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_4.addWidget(self.maximize_screen_button)
 
+
+
         self.close_button = QPushButton(self.top_bar_widget)
         self.close_button.setObjectName(u"close_button")
         self.close_button.setStyleSheet(u"wight: 40px;\n"
@@ -2708,6 +2711,7 @@ class Ui_MainWindow(object):
 
 
         self.gridLayout.addWidget(self.top_bar_widget, 0, 0, 1, 3)
+        self.close_button.clicked.connect(MainWindow.close)
 
         MainWindow.setCentralWidget(self.centralwidget)
 
@@ -2906,12 +2910,3 @@ class Ui_MainWindow(object):
         self.maximize_screen_button.setText("")
         self.close_button.setText("")
     # retranslateUi
-
-if __name__ == "__main__":
-    import sys
-    app = QApplication(sys.argv)
-    MainWindow = QMainWindow()
-    ui = Ui_MainWindow()
-    ui.setupUi(MainWindow)
-    MainWindow.show()
-    sys.exit(app.exec_())

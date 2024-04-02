@@ -1,5 +1,5 @@
 from PySide6.QtWidgets import *
-from ui_forgetting_password import Ui_en_main_widget  
+from ui_forgetting_password import Ui_Forgetting_Password
 from PySide6.QtCore import Qt
 from PySide6.QtGui import * 
 
@@ -9,7 +9,7 @@ class MainWindow(QMainWindow):
         #self.setWindowFlag(Qt.FramelessWindowHint)
         
         # Arayüzü oluşturmak için Ui_MainWindow sınıfından bir örnek oluşturun
-        self.ui = Ui_en_main_widget()
+        self.ui = Ui_Forgetting_Password()
         # Arayüzü setupUi metoduyla ayarlayın
         self.ui.setupUi(self)
         

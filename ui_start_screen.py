@@ -19,7 +19,7 @@ from PySide6.QtWidgets import (QApplication, QFrame, QLabel, QSizePolicy,
     QWidget)
 import start_screen_rc
 
-class Ui_Form(object):
+class Ui_Start_Screen(object):
     def setupUi(self, Form):
         if not Form.objectName():
             Form.setObjectName(u"Form")

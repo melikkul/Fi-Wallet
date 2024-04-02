@@ -19,7 +19,7 @@ from PySide6.QtWidgets import (QApplication, QLabel, QLineEdit, QMainWindow,
     QPushButton, QSizePolicy, QWidget)
 import forgetting_password_rc
 
-class Ui_en_main_widget(object):
+class Ui_Forgetting_Password(object):
     def setupUi(self, en_main_widget):
         if not en_main_widget.objectName():
             en_main_widget.setObjectName(u"en_main_widget")
@@ -140,12 +140,3 @@ class Ui_en_main_widget(object):
         self.password_reset.setText(QCoreApplication.translate("en_main_widget", u"Password Reset", None))
         self.back_login.setText(QCoreApplication.translate("en_main_widget", u"    Back to Login", None))
     # retranslateUi
-
-if __name__ == "__main__":
-    import sys
-    app = QApplication(sys.argv)
-    MainWindow = QMainWindow()
-    ui = Ui_en_main_widget()
-    ui.setupUi(MainWindow)
-    MainWindow.show()
-    sys.exit(app.exec_())

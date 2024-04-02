@@ -1,5 +1,5 @@
 from PySide6.QtWidgets import *
-from ui_login_screen import Ui_MainWindow  
+from ui_login_screen import Ui_Login_Screen 
 from PySide6.QtCore import Qt
 from PySide6.QtGui import * 
 
@@ -9,7 +9,7 @@ class MainWindow(QMainWindow):
         self.setWindowFlag(Qt.FramelessWindowHint)
         
         # Arayüzü oluşturmak için Ui_MainWindow sınıfından bir örnek oluşturun
-        self.ui = Ui_MainWindow()
+        self.ui = Ui_Login_Screen()
         # Arayüzü setupUi metoduyla ayarlayın
         self.ui.setupUi(self)
         

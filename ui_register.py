@@ -19,7 +19,14 @@ from PySide6.QtWidgets import (QApplication, QCheckBox, QLabel, QLineEdit,
     QMainWindow, QPushButton, QSizePolicy, QWidget)
 import register_rc
 
-class Ui_anasayfa(object):
+class Ui_Register(object):
+                 
+    def toggle_password_visibility(self):
+        if self.sifre.echoMode() == QLineEdit.Password:
+            self.sifre.setEchoMode(QLineEdit.Normal)
+        else:
+            self.sifre.setEchoMode(QLineEdit.Password)
+
     def setupUi(self, anasayfa):
         if not anasayfa.objectName():
             anasayfa.setObjectName(u"anasayfa")
@@ -165,6 +172,9 @@ class Ui_anasayfa(object):
 "\n"
 "}")
         anasayfa.setCentralWidget(self.sayfa2)
+
+        
+        self.sifregoster.clicked.connect(self.toggle_password_visibility)
 
         self.retranslateUi(anasayfa)
 

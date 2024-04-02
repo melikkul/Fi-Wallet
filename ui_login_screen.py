@@ -19,7 +19,7 @@ from PySide6.QtWidgets import (QApplication, QCheckBox, QLabel, QLineEdit,
     QMainWindow, QPushButton, QSizePolicy, QWidget)
 import login_screen_rc
 
-class Ui_MainWindow(object):
+class Ui_Login_Screen(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
@@ -82,9 +82,9 @@ class Ui_MainWindow(object):
         self.label_2.setFont(font1)
         self.label_2.setStyleSheet(u"background-color:transparent;\n"
 "color: white;")
-        self.label_3 = QLabel(self.widget)
+        self.label_3 = QPushButton(self.widget)
         self.label_3.setObjectName(u"label_3")
-        self.label_3.setGeometry(QRect(490, 290, 141, 31))
+        self.label_3.setGeometry(QRect(470, 290, 141, 31))
         font3 = QFont()
         font3.setFamilies([u"Poppins"])
         font3.setPointSize(8)
@@ -186,11 +186,28 @@ class Ui_MainWindow(object):
         self.checkBox_2.setText(QCoreApplication.translate("MainWindow", u"Keep me signed in  ", None))
     # retranslateUi
 
-if __name__ == "__main__":
-    import sys
-    app = QApplication(sys.argv)
-    MainWindow = QMainWindow()
-    ui = Ui_MainWindow()
-    ui.setupUi(MainWindow)
-    MainWindow.show()
-    sys.exit(app.exec_())
+    """# Connect the existing button's clicked signal to toggle password visibility
+        self.pushButton_eye = QPushButton(self.widget)
+        self.pushButton_eye.setObjectName(u"pushButton_eye")
+        self.pushButton_eye.setGeometry(QRect(610, 320, 31, 31))
+        self.pushButton_eye.setStyleSheet(u"background-color: transparent;")
+        icon3 = QIcon()
+        icon3.addFile(u":/img/img/eye.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.pushButton_eye.setIcon(icon3)
+        self.pushButton_eye.setIconSize(QSize(20, 20))
+        self.pushButton_eye.setFlat(True)
+        self.pushButton_eye.clicked.connect(self.togglePasswordVisibility)
+
+    def togglePasswordVisibility(self):
+        # Toggle password visibility
+        if self.lineEdit_2.echoMode() == QLineEdit.Password:
+            self.lineEdit_2.setEchoMode(QLineEdit.Normal)
+            icon = QIcon()
+            icon.addFile(u":/img/img/eye-off.svg", QSize(), QIcon.Normal, QIcon.Off)
+            self.pushButton_eye.setIcon(icon)
+        else:
+            self.lineEdit_2.setEchoMode(QLineEdit.Password)
+            icon = QIcon()
+            icon.addFile(u":/img/img/eye.svg", QSize(), QIcon.Normal, QIcon.Off)
+            self.pushButton_eye.setIcon(icon) """
+

@@ -1,5 +1,5 @@
 from PySide6.QtWidgets import *
-from ui_register import Ui_anasayfa
+from ui_register import Ui_Register
 from PySide6.QtCore import Qt
 from PySide6.QtGui import * 
 
@@ -9,7 +9,7 @@ class MainWindow(QMainWindow):
         #self.setWindowFlag(Qt.FramelessWindowHint)
         
         # Arayüzü oluşturmak için Ui_MainWindow sınıfından bir örnek oluşturun
-        self.ui = Ui_anasayfa()
+        self.ui = Ui_Register()
         # Arayüzü setupUi metoduyla ayarlayın
         self.ui.setupUi(self)
         
