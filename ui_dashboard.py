@@ -2651,7 +2651,6 @@ class Ui_Dashboard(object):
         self.full_screen_button.setAutoExclusive(True)
 
         self.horizontalLayout_4.addWidget(self.full_screen_button)
-        self.full_screen_button.clicked.connect(self.setFull)
 
         self.screen_minimize_button = QPushButton(self.top_bar_widget)
         self.screen_minimize_button.setObjectName(u"screen_minimize_button")

@@ -40,10 +40,17 @@ class MainWindow(QMainWindow):
         self.ui = Ui_Dashboard()
         self.ui.setupUi(self)
         self.show()
-        if self.ui.maximize_screen_button.checkState() == Qt.Checked:
-            self.showMaximized()
+        self.showMaximized()
+        self.ui.maximize_screen_button.stateChanged.connect(self.toggle_maximize)
+
+
+    def toggle_maximize(self, state):
+        if state == 2:
+            self.showMaximized()  # Eğer buton işaretlenmişse ekranı tam ekran yap
         else:
-            self.setFixedSize(1280, 720)
+            self.resize(1280, 720)  # Belirtilen boyutlara yeniden boyutlandır
+
+
 
     def forgetting_password(self):
         self.ui = Ui_Forgetting_Password()
