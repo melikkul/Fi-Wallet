@@ -64,7 +64,7 @@ QPushButton:checked{
           <string/>
          </property>
          <property name="icon">
-          <iconset resource="../../OneDrive/Belgeler/GitHub/financaITrackingProject/dashboard/dashboard.qrc">
+          <iconset resource="dashboard.qrc">
            <normaloff>:/img/img/home.svg</normaloff>:/img/img/home.svg</iconset>
          </property>
          <property name="iconSize">
@@ -108,7 +108,7 @@ QPushButton:checked{
             <string/>
            </property>
            <property name="icon">
-            <iconset resource="../../OneDrive/Belgeler/GitHub/financaITrackingProject/dashboard/dashboard.qrc">
+            <iconset resource="dashboard.qrc">
              <normaloff>:/img/img/grid.svg</normaloff>:/img/img/grid.svg</iconset>
            </property>
            <property name="iconSize">
@@ -131,7 +131,7 @@ QPushButton:checked{
             <string/>
            </property>
            <property name="icon">
-            <iconset resource="../../OneDrive/Belgeler/GitHub/financaITrackingProject/dashboard/dashboard.qrc">
+            <iconset resource="dashboard.qrc">
              <normaloff>:/img/img/analist.svg</normaloff>:/img/img/analist.svg</iconset>
            </property>
            <property name="iconSize">
@@ -154,7 +154,7 @@ QPushButton:checked{
             <string/>
            </property>
            <property name="icon">
-            <iconset resource="../../OneDrive/Belgeler/GitHub/financaITrackingProject/dashboard/dashboard.qrc">
+            <iconset resource="dashboard.qrc">
              <normaloff>:/img/img/performance.svg</normaloff>:/img/img/performance.svg</iconset>
            </property>
            <property name="iconSize">
@@ -177,7 +177,7 @@ QPushButton:checked{
             <string/>
            </property>
            <property name="icon">
-            <iconset resource="../../OneDrive/Belgeler/GitHub/financaITrackingProject/dashboard/dashboard.qrc">
+            <iconset resource="dashboard.qrc">
              <normaloff>:/img/img/bills.svg</normaloff>:/img/img/bills.svg</iconset>
            </property>
            <property name="iconSize">
@@ -200,7 +200,7 @@ QPushButton:checked{
             <string/>
            </property>
            <property name="icon">
-            <iconset resource="../../OneDrive/Belgeler/GitHub/financaITrackingProject/dashboard/dashboard.qrc">
+            <iconset resource="dashboard.qrc">
              <normaloff>:/img/img/wallet.svg</normaloff>:/img/img/wallet.svg</iconset>
            </property>
            <property name="iconSize">
@@ -223,7 +223,7 @@ QPushButton:checked{
             <string/>
            </property>
            <property name="icon">
-            <iconset resource="../../OneDrive/Belgeler/GitHub/financaITrackingProject/dashboard/dashboard.qrc">
+            <iconset resource="dashboard.qrc">
              <normaloff>:/img/img/crosshair.svg</normaloff>:/img/img/crosshair.svg</iconset>
            </property>
            <property name="iconSize">
@@ -304,7 +304,7 @@ QCheckBox::indicator:unchecked{
             <string/>
            </property>
            <property name="icon">
-            <iconset resource="../../OneDrive/Belgeler/GitHub/financaITrackingProject/dashboard/dashboard.qrc">
+            <iconset resource="dashboard.qrc">
              <normaloff>:/img/img/settings.svg</normaloff>:/img/img/settings.svg</iconset>
            </property>
            <property name="iconSize">
@@ -327,7 +327,7 @@ QCheckBox::indicator:unchecked{
             <string/>
            </property>
            <property name="icon">
-            <iconset resource="../../OneDrive/Belgeler/GitHub/financaITrackingProject/dashboard/dashboard.qrc">
+            <iconset resource="dashboard.qrc">
              <normaloff>:/img/img/log-out.svg</normaloff>:/img/img/log-out.svg</iconset>
            </property>
            <property name="iconSize">
@@ -365,7 +365,7 @@ QCheckBox::indicator:unchecked{
           <string/>
          </property>
          <property name="icon">
-          <iconset resource="../../OneDrive/Belgeler/GitHub/financaITrackingProject/dashboard/dashboard.qrc">
+          <iconset resource="dashboard.qrc">
            <normaloff>:/img/img/default_profile.svg</normaloff>:/img/img/default_profile.svg</iconset>
          </property>
          <property name="iconSize">
@@ -512,7 +512,7 @@ padding-left: 10px;</string>
             <string>Dashboard</string>
            </property>
            <property name="icon">
-            <iconset resource="../../OneDrive/Belgeler/GitHub/financaITrackingProject/dashboard/dashboard.qrc">
+            <iconset resource="dashboard.qrc">
              <normaloff>:/img/img/grid.svg</normaloff>:/img/img/grid.svg</iconset>
            </property>
            <property name="iconSize">
@@ -546,7 +546,7 @@ padding-left: 10px;</string>
             <string>Analist</string>
            </property>
            <property name="icon">
-            <iconset resource="../../OneDrive/Belgeler/GitHub/financaITrackingProject/dashboard/dashboard.qrc">
+            <iconset resource="dashboard.qrc">
              <normaloff>:/img/img/analist.svg</normaloff>:/img/img/analist.svg</iconset>
            </property>
            <property name="iconSize">
@@ -580,7 +580,7 @@ padding-left: 10px;</string>
             <string>Perfomance</string>
            </property>
            <property name="icon">
-            <iconset resource="../../OneDrive/Belgeler/GitHub/financaITrackingProject/dashboard/dashboard.qrc">
+            <iconset resource="dashboard.qrc">
              <normaloff>:/img/img/performance.svg</normaloff>:/img/img/performance.svg</iconset>
            </property>
            <property name="iconSize">
@@ -614,7 +614,7 @@ padding-left: 10px;</string>
             <string>Bills</string>
            </property>
            <property name="icon">
-            <iconset resource="../../OneDrive/Belgeler/GitHub/financaITrackingProject/dashboard/dashboard.qrc">
+            <iconset resource="dashboard.qrc">
              <normaloff>:/img/img/bills.svg</normaloff>:/img/img/bills.svg</iconset>
            </property>
            <property name="iconSize">
@@ -648,7 +648,7 @@ padding-left: 10px;</string>
             <string>Wallet</string>
            </property>
            <property name="icon">
-            <iconset resource="../../OneDrive/Belgeler/GitHub/financaITrackingProject/dashboard/dashboard.qrc">
+            <iconset resource="dashboard.qrc">
              <normaloff>:/img/img/wallet.svg</normaloff>:/img/img/wallet.svg</iconset>
            </property>
            <property name="iconSize">
@@ -682,7 +682,7 @@ padding-left: 10px;</string>
             <string>Goal</string>
            </property>
            <property name="icon">
-            <iconset resource="../../OneDrive/Belgeler/GitHub/financaITrackingProject/dashboard/dashboard.qrc">
+            <iconset resource="dashboard.qrc">
              <normaloff>:/img/img/crosshair.svg</normaloff>:/img/img/crosshair.svg</iconset>
            </property>
            <property name="iconSize">
@@ -774,7 +774,7 @@ padding-left: 10px;</string>
             <string>Settings</string>
            </property>
            <property name="icon">
-            <iconset resource="../../OneDrive/Belgeler/GitHub/financaITrackingProject/dashboard/dashboard.qrc">
+            <iconset resource="dashboard.qrc">
              <normaloff>:/img/img/settings.svg</normaloff>:/img/img/settings.svg</iconset>
            </property>
            <property name="iconSize">
@@ -808,7 +808,7 @@ padding-left: 10px;</string>
             <string>Log Out</string>
            </property>
            <property name="icon">
-            <iconset resource="../../OneDrive/Belgeler/GitHub/financaITrackingProject/dashboard/dashboard.qrc">
+            <iconset resource="dashboard.qrc">
              <normaloff>:/img/img/log-out.svg</normaloff>:/img/img/log-out.svg</iconset>
            </property>
            <property name="iconSize">
@@ -857,7 +857,7 @@ padding-left: 10px;</string>
           <string>User Name</string>
          </property>
          <property name="icon">
-          <iconset resource="../../OneDrive/Belgeler/GitHub/financaITrackingProject/dashboard/dashboard.qrc">
+          <iconset resource="dashboard.qrc">
            <normaloff>:/img/img/default_profile.svg</normaloff>:/img/img/default_profile.svg</iconset>
          </property>
          <property name="iconSize">
@@ -926,7 +926,7 @@ QPushButton{
             <string/>
            </property>
            <property name="icon">
-            <iconset resource="../../OneDrive/Belgeler/GitHub/financaITrackingProject/dashboard/dashboard.qrc">
+            <iconset resource="dashboard.qrc">
              <normaloff>:/img/img/menu.svg</normaloff>:/img/img/menu.svg</iconset>
            </property>
            <property name="iconSize">
@@ -965,7 +965,7 @@ text-align: left;</string>
             <string>Fi-Wallet</string>
            </property>
            <property name="icon">
-            <iconset resource="../../OneDrive/Belgeler/GitHub/financaITrackingProject/dashboard/dashboard.qrc">
+            <iconset resource="dashboard.qrc">
              <normaloff>:/img/img/fi_wallet.svg</normaloff>:/img/img/fi_wallet.svg</iconset>
            </property>
            <property name="iconSize">
@@ -1071,7 +1071,7 @@ height:36px;</string>
             <string/>
            </property>
            <property name="icon">
-            <iconset resource="../../OneDrive/Belgeler/GitHub/financaITrackingProject/dashboard/dashboard.qrc">
+            <iconset resource="dashboard.qrc">
              <normaloff>:/img/img/search.svg</normaloff>:/img/img/search.svg</iconset>
            </property>
            <property name="iconSize">
@@ -1135,7 +1135,7 @@ QPushButton:checked{
             <string/>
            </property>
            <property name="icon">
-            <iconset resource="../../OneDrive/Belgeler/GitHub/financaITrackingProject/dashboard/dashboard.qrc">
+            <iconset resource="dashboard.qrc">
              <normaloff>:/img/img/bell.svg</normaloff>:/img/img/bell.svg</iconset>
            </property>
            <property name="iconSize">
@@ -1188,7 +1188,7 @@ QPushButton:checked{
             <string/>
            </property>
            <property name="icon">
-            <iconset resource="../../OneDrive/Belgeler/GitHub/financaITrackingProject/dashboard/dashboard.qrc">
+            <iconset resource="dashboard.qrc">
              <normaloff>:/img/img/calculator.svg</normaloff>:/img/img/calculator.svg</iconset>
            </property>
            <property name="iconSize">
@@ -1235,7 +1235,7 @@ height: 40px;</string>
             <string/>
            </property>
            <property name="icon">
-            <iconset resource="../../OneDrive/Belgeler/GitHub/financaITrackingProject/dashboard/dashboard.qrc">
+            <iconset resource="dashboard.qrc">
              <normaloff>:/img/img/maximize-2.svg</normaloff>:/img/img/maximize-2.svg</iconset>
            </property>
            <property name="iconSize">
@@ -1262,7 +1262,7 @@ height: 40px;</string>
             <string/>
            </property>
            <property name="icon">
-            <iconset resource="../../OneDrive/Belgeler/GitHub/financaITrackingProject/dashboard/dashboard.qrc">
+            <iconset resource="dashboard.qrc">
              <normaloff>:/img/img/window_minimize.png</normaloff>:/img/img/window_minimize.png</iconset>
            </property>
            <property name="iconSize">
@@ -1327,7 +1327,7 @@ height: 40px;</string>
             <string/>
            </property>
            <property name="icon">
-            <iconset resource="../../OneDrive/Belgeler/GitHub/financaITrackingProject/dashboard/dashboard.qrc">
+            <iconset resource="dashboard.qrc">
              <normaloff>:/img/img/x.svg</normaloff>:/img/img/x.svg</iconset>
            </property>
            <property name="iconSize">
@@ -3201,7 +3201,7 @@ border-radius: 35px;</string>
                   <string/>
                  </property>
                  <property name="icon">
-                  <iconset resource="../../OneDrive/Belgeler/GitHub/financaITrackingProject/dashboard/dashboard.qrc">
+                  <iconset resource="dashboard.qrc">
                    <normaloff>:/img/img/edit-3.svg</normaloff>:/img/img/edit-3.svg</iconset>
                  </property>
                  <property name="iconSize">
@@ -3281,7 +3281,7 @@ border-radius: 35px;</string>
                     <string/>
                    </property>
                    <property name="icon">
-                    <iconset resource="../../OneDrive/Belgeler/GitHub/financaITrackingProject/dashboard/dashboard.qrc">
+                    <iconset resource="dashboard.qrc">
                      <normaloff>:/img/img/target.svg</normaloff>:/img/img/target.svg</iconset>
                    </property>
                    <property name="iconSize">
@@ -3357,7 +3357,7 @@ border-radius: 35px;</string>
                     <string/>
                    </property>
                    <property name="icon">
-                    <iconset resource="../../OneDrive/Belgeler/GitHub/financaITrackingProject/dashboard/dashboard.qrc">
+                    <iconset resource="dashboard.qrc">
                      <normaloff>:/img/img/award.svg</normaloff>:/img/img/award.svg</iconset>
                    </property>
                    <property name="iconSize">
@@ -6334,7 +6334,8 @@ color: white;</string>
         </property>
         <property name="styleSheet">
          <string notr="true">color: white;
-text-align: left;</string>
+text-align: left;
+background-color:transparent;</string>
         </property>
         <property name="text">
          <string>BALANCES</string>
@@ -6347,7 +6348,7 @@ text-align: left;</string>
   </widget>
  </widget>
  <resources>
-  <include location="../../OneDrive/Belgeler/GitHub/financaITrackingProject/dashboard/dashboard.qrc"/>
+  <include location="dashboard.qrc"/>
  </resources>
  <connections>
   <connection>
