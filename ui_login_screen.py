@@ -35,7 +35,8 @@ class Ui_Login_Screen(object):
         self.widget = QWidget(self.centralwidget)
         self.widget.setObjectName(u"widget")
         self.widget.setGeometry(QRect(0, 0, 781, 591))
-        self.widget.setStyleSheet(u"background-color: qlineargradient(spread:reflect, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(83, 92, 145, 255), stop:1 rgba(27, 26, 85, 255));")
+        self.widget.setStyleSheet(u"background-color: qlineargradient(spread:reflect, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(83, 92, 145, 255), stop:1 rgba(27, 26, 85, 255));\n"
+                                  "border-radius: 75px;")
         self.pushButton = QPushButton(self.widget)
         self.pushButton.setObjectName(u"pushButton")
         self.pushButton.setGeometry(QRect(240, 40, 311, 161))

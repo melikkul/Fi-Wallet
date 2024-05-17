@@ -43,7 +43,8 @@ class Ui_Register(object):
         font = QFont()
         font.setPointSize(25)
         self.sayfa3.setFont(font)
-        self.sayfa3.setStyleSheet(u"background-color: qlineargradient(spread:reflect, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(83, 92, 145, 255), stop:1 rgba(27, 26, 85, 255));")
+        self.sayfa3.setStyleSheet(u"background-color: qlineargradient(spread:reflect, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(83, 92, 145, 255), stop:1 rgba(27, 26, 85, 255));\n"
+                                  "border-radius: 75px;")
         self.pushButton = QPushButton(self.sayfa3)
         self.pushButton.setObjectName(u"pushButton")
         self.pushButton.setGeometry(QRect(260, 0, 291, 141))
