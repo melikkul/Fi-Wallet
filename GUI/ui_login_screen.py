@@ -18,6 +18,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWidgets import (QApplication, QCheckBox, QLabel, QLineEdit,
     QMainWindow, QPushButton, QSizePolicy, QWidget)
 from GRC import login_screen_rc
+from PySide6.QtWidgets import QLineEdit
 
 class Ui_Login_Screen(object):
 
@@ -178,6 +179,8 @@ class Ui_Login_Screen(object):
         self.retranslateUi(MainWindow)
 
         QMetaObject.connectSlotsByName(MainWindow)
+        
+        self.checkBox.stateChanged.connect(self.toggle_password_visibility)
     # setupUi
 
     def retranslateUi(self, MainWindow):
@@ -192,7 +195,13 @@ class Ui_Login_Screen(object):
         self.pushButton_3.setText(QCoreApplication.translate("MainWindow", u"    Create an account", None))
         self.checkBox.setText("")
         self.checkBox_2.setText(QCoreApplication.translate("MainWindow", u"Keep me signed in  ", None))
-   
+    
+    
+    def toggle_password_visibility(self):
+        if self.lineEdit_2.echoMode() == QLineEdit.Password:
+                self.lineEdit_2.setEchoMode(QLineEdit.Normal)
+        else:
+                self.lineEdit_2.setEchoMode(QLineEdit.Password)
 
 
 

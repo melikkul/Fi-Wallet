@@ -62,3 +62,12 @@ class UserRegistration:
         except Exception as e:
             print(f"Kullanıcı doğrulanırken hata oluştu: {e}")
             return False
+        
+if __name__ == "__main__":
+    user_reg = UserRegistration("user_database.xlsx")
+    user_reg.setup_database()
+    
+    user_reg.register_user()
+    
+    is_authenticated = user_reg.authenticate_user("", "")
+    print(f"Kullanıcı girişi {'başarılı' if is_authenticated else 'başarısız'}.")

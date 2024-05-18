@@ -23,9 +23,10 @@ class Ui_Register(object):
                  
     def toggle_password_visibility(self):
         if self.sifre.echoMode() == QLineEdit.Password:
-            self.sifre.setEchoMode(QLineEdit.Normal)
+                self.sifre.setEchoMode(QLineEdit.Normal)
         else:
-            self.sifre.setEchoMode(QLineEdit.Password)
+                self.sifre.setEchoMode(QLineEdit.Password)
+
 
     def setupUi(self, anasayfa):
         if not anasayfa.objectName():

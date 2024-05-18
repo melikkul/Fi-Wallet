@@ -51,6 +51,7 @@ class MainWindow(QMainWindow):
         email = self.ui.mail.text()
         password = self.ui.sifre.text()
         self.db.register_user(first_name, last_name, email, password)
+        self.login()
 
         
 
