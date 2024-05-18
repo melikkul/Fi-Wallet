@@ -1,13 +1,14 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'dashboard.ui'
+## Form generated from reading UI file 'dashboard2.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.6.2
+## Created by: Qt User Interface Compiler version 6.7.0
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
+from PySide6.QtCharts import QChartView
 from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
     QMetaObject, QObject, QPoint, QRect,
     QSize, QTime, QUrl, Qt)
@@ -18,14 +19,14 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWidgets import (QApplication, QCheckBox, QComboBox, QGridLayout,
     QHBoxLayout, QLabel, QLineEdit, QMainWindow,
     QProgressBar, QPushButton, QSizePolicy, QSpacerItem,
-    QStackedWidget, QVBoxLayout, QWidget)
-import dashboard_rc
+    QStackedWidget, QToolButton, QVBoxLayout, QWidget)
+from GRC import dashboard_rc
 
-class Ui_Dashboard(object):
+class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1280, 720)
+        MainWindow.resize(1920, 1080)
         MainWindow.setStyleSheet(u"background-color: transparent;")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
@@ -33,6 +34,200 @@ class Ui_Dashboard(object):
         self.gridLayout.setSpacing(0)
         self.gridLayout.setObjectName(u"gridLayout")
         self.gridLayout.setContentsMargins(0, 0, 0, 0)
+        self.minimize_slider_menu_widget = QWidget(self.centralwidget)
+        self.minimize_slider_menu_widget.setObjectName(u"minimize_slider_menu_widget")
+        self.minimize_slider_menu_widget.setStyleSheet(u"QWidget{\n"
+"	background-color:#1B1A55;\n"
+"}\n"
+"QPushButton{\n"
+"	height:50px;\n"
+"	weight:220px;\n"
+"	border:none;\n"
+"	border-radius:5px;\n"
+"\n"
+"}\n"
+"QCheckBox{\n"
+"	height:50px;\n"
+"	weight:220px;\n"
+"}\n"
+"QPushButton:checked{\n"
+"	background-color:#9290C3;\n"
+"	color: #9290C3;\n"
+"	font-weight:bold;\n"
+"}\n"
+"")
+        self.verticalLayout_6 = QVBoxLayout(self.minimize_slider_menu_widget)
+        self.verticalLayout_6.setObjectName(u"verticalLayout_6")
+        self.pushButton_2 = QPushButton(self.minimize_slider_menu_widget)
+        self.pushButton_2.setObjectName(u"pushButton_2")
+        icon = QIcon()
+        icon.addFile(u":/img/img/home.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.pushButton_2.setIcon(icon)
+        self.pushButton_2.setIconSize(QSize(32, 32))
+        self.pushButton_2.setCheckable(True)
+        self.pushButton_2.setAutoRepeat(False)
+        self.pushButton_2.setAutoExclusive(True)
+
+        self.verticalLayout_6.addWidget(self.pushButton_2)
+
+        self.verticalSpacer = QSpacerItem(20, 49, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+
+        self.verticalLayout_6.addItem(self.verticalSpacer)
+
+        self.verticalLayout_2 = QVBoxLayout()
+        self.verticalLayout_2.setSpacing(15)
+        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.dashboard_minimize_button = QPushButton(self.minimize_slider_menu_widget)
+        self.dashboard_minimize_button.setObjectName(u"dashboard_minimize_button")
+        icon1 = QIcon()
+        icon1.addFile(u":/img/img/grid.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.dashboard_minimize_button.setIcon(icon1)
+        self.dashboard_minimize_button.setIconSize(QSize(32, 32))
+        self.dashboard_minimize_button.setCheckable(True)
+        self.dashboard_minimize_button.setAutoExclusive(True)
+
+        self.verticalLayout_2.addWidget(self.dashboard_minimize_button)
+
+        self.analist_minimize_button = QPushButton(self.minimize_slider_menu_widget)
+        self.analist_minimize_button.setObjectName(u"analist_minimize_button")
+        icon2 = QIcon()
+        icon2.addFile(u":/img/img/analist.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.analist_minimize_button.setIcon(icon2)
+        self.analist_minimize_button.setIconSize(QSize(32, 32))
+        self.analist_minimize_button.setCheckable(True)
+        self.analist_minimize_button.setAutoExclusive(True)
+
+        self.verticalLayout_2.addWidget(self.analist_minimize_button)
+
+        self.performance_minimize_button = QPushButton(self.minimize_slider_menu_widget)
+        self.performance_minimize_button.setObjectName(u"performance_minimize_button")
+        icon3 = QIcon()
+        icon3.addFile(u":/img/img/performance.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.performance_minimize_button.setIcon(icon3)
+        self.performance_minimize_button.setIconSize(QSize(32, 32))
+        self.performance_minimize_button.setCheckable(True)
+        self.performance_minimize_button.setAutoExclusive(True)
+
+        self.verticalLayout_2.addWidget(self.performance_minimize_button)
+
+        self.bills_minimize_button = QPushButton(self.minimize_slider_menu_widget)
+        self.bills_minimize_button.setObjectName(u"bills_minimize_button")
+        icon4 = QIcon()
+        icon4.addFile(u":/img/img/bills.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.bills_minimize_button.setIcon(icon4)
+        self.bills_minimize_button.setIconSize(QSize(32, 32))
+        self.bills_minimize_button.setCheckable(True)
+        self.bills_minimize_button.setAutoExclusive(True)
+
+        self.verticalLayout_2.addWidget(self.bills_minimize_button)
+
+        self.wallet_minimize_button = QPushButton(self.minimize_slider_menu_widget)
+        self.wallet_minimize_button.setObjectName(u"wallet_minimize_button")
+        icon5 = QIcon()
+        icon5.addFile(u":/img/img/wallet.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.wallet_minimize_button.setIcon(icon5)
+        self.wallet_minimize_button.setIconSize(QSize(32, 32))
+        self.wallet_minimize_button.setCheckable(True)
+        self.wallet_minimize_button.setAutoExclusive(True)
+
+        self.verticalLayout_2.addWidget(self.wallet_minimize_button)
+
+        self.goal_minimize_button = QPushButton(self.minimize_slider_menu_widget)
+        self.goal_minimize_button.setObjectName(u"goal_minimize_button")
+        icon6 = QIcon()
+        icon6.addFile(u":/img/img/crosshair.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.goal_minimize_button.setIcon(icon6)
+        self.goal_minimize_button.setIconSize(QSize(32, 32))
+        self.goal_minimize_button.setCheckable(True)
+        self.goal_minimize_button.setAutoExclusive(True)
+
+        self.verticalLayout_2.addWidget(self.goal_minimize_button)
+
+
+        self.verticalLayout_6.addLayout(self.verticalLayout_2)
+
+        self.verticalSpacer_2 = QSpacerItem(20, 97, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+
+        self.verticalLayout_6.addItem(self.verticalSpacer_2)
+
+        self.verticalLayout_3 = QVBoxLayout()
+        self.verticalLayout_3.setSpacing(20)
+        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
+        self.thema_minimize_button = QCheckBox(self.minimize_slider_menu_widget)
+        self.thema_minimize_button.setObjectName(u"thema_minimize_button")
+        font = QFont()
+        font.setFamilies([u"Poppins"])
+        font.setPointSize(14)
+        self.thema_minimize_button.setFont(font)
+        self.thema_minimize_button.setStyleSheet(u"QCheckBox{\n"
+"	color:white;\n"
+"	padding-left: 10px;\n"
+"}\n"
+"QCheckBox::indicator {\n"
+"	width: 32px;\n"
+"	height: 32px;\n"
+"}\n"
+"\n"
+"QCheckBox::indicator:checked{\n"
+"	image: url(:/img/img/toggle-right.svg);\n"
+"}\n"
+"\n"
+"QCheckBox::indicator:unchecked{\n"
+"\n"
+"	image: url(:/img/img/toggle-left.svg);\n"
+"}")
+        self.thema_minimize_button.setCheckable(True)
+        self.thema_minimize_button.setAutoExclusive(False)
+
+        self.verticalLayout_3.addWidget(self.thema_minimize_button)
+
+        self.settings_minimize_button = QPushButton(self.minimize_slider_menu_widget)
+        self.settings_minimize_button.setObjectName(u"settings_minimize_button")
+        icon7 = QIcon()
+        icon7.addFile(u":/img/img/settings.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.settings_minimize_button.setIcon(icon7)
+        self.settings_minimize_button.setIconSize(QSize(32, 32))
+        self.settings_minimize_button.setCheckable(True)
+        self.settings_minimize_button.setAutoExclusive(True)
+
+        self.verticalLayout_3.addWidget(self.settings_minimize_button)
+
+        self.logout_minimize_button = QPushButton(self.minimize_slider_menu_widget)
+        self.logout_minimize_button.setObjectName(u"logout_minimize_button")
+        icon8 = QIcon()
+        icon8.addFile(u":/img/img/log-out.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.logout_minimize_button.setIcon(icon8)
+        self.logout_minimize_button.setIconSize(QSize(32, 32))
+        self.logout_minimize_button.setCheckable(True)
+        self.logout_minimize_button.setAutoExclusive(True)
+
+        self.verticalLayout_3.addWidget(self.logout_minimize_button)
+
+
+        self.verticalLayout_6.addLayout(self.verticalLayout_3)
+
+        self.verticalSpacer_5 = QSpacerItem(20, 64, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+
+        self.verticalLayout_6.addItem(self.verticalSpacer_5)
+
+        self.profile_minimize_button = QPushButton(self.minimize_slider_menu_widget)
+        self.profile_minimize_button.setObjectName(u"profile_minimize_button")
+        icon9 = QIcon()
+        icon9.addFile(u":/img/img/default_profile.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.profile_minimize_button.setIcon(icon9)
+        self.profile_minimize_button.setIconSize(QSize(32, 32))
+        self.profile_minimize_button.setCheckable(True)
+        self.profile_minimize_button.setAutoExclusive(True)
+
+        self.verticalLayout_6.addWidget(self.profile_minimize_button)
+
+        self.verticalSpacer_7 = QSpacerItem(20, 59, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+
+        self.verticalLayout_6.addItem(self.verticalSpacer_7)
+
+
+        self.gridLayout.addWidget(self.minimize_slider_menu_widget, 1, 0, 1, 1)
+
         self.maximize_slider_menu_widget = QWidget(self.centralwidget)
         self.maximize_slider_menu_widget.setObjectName(u"maximize_slider_menu_widget")
         self.maximize_slider_menu_widget.setStyleSheet(u"QWidget{\n"
@@ -63,9 +258,6 @@ class Ui_Dashboard(object):
         self.profiles_combobox.addItem("")
         self.profiles_combobox.addItem("")
         self.profiles_combobox.setObjectName(u"profiles_combobox")
-        font = QFont()
-        font.setFamilies([u"Poppins"])
-        font.setPointSize(14)
         self.profiles_combobox.setFont(font)
         self.profiles_combobox.setStyleSheet(u"QComboBox\n"
 "{\n"
@@ -111,9 +303,7 @@ class Ui_Dashboard(object):
         self.dashboard_button.setStyleSheet(u"color:white;\n"
 "text-align: left;\n"
 "padding-left: 10px;")
-        icon = QIcon()
-        icon.addFile(u":/img/img/grid.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.dashboard_button.setIcon(icon)
+        self.dashboard_button.setIcon(icon1)
         self.dashboard_button.setIconSize(QSize(32, 32))
         self.dashboard_button.setCheckable(True)
         self.dashboard_button.setAutoExclusive(True)
@@ -126,9 +316,7 @@ class Ui_Dashboard(object):
         self.analist_button.setStyleSheet(u"color:white;\n"
 "text-align: left;\n"
 "padding-left: 10px;")
-        icon1 = QIcon()
-        icon1.addFile(u":/img/img/analist.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.analist_button.setIcon(icon1)
+        self.analist_button.setIcon(icon2)
         self.analist_button.setIconSize(QSize(32, 32))
         self.analist_button.setCheckable(True)
         self.analist_button.setAutoExclusive(True)
@@ -141,9 +329,7 @@ class Ui_Dashboard(object):
         self.performance_button.setStyleSheet(u"color:white;\n"
 "text-align: left;\n"
 "padding-left: 10px;")
-        icon2 = QIcon()
-        icon2.addFile(u":/img/img/performance.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.performance_button.setIcon(icon2)
+        self.performance_button.setIcon(icon3)
         self.performance_button.setIconSize(QSize(32, 32))
         self.performance_button.setCheckable(True)
         self.performance_button.setAutoExclusive(True)
@@ -156,9 +342,7 @@ class Ui_Dashboard(object):
         self.bills_button.setStyleSheet(u"color:white;\n"
 "text-align: left;\n"
 "padding-left: 10px;")
-        icon3 = QIcon()
-        icon3.addFile(u":/img/img/bills.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.bills_button.setIcon(icon3)
+        self.bills_button.setIcon(icon4)
         self.bills_button.setIconSize(QSize(32, 32))
         self.bills_button.setCheckable(True)
         self.bills_button.setAutoExclusive(True)
@@ -171,9 +355,7 @@ class Ui_Dashboard(object):
         self.wallet_button.setStyleSheet(u"color:white;\n"
 "text-align: left;\n"
 "padding-left: 10px;")
-        icon4 = QIcon()
-        icon4.addFile(u":/img/img/wallet.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.wallet_button.setIcon(icon4)
+        self.wallet_button.setIcon(icon5)
         self.wallet_button.setIconSize(QSize(32, 32))
         self.wallet_button.setCheckable(True)
         self.wallet_button.setAutoExclusive(True)
@@ -186,9 +368,7 @@ class Ui_Dashboard(object):
         self.goal_button.setStyleSheet(u"color:white;\n"
 "text-align: left;\n"
 "padding-left: 10px;")
-        icon5 = QIcon()
-        icon5.addFile(u":/img/img/crosshair.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.goal_button.setIcon(icon5)
+        self.goal_button.setIcon(icon6)
         self.goal_button.setIconSize(QSize(32, 32))
         self.goal_button.setCheckable(True)
         self.goal_button.setAutoExclusive(True)
@@ -236,9 +416,7 @@ class Ui_Dashboard(object):
         self.settings_button.setStyleSheet(u"color:white;\n"
 "text-align: left;\n"
 "padding-left: 10px;")
-        icon6 = QIcon()
-        icon6.addFile(u":/img/img/settings.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.settings_button.setIcon(icon6)
+        self.settings_button.setIcon(icon7)
         self.settings_button.setIconSize(QSize(32, 32))
         self.settings_button.setCheckable(True)
         self.settings_button.setAutoExclusive(True)
@@ -251,9 +429,7 @@ class Ui_Dashboard(object):
         self.logout_button.setStyleSheet(u"color:white;\n"
 "text-align: left;\n"
 "padding-left: 10px;")
-        icon7 = QIcon()
-        icon7.addFile(u":/img/img/log-out.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.logout_button.setIcon(icon7)
+        self.logout_button.setIcon(icon8)
         self.logout_button.setIconSize(QSize(32, 32))
         self.logout_button.setCheckable(True)
         self.logout_button.setAutoExclusive(True)
@@ -273,9 +449,7 @@ class Ui_Dashboard(object):
         self.profile_button.setStyleSheet(u"color:white;\n"
 "text-align: left;\n"
 "padding-left: 10px;")
-        icon8 = QIcon()
-        icon8.addFile(u":/img/img/default_profile.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.profile_button.setIcon(icon8)
+        self.profile_button.setIcon(icon9)
         self.profile_button.setIconSize(QSize(32, 32))
         self.profile_button.setCheckable(True)
         self.profile_button.setAutoExclusive(True)
@@ -289,178 +463,167 @@ class Ui_Dashboard(object):
 
         self.gridLayout.addWidget(self.maximize_slider_menu_widget, 1, 1, 1, 1)
 
-        self.minimize_slider_menu_widget = QWidget(self.centralwidget)
-        self.minimize_slider_menu_widget.setObjectName(u"minimize_slider_menu_widget")
-        self.minimize_slider_menu_widget.setStyleSheet(u"QWidget{\n"
-"	background-color:#1B1A55;\n"
+        self.top_bar_widget = QWidget(self.centralwidget)
+        self.top_bar_widget.setObjectName(u"top_bar_widget")
+        self.top_bar_widget.setStyleSheet(u"QWidget{\n"
+"	background-color:#070F2B;\n"
 "}\n"
 "QPushButton{\n"
-"	height:50px;\n"
-"	weight:220px;\n"
 "	border:none;\n"
-"	border-radius:5px;\n"
-"\n"
 "}\n"
-"QCheckBox{\n"
-"	height:50px;\n"
-"	weight:220px;\n"
+"")
+        self.horizontalLayout_39 = QHBoxLayout(self.top_bar_widget)
+        self.horizontalLayout_39.setObjectName(u"horizontalLayout_39")
+        self.horizontalLayout_2 = QHBoxLayout()
+        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.slider_button = QPushButton(self.top_bar_widget)
+        self.slider_button.setObjectName(u"slider_button")
+        font1 = QFont()
+        font1.setFamilies([u"Poppins"])
+        font1.setPointSize(14)
+        font1.setBold(True)
+        self.slider_button.setFont(font1)
+        self.slider_button.setStyleSheet(u"QPushButton{\n"
+"	color: white;\n"
+"	height:42px;\n"
+"	width: 32px;\n"
+"	padding-left: 10px;\n"
+"}")
+        icon10 = QIcon()
+        icon10.addFile(u":/img/img/menu.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.slider_button.setIcon(icon10)
+        self.slider_button.setIconSize(QSize(32, 32))
+        self.slider_button.setCheckable(True)
+        self.slider_button.setAutoRepeat(False)
+        self.slider_button.setAutoExclusive(False)
+
+        self.horizontalLayout_2.addWidget(self.slider_button)
+
+        self.fi_wallet_button = QPushButton(self.top_bar_widget)
+        self.fi_wallet_button.setObjectName(u"fi_wallet_button")
+        self.fi_wallet_button.setFont(font1)
+        self.fi_wallet_button.setStyleSheet(u"color: white;\n"
+"height:50px;\n"
+"text-align: left;")
+        icon11 = QIcon()
+        icon11.addFile(u":/img/img/fi_wallet.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.fi_wallet_button.setIcon(icon11)
+        self.fi_wallet_button.setIconSize(QSize(75, 75))
+        self.fi_wallet_button.setCheckable(True)
+        self.fi_wallet_button.setAutoRepeat(False)
+        self.fi_wallet_button.setAutoExclusive(False)
+
+        self.horizontalLayout_2.addWidget(self.fi_wallet_button)
+
+
+        self.horizontalLayout_39.addLayout(self.horizontalLayout_2)
+
+        self.horizontalSpacer_2 = QSpacerItem(503, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_39.addItem(self.horizontalSpacer_2)
+
+        self.horizontalLayout = QHBoxLayout()
+        self.horizontalLayout.setSpacing(0)
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.search_line_edit = QLineEdit(self.top_bar_widget)
+        self.search_line_edit.setObjectName(u"search_line_edit")
+        self.search_line_edit.setMinimumSize(QSize(700, 36))
+        self.search_line_edit.setMaximumSize(QSize(700, 36))
+        self.search_line_edit.setStyleSheet(u"background-color: rgb(146, 144, 195);\n"
+"font: 14pt \"Poppins\";\n"
+"color:rgba(255,255,255,0.4);\n"
+"border-top-left-radius: 10px;\n"
+"border-bottom-left-radius: 10px;\n"
+" width: 700px;")
+        self.search_line_edit.setFrame(False)
+        self.search_line_edit.setAlignment(Qt.AlignCenter)
+        self.search_line_edit.setReadOnly(False)
+        self.search_line_edit.setClearButtonEnabled(True)
+
+        self.horizontalLayout.addWidget(self.search_line_edit)
+
+        self.search_button = QPushButton(self.top_bar_widget)
+        self.search_button.setObjectName(u"search_button")
+        self.search_button.setMinimumSize(QSize(32, 36))
+        self.search_button.setMaximumSize(QSize(32, 36))
+        self.search_button.setStyleSheet(u"background-color: rgb(146, 144, 195);\n"
+"border-top-right-radius: 10px;\n"
+"border-bottom-right-radius: 10px;\n"
+"height:36px;")
+        icon12 = QIcon()
+        icon12.addFile(u":/img/img/search.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.search_button.setIcon(icon12)
+        self.search_button.setIconSize(QSize(28, 28))
+        self.search_button.setCheckable(True)
+        self.search_button.setAutoExclusive(True)
+
+        self.horizontalLayout.addWidget(self.search_button)
+
+
+        self.horizontalLayout_39.addLayout(self.horizontalLayout)
+
+        self.horizontalSpacer_55 = QSpacerItem(150, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_39.addItem(self.horizontalSpacer_55)
+
+        self.horizontalLayout_3 = QHBoxLayout()
+        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.notification_button = QPushButton(self.top_bar_widget)
+        self.notification_button.setObjectName(u"notification_button")
+        self.notification_button.setMinimumSize(QSize(40, 40))
+        self.notification_button.setMaximumSize(QSize(40, 40))
+        self.notification_button.setStyleSheet(u"QPushButton{\n"
+"	wight: 40px;\n"
+"	height: 40px;\n"
+"	border-radius:5px;\n"
 "}\n"
 "QPushButton:checked{\n"
 "	background-color:#9290C3;\n"
 "	color: #9290C3;\n"
 "	font-weight:bold;\n"
-"}\n"
-"")
-        self.verticalLayout_6 = QVBoxLayout(self.minimize_slider_menu_widget)
-        self.verticalLayout_6.setObjectName(u"verticalLayout_6")
-        self.pushButton_2 = QPushButton(self.minimize_slider_menu_widget)
-        self.pushButton_2.setObjectName(u"pushButton_2")
-        icon9 = QIcon()
-        icon9.addFile(u":/img/img/home.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.pushButton_2.setIcon(icon9)
-        self.pushButton_2.setIconSize(QSize(32, 32))
-        self.pushButton_2.setCheckable(True)
-        self.pushButton_2.setAutoRepeat(False)
-        self.pushButton_2.setAutoExclusive(True)
-
-        self.verticalLayout_6.addWidget(self.pushButton_2)
-
-        self.verticalSpacer = QSpacerItem(20, 49, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
-
-        self.verticalLayout_6.addItem(self.verticalSpacer)
-
-        self.verticalLayout_2 = QVBoxLayout()
-        self.verticalLayout_2.setSpacing(15)
-        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
-        self.dashboard_minimize_button = QPushButton(self.minimize_slider_menu_widget)
-        self.dashboard_minimize_button.setObjectName(u"dashboard_minimize_button")
-        self.dashboard_minimize_button.setIcon(icon)
-        self.dashboard_minimize_button.setIconSize(QSize(32, 32))
-        self.dashboard_minimize_button.setCheckable(True)
-        self.dashboard_minimize_button.setAutoExclusive(True)
-
-        self.verticalLayout_2.addWidget(self.dashboard_minimize_button)
-
-        self.analist_minimize_button = QPushButton(self.minimize_slider_menu_widget)
-        self.analist_minimize_button.setObjectName(u"analist_minimize_button")
-        self.analist_minimize_button.setIcon(icon1)
-        self.analist_minimize_button.setIconSize(QSize(32, 32))
-        self.analist_minimize_button.setCheckable(True)
-        self.analist_minimize_button.setAutoExclusive(True)
-
-        self.verticalLayout_2.addWidget(self.analist_minimize_button)
-
-        self.performance_minimize_button = QPushButton(self.minimize_slider_menu_widget)
-        self.performance_minimize_button.setObjectName(u"performance_minimize_button")
-        self.performance_minimize_button.setIcon(icon2)
-        self.performance_minimize_button.setIconSize(QSize(32, 32))
-        self.performance_minimize_button.setCheckable(True)
-        self.performance_minimize_button.setAutoExclusive(True)
-
-        self.verticalLayout_2.addWidget(self.performance_minimize_button)
-
-        self.bills_minimize_button = QPushButton(self.minimize_slider_menu_widget)
-        self.bills_minimize_button.setObjectName(u"bills_minimize_button")
-        self.bills_minimize_button.setIcon(icon3)
-        self.bills_minimize_button.setIconSize(QSize(32, 32))
-        self.bills_minimize_button.setCheckable(True)
-        self.bills_minimize_button.setAutoExclusive(True)
-
-        self.verticalLayout_2.addWidget(self.bills_minimize_button)
-
-        self.wallet_minimize_button = QPushButton(self.minimize_slider_menu_widget)
-        self.wallet_minimize_button.setObjectName(u"wallet_minimize_button")
-        self.wallet_minimize_button.setIcon(icon4)
-        self.wallet_minimize_button.setIconSize(QSize(32, 32))
-        self.wallet_minimize_button.setCheckable(True)
-        self.wallet_minimize_button.setAutoExclusive(True)
-
-        self.verticalLayout_2.addWidget(self.wallet_minimize_button)
-
-        self.goal_minimize_button = QPushButton(self.minimize_slider_menu_widget)
-        self.goal_minimize_button.setObjectName(u"goal_minimize_button")
-        self.goal_minimize_button.setIcon(icon5)
-        self.goal_minimize_button.setIconSize(QSize(32, 32))
-        self.goal_minimize_button.setCheckable(True)
-        self.goal_minimize_button.setAutoExclusive(True)
-
-        self.verticalLayout_2.addWidget(self.goal_minimize_button)
-
-
-        self.verticalLayout_6.addLayout(self.verticalLayout_2)
-
-        self.verticalSpacer_2 = QSpacerItem(20, 97, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
-
-        self.verticalLayout_6.addItem(self.verticalSpacer_2)
-
-        self.verticalLayout_3 = QVBoxLayout()
-        self.verticalLayout_3.setSpacing(20)
-        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
-        self.thema_minimize_button = QCheckBox(self.minimize_slider_menu_widget)
-        self.thema_minimize_button.setObjectName(u"thema_minimize_button")
-        self.thema_minimize_button.setFont(font)
-        self.thema_minimize_button.setStyleSheet(u"QCheckBox{\n"
-"	color:white;\n"
-"	padding-left: 10px;\n"
-"}\n"
-"QCheckBox::indicator {\n"
-"	width: 32px;\n"
-"	height: 32px;\n"
-"}\n"
-"\n"
-"QCheckBox::indicator:checked{\n"
-"	image: url(:/img/img/toggle-right.svg);\n"
-"}\n"
-"\n"
-"QCheckBox::indicator:unchecked{\n"
-"\n"
-"	image: url(:/img/img/toggle-left.svg);\n"
 "}")
-        self.thema_minimize_button.setCheckable(True)
-        self.thema_minimize_button.setAutoExclusive(False)
+        icon13 = QIcon()
+        icon13.addFile(u":/img/img/bell.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.notification_button.setIcon(icon13)
+        self.notification_button.setIconSize(QSize(25, 25))
+        self.notification_button.setCheckable(True)
+        self.notification_button.setAutoExclusive(True)
 
-        self.verticalLayout_3.addWidget(self.thema_minimize_button)
+        self.horizontalLayout_3.addWidget(self.notification_button)
 
-        self.settings_minimize_button = QPushButton(self.minimize_slider_menu_widget)
-        self.settings_minimize_button.setObjectName(u"settings_minimize_button")
-        self.settings_minimize_button.setIcon(icon6)
-        self.settings_minimize_button.setIconSize(QSize(32, 32))
-        self.settings_minimize_button.setCheckable(True)
-        self.settings_minimize_button.setAutoExclusive(True)
+        self.calculator_button = QPushButton(self.top_bar_widget)
+        self.calculator_button.setObjectName(u"calculator_button")
+        sizePolicy = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.calculator_button.sizePolicy().hasHeightForWidth())
+        self.calculator_button.setSizePolicy(sizePolicy)
+        self.calculator_button.setMinimumSize(QSize(40, 40))
+        self.calculator_button.setMaximumSize(QSize(40, 40))
+        self.calculator_button.setStyleSheet(u"QPushButton{\n"
+"	wight: 40px;\n"
+"	height: 40px;\n"
+"	border-radius:5px;\n"
+"}\n"
+"QPushButton:checked{\n"
+"	background-color:#9290C3;\n"
+"	color: #9290C3;\n"
+"	font-weight:bold;\n"
+"}")
+        icon14 = QIcon()
+        icon14.addFile(u":/img/img/calculator.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.calculator_button.setIcon(icon14)
+        self.calculator_button.setIconSize(QSize(35, 35))
+        self.calculator_button.setCheckable(True)
+        self.calculator_button.setAutoExclusive(True)
 
-        self.verticalLayout_3.addWidget(self.settings_minimize_button)
-
-        self.logout_minimize_button = QPushButton(self.minimize_slider_menu_widget)
-        self.logout_minimize_button.setObjectName(u"logout_minimize_button")
-        self.logout_minimize_button.setIcon(icon7)
-        self.logout_minimize_button.setIconSize(QSize(32, 32))
-        self.logout_minimize_button.setCheckable(True)
-        self.logout_minimize_button.setAutoExclusive(True)
-
-        self.verticalLayout_3.addWidget(self.logout_minimize_button)
-
-
-        self.verticalLayout_6.addLayout(self.verticalLayout_3)
-
-        self.verticalSpacer_5 = QSpacerItem(20, 64, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
-
-        self.verticalLayout_6.addItem(self.verticalSpacer_5)
-
-        self.profile_minimize_button = QPushButton(self.minimize_slider_menu_widget)
-        self.profile_minimize_button.setObjectName(u"profile_minimize_button")
-        self.profile_minimize_button.setIcon(icon8)
-        self.profile_minimize_button.setIconSize(QSize(32, 32))
-        self.profile_minimize_button.setCheckable(True)
-        self.profile_minimize_button.setAutoExclusive(True)
-
-        self.verticalLayout_6.addWidget(self.profile_minimize_button)
-
-        self.verticalSpacer_7 = QSpacerItem(20, 59, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
-
-        self.verticalLayout_6.addItem(self.verticalSpacer_7)
+        self.horizontalLayout_3.addWidget(self.calculator_button)
 
 
-        self.gridLayout.addWidget(self.minimize_slider_menu_widget, 1, 0, 1, 1)
+        self.horizontalLayout_39.addLayout(self.horizontalLayout_3)
+
+
+        self.gridLayout.addWidget(self.top_bar_widget, 0, 0, 1, 3)
 
         self.main_screen_stacked_widget = QStackedWidget(self.centralwidget)
         self.main_screen_stacked_widget.setObjectName(u"main_screen_stacked_widget")
@@ -536,10 +699,10 @@ class Ui_Dashboard(object):
         self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
         self.tota_balance_value_label = QLabel(self.total_balance_widget)
         self.tota_balance_value_label.setObjectName(u"tota_balance_value_label")
-        font1 = QFont()
-        font1.setFamilies([u"Poppins"])
-        font1.setPointSize(22)
-        self.tota_balance_value_label.setFont(font1)
+        font2 = QFont()
+        font2.setFamilies([u"Poppins"])
+        font2.setPointSize(22)
+        self.tota_balance_value_label.setFont(font2)
         self.tota_balance_value_label.setStyleSheet(u"color: white;\n"
 "text-align: left;")
 
@@ -619,7 +782,7 @@ class Ui_Dashboard(object):
         self.horizontalLayout_10.setObjectName(u"horizontalLayout_10")
         self.tota_spending_value_label = QLabel(self.total_spending_widget)
         self.tota_spending_value_label.setObjectName(u"tota_spending_value_label")
-        self.tota_spending_value_label.setFont(font1)
+        self.tota_spending_value_label.setFont(font2)
         self.tota_spending_value_label.setStyleSheet(u"color: white;\n"
 "text-align: left;")
 
@@ -699,7 +862,7 @@ class Ui_Dashboard(object):
         self.horizontalLayout_16.setObjectName(u"horizontalLayout_16")
         self.money_saved_value_label = QLabel(self.money_saved_widget)
         self.money_saved_value_label.setObjectName(u"money_saved_value_label")
-        self.money_saved_value_label.setFont(font1)
+        self.money_saved_value_label.setFont(font2)
         self.money_saved_value_label.setStyleSheet(u"color: white;\n"
 "text-align: left;")
 
@@ -780,7 +943,7 @@ class Ui_Dashboard(object):
         self.horizontalLayout_19.setObjectName(u"horizontalLayout_19")
         self.money_sent_value_label = QLabel(self.money_sent_widget)
         self.money_sent_value_label.setObjectName(u"money_sent_value_label")
-        self.money_sent_value_label.setFont(font1)
+        self.money_sent_value_label.setFont(font2)
         self.money_sent_value_label.setStyleSheet(u"color: white;\n"
 "text-align: left;")
 
@@ -860,7 +1023,7 @@ class Ui_Dashboard(object):
         self.horizontalLayout_28.setObjectName(u"horizontalLayout_28")
         self.online_payments_value_label = QLabel(self.online_payments_widget)
         self.online_payments_value_label.setObjectName(u"online_payments_value_label")
-        self.online_payments_value_label.setFont(font1)
+        self.online_payments_value_label.setFont(font2)
         self.online_payments_value_label.setStyleSheet(u"color: white;\n"
 "text-align: left;")
 
@@ -914,12 +1077,12 @@ class Ui_Dashboard(object):
         self.horizontalLayout_25.setContentsMargins(20, -1, 20, -1)
         self.cards_topic_label = QLabel(self.card1)
         self.cards_topic_label.setObjectName(u"cards_topic_label")
-        font2 = QFont()
-        font2.setFamilies([u"Poppins"])
-        font2.setPointSize(10)
-        font2.setBold(True)
-        font2.setUnderline(True)
-        self.cards_topic_label.setFont(font2)
+        font3 = QFont()
+        font3.setFamilies([u"Poppins"])
+        font3.setPointSize(10)
+        font3.setBold(True)
+        font3.setUnderline(True)
+        self.cards_topic_label.setFont(font3)
         self.cards_topic_label.setStyleSheet(u"background-color: transparent;\n"
 "color: white;")
 
@@ -931,11 +1094,11 @@ class Ui_Dashboard(object):
 
         self.all_accounts_label = QLabel(self.card1)
         self.all_accounts_label.setObjectName(u"all_accounts_label")
-        font3 = QFont()
-        font3.setFamilies([u"Poppins"])
-        font3.setPointSize(10)
-        font3.setUnderline(True)
-        self.all_accounts_label.setFont(font3)
+        font4 = QFont()
+        font4.setFamilies([u"Poppins"])
+        font4.setPointSize(10)
+        font4.setUnderline(True)
+        self.all_accounts_label.setFont(font4)
         self.all_accounts_label.setStyleSheet(u"background-color: transparent;\n"
 "color: white;")
 
@@ -968,20 +1131,20 @@ class Ui_Dashboard(object):
         self.verticalLayout_21.setObjectName(u"verticalLayout_21")
         self.card_name_label = QLabel(self.widget_11)
         self.card_name_label.setObjectName(u"card_name_label")
-        font4 = QFont()
-        font4.setFamilies([u"Poppins"])
-        font4.setPointSize(10)
-        self.card_name_label.setFont(font4)
+        font5 = QFont()
+        font5.setFamilies([u"Poppins"])
+        font5.setPointSize(10)
+        self.card_name_label.setFont(font5)
         self.card_name_label.setStyleSheet(u"color: white;")
 
         self.verticalLayout_21.addWidget(self.card_name_label)
 
         self.account_name_label = QLabel(self.widget_11)
         self.account_name_label.setObjectName(u"account_name_label")
-        font5 = QFont()
-        font5.setFamilies([u"Poppins"])
-        font5.setPointSize(7)
-        self.account_name_label.setFont(font5)
+        font6 = QFont()
+        font6.setFamilies([u"Poppins"])
+        font6.setPointSize(7)
+        self.account_name_label.setFont(font6)
         self.account_name_label.setStyleSheet(u"color:rgba(255,255,255,0.4);\n"
 "background-color: transparent;")
 
@@ -1006,10 +1169,10 @@ class Ui_Dashboard(object):
         self.horizontalLayout_34.setObjectName(u"horizontalLayout_34")
         self.card1_card_number_label = QLabel(self.widget_11)
         self.card1_card_number_label.setObjectName(u"card1_card_number_label")
-        font6 = QFont()
-        font6.setFamilies([u"Poppins"])
-        font6.setPointSize(19)
-        self.card1_card_number_label.setFont(font6)
+        font7 = QFont()
+        font7.setFamilies([u"Poppins"])
+        font7.setPointSize(19)
+        self.card1_card_number_label.setFont(font7)
         self.card1_card_number_label.setStyleSheet(u"color: white;")
 
         self.horizontalLayout_34.addWidget(self.card1_card_number_label)
@@ -1029,20 +1192,20 @@ class Ui_Dashboard(object):
         self.verticalLayout_22.setObjectName(u"verticalLayout_22")
         self.card1_card_holder_label = QLabel(self.widget_11)
         self.card1_card_holder_label.setObjectName(u"card1_card_holder_label")
-        font7 = QFont()
-        font7.setFamilies([u"Poppins"])
-        font7.setPointSize(8)
-        self.card1_card_holder_label.setFont(font7)
+        font8 = QFont()
+        font8.setFamilies([u"Poppins"])
+        font8.setPointSize(8)
+        self.card1_card_holder_label.setFont(font8)
         self.card1_card_holder_label.setStyleSheet(u"color:white;")
 
         self.verticalLayout_22.addWidget(self.card1_card_holder_label)
 
         self.card1_card_name_label = QLabel(self.widget_11)
         self.card1_card_name_label.setObjectName(u"card1_card_name_label")
-        font8 = QFont()
-        font8.setFamilies([u"Poppins"])
-        font8.setPointSize(11)
-        self.card1_card_name_label.setFont(font8)
+        font9 = QFont()
+        font9.setFamilies([u"Poppins"])
+        font9.setPointSize(11)
+        self.card1_card_name_label.setFont(font9)
         self.card1_card_name_label.setStyleSheet(u"color:white;\n"
 "background-color:transparent;")
 
@@ -1060,7 +1223,7 @@ class Ui_Dashboard(object):
         self.verticalLayout_23.setObjectName(u"verticalLayout_23")
         self.card1_expier_date_label = QLabel(self.widget_11)
         self.card1_expier_date_label.setObjectName(u"card1_expier_date_label")
-        self.card1_expier_date_label.setFont(font7)
+        self.card1_expier_date_label.setFont(font8)
         self.card1_expier_date_label.setStyleSheet(u"color:white;\n"
 "backgroundd-color: transparent;")
 
@@ -1068,7 +1231,7 @@ class Ui_Dashboard(object):
 
         self.card1_card_date_label = QLabel(self.widget_11)
         self.card1_card_date_label.setObjectName(u"card1_card_date_label")
-        self.card1_card_date_label.setFont(font8)
+        self.card1_card_date_label.setFont(font9)
         self.card1_card_date_label.setStyleSheet(u"color:white;\n"
 "background-color:transparent;")
 
@@ -1108,10 +1271,10 @@ class Ui_Dashboard(object):
         self.verticalLayout_24.setObjectName(u"verticalLayout_24")
         self.card1_current_balance_value_label = QLabel(self.card1)
         self.card1_current_balance_value_label.setObjectName(u"card1_current_balance_value_label")
-        font9 = QFont()
-        font9.setFamilies([u"Poppins"])
-        font9.setPointSize(17)
-        self.card1_current_balance_value_label.setFont(font9)
+        font10 = QFont()
+        font10.setFamilies([u"Poppins"])
+        font10.setPointSize(17)
+        self.card1_current_balance_value_label.setFont(font10)
         self.card1_current_balance_value_label.setStyleSheet(u"color:white;")
         self.card1_current_balance_value_label.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
 
@@ -1119,11 +1282,11 @@ class Ui_Dashboard(object):
 
         self.current_balance_label = QLabel(self.card1)
         self.current_balance_label.setObjectName(u"current_balance_label")
-        font10 = QFont()
-        font10.setFamilies([u"Poppins"])
-        font10.setPointSize(8)
-        font10.setUnderline(False)
-        self.current_balance_label.setFont(font10)
+        font11 = QFont()
+        font11.setFamilies([u"Poppins"])
+        font11.setPointSize(8)
+        font11.setUnderline(False)
+        self.current_balance_label.setFont(font11)
         self.current_balance_label.setStyleSheet(u"background-color: transparent;\n"
 "color: rgba(255,255,255,0.4);")
         self.current_balance_label.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
@@ -1144,7 +1307,7 @@ class Ui_Dashboard(object):
 
         self.income_label = QLabel(self.card1)
         self.income_label.setObjectName(u"income_label")
-        self.income_label.setFont(font10)
+        self.income_label.setFont(font11)
         self.income_label.setStyleSheet(u"background-color: transparent;\n"
 "color: rgba(255,255,255,0.4);")
         self.income_label.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
@@ -1192,7 +1355,7 @@ class Ui_Dashboard(object):
 
         self.deactive_card_label = QLabel(self.card1)
         self.deactive_card_label.setObjectName(u"deactive_card_label")
-        self.deactive_card_label.setFont(font10)
+        self.deactive_card_label.setFont(font11)
         self.deactive_card_label.setStyleSheet(u"background-color: transparent;\n"
 "color: rgba(255,255,255,0.4);")
         self.deactive_card_label.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
@@ -1249,7 +1412,7 @@ class Ui_Dashboard(object):
         self.horizontalLayout_37.setContentsMargins(20, -1, 20, -1)
         self.weeklypayments_limit_label = QLabel(self.card1)
         self.weeklypayments_limit_label.setObjectName(u"weeklypayments_limit_label")
-        self.weeklypayments_limit_label.setFont(font7)
+        self.weeklypayments_limit_label.setFont(font8)
         self.weeklypayments_limit_label.setStyleSheet(u"color: white;")
 
         self.horizontalLayout_37.addWidget(self.weeklypayments_limit_label)
@@ -1260,7 +1423,7 @@ class Ui_Dashboard(object):
 
         self.card1_weekl_payment_limit_label = QLabel(self.card1)
         self.card1_weekl_payment_limit_label.setObjectName(u"card1_weekl_payment_limit_label")
-        self.card1_weekl_payment_limit_label.setFont(font7)
+        self.card1_weekl_payment_limit_label.setFont(font8)
         self.card1_weekl_payment_limit_label.setStyleSheet(u"color: white;")
         self.card1_weekl_payment_limit_label.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
 
@@ -1327,19 +1490,19 @@ class Ui_Dashboard(object):
         self.horizontalLayout_20.setObjectName(u"horizontalLayout_20")
         self.goal_top_target_value_label = QLabel(self.goal_widget)
         self.goal_top_target_value_label.setObjectName(u"goal_top_target_value_label")
-        font11 = QFont()
-        font11.setFamilies([u"Poppins"])
-        font11.setPointSize(16)
-        self.goal_top_target_value_label.setFont(font11)
+        font12 = QFont()
+        font12.setFamilies([u"Poppins"])
+        font12.setPointSize(16)
+        self.goal_top_target_value_label.setFont(font12)
         self.goal_top_target_value_label.setStyleSheet(u"color:white;")
 
         self.horizontalLayout_20.addWidget(self.goal_top_target_value_label)
 
         self.pushButton_27 = QPushButton(self.goal_widget)
         self.pushButton_27.setObjectName(u"pushButton_27")
-        icon10 = QIcon()
-        icon10.addFile(u":/img/img/edit-3.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.pushButton_27.setIcon(icon10)
+        icon15 = QIcon()
+        icon15.addFile(u":/img/img/edit-3.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.pushButton_27.setIcon(icon15)
         self.pushButton_27.setIconSize(QSize(25, 25))
 
         self.horizontalLayout_20.addWidget(self.pushButton_27)
@@ -1350,7 +1513,7 @@ class Ui_Dashboard(object):
 
         self.goal_target_date_label = QLabel(self.goal_widget)
         self.goal_target_date_label.setObjectName(u"goal_target_date_label")
-        self.goal_target_date_label.setFont(font11)
+        self.goal_target_date_label.setFont(font12)
         self.goal_target_date_label.setStyleSheet(u"color: white;")
 
         self.horizontalLayout_20.addWidget(self.goal_target_date_label)
@@ -1375,9 +1538,9 @@ class Ui_Dashboard(object):
         self.goal_this_month_target_icon_button = QPushButton(self.goal_widget)
         self.goal_this_month_target_icon_button.setObjectName(u"goal_this_month_target_icon_button")
         self.goal_this_month_target_icon_button.setStyleSheet(u"background-color:transparent;")
-        icon11 = QIcon()
-        icon11.addFile(u":/img/img/target.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.goal_this_month_target_icon_button.setIcon(icon11)
+        icon16 = QIcon()
+        icon16.addFile(u":/img/img/target.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.goal_this_month_target_icon_button.setIcon(icon16)
         self.goal_this_month_target_icon_button.setIconSize(QSize(35, 35))
 
         self.horizontalLayout_31.addWidget(self.goal_this_month_target_icon_button)
@@ -1387,14 +1550,14 @@ class Ui_Dashboard(object):
         self.verticalLayout_25.setObjectName(u"verticalLayout_25")
         self.goal_this_month_target_label = QLabel(self.goal_widget)
         self.goal_this_month_target_label.setObjectName(u"goal_this_month_target_label")
-        self.goal_this_month_target_label.setFont(font8)
+        self.goal_this_month_target_label.setFont(font9)
         self.goal_this_month_target_label.setStyleSheet(u"color: rgba(255,255,255,0.4);")
 
         self.verticalLayout_25.addWidget(self.goal_this_month_target_label)
 
         self.goal_this_month_target_value_label = QLabel(self.goal_widget)
         self.goal_this_month_target_value_label.setObjectName(u"goal_this_month_target_value_label")
-        self.goal_this_month_target_value_label.setFont(font11)
+        self.goal_this_month_target_value_label.setFont(font12)
         self.goal_this_month_target_value_label.setStyleSheet(u"color:white;")
 
         self.verticalLayout_25.addWidget(self.goal_this_month_target_value_label)
@@ -1414,9 +1577,9 @@ class Ui_Dashboard(object):
         self.goal_target_achived_icon_button = QPushButton(self.goal_widget)
         self.goal_target_achived_icon_button.setObjectName(u"goal_target_achived_icon_button")
         self.goal_target_achived_icon_button.setStyleSheet(u"background-color:transparent;")
-        icon12 = QIcon()
-        icon12.addFile(u":/img/img/award.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.goal_target_achived_icon_button.setIcon(icon12)
+        icon17 = QIcon()
+        icon17.addFile(u":/img/img/award.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.goal_target_achived_icon_button.setIcon(icon17)
         self.goal_target_achived_icon_button.setIconSize(QSize(35, 35))
 
         self.horizontalLayout_21.addWidget(self.goal_target_achived_icon_button)
@@ -1426,14 +1589,14 @@ class Ui_Dashboard(object):
         self.verticalLayout_19.setObjectName(u"verticalLayout_19")
         self.goal_target_achived_label = QLabel(self.goal_widget)
         self.goal_target_achived_label.setObjectName(u"goal_target_achived_label")
-        self.goal_target_achived_label.setFont(font8)
+        self.goal_target_achived_label.setFont(font9)
         self.goal_target_achived_label.setStyleSheet(u"color: rgba(255,255,255,0.4);")
 
         self.verticalLayout_19.addWidget(self.goal_target_achived_label)
 
         self.goal_target_achived_value_label = QLabel(self.goal_widget)
         self.goal_target_achived_value_label.setObjectName(u"goal_target_achived_value_label")
-        self.goal_target_achived_value_label.setFont(font11)
+        self.goal_target_achived_value_label.setFont(font12)
         self.goal_target_achived_value_label.setStyleSheet(u"color:white;")
 
         self.verticalLayout_19.addWidget(self.goal_target_achived_value_label)
@@ -1479,7 +1642,7 @@ class Ui_Dashboard(object):
         self.goal_graph_label.setObjectName(u"goal_graph_label")
         self.goal_graph_label.setMinimumSize(QSize(150, 150))
         self.goal_graph_label.setMaximumSize(QSize(150, 150))
-        self.goal_graph_label.setFont(font6)
+        self.goal_graph_label.setFont(font7)
         self.goal_graph_label.setStyleSheet(u"color: white;\n"
 "width: 150px;\n"
 "height: 150px;")
@@ -1495,7 +1658,7 @@ class Ui_Dashboard(object):
 
         self.goal_topic_label = QLabel(self.goal_widget)
         self.goal_topic_label.setObjectName(u"goal_topic_label")
-        self.goal_topic_label.setFont(font2)
+        self.goal_topic_label.setFont(font3)
         self.goal_topic_label.setStyleSheet(u"color:white;")
 
         self.gridLayout_17.addWidget(self.goal_topic_label, 0, 0, 1, 2)
@@ -1511,23 +1674,23 @@ class Ui_Dashboard(object):
         self.upcoming_bill_widget.setObjectName(u"upcoming_bill_widget")
         self.upcoming_bill_widget.setMinimumSize(QSize(351, 374))
         self.upcoming_bill_widget.setMaximumSize(QSize(351, 374))
-        font12 = QFont()
-        font12.setBold(False)
-        font12.setUnderline(False)
-        self.upcoming_bill_widget.setFont(font12)
+        font13 = QFont()
+        font13.setBold(False)
+        font13.setUnderline(False)
+        self.upcoming_bill_widget.setFont(font13)
         self.upcoming_bill_widget.setStyleSheet(u"background-color: #535C91;\n"
 "border-radius: 23px;")
         self.verticalLayout_33 = QVBoxLayout(self.upcoming_bill_widget)
         self.verticalLayout_33.setObjectName(u"verticalLayout_33")
         self.label_22 = QLabel(self.upcoming_bill_widget)
         self.label_22.setObjectName(u"label_22")
-        font13 = QFont()
-        font13.setFamilies([u"Poppins"])
-        font13.setPointSize(11)
-        font13.setBold(True)
-        font13.setItalic(False)
-        font13.setUnderline(True)
-        self.label_22.setFont(font13)
+        font14 = QFont()
+        font14.setFamilies([u"Poppins"])
+        font14.setPointSize(11)
+        font14.setBold(True)
+        font14.setItalic(False)
+        font14.setUnderline(True)
+        self.label_22.setFont(font14)
         self.label_22.setStyleSheet(u"color:white;")
         self.label_22.setAlignment(Qt.AlignCenter)
 
@@ -1549,7 +1712,7 @@ class Ui_Dashboard(object):
         self.verticalLayout_9.setObjectName(u"verticalLayout_9")
         self.first_bill_date_month_label = QLabel(self.first_bill_date_widget)
         self.first_bill_date_month_label.setObjectName(u"first_bill_date_month_label")
-        self.first_bill_date_month_label.setFont(font8)
+        self.first_bill_date_month_label.setFont(font9)
         self.first_bill_date_month_label.setStyleSheet(u"color:white;")
         self.first_bill_date_month_label.setAlignment(Qt.AlignCenter)
 
@@ -1572,25 +1735,25 @@ class Ui_Dashboard(object):
         self.verticalLayout_13.setContentsMargins(10, -1, -1, -1)
         self.first_bill_topic_label = QLabel(self.first_bill_widget)
         self.first_bill_topic_label.setObjectName(u"first_bill_topic_label")
-        self.first_bill_topic_label.setFont(font8)
+        self.first_bill_topic_label.setFont(font9)
         self.first_bill_topic_label.setStyleSheet(u"color: white;")
 
         self.verticalLayout_13.addWidget(self.first_bill_topic_label)
 
         self.first_bill_status_label = QLabel(self.first_bill_widget)
         self.first_bill_status_label.setObjectName(u"first_bill_status_label")
-        font14 = QFont()
-        font14.setFamilies([u"Poppins"])
-        font14.setPointSize(11)
-        font14.setBold(True)
-        self.first_bill_status_label.setFont(font14)
+        font15 = QFont()
+        font15.setFamilies([u"Poppins"])
+        font15.setPointSize(11)
+        font15.setBold(True)
+        self.first_bill_status_label.setFont(font15)
         self.first_bill_status_label.setStyleSheet(u"color: white;")
 
         self.verticalLayout_13.addWidget(self.first_bill_status_label)
 
         self.first_bill_last_charge_label = QLabel(self.first_bill_widget)
         self.first_bill_last_charge_label.setObjectName(u"first_bill_last_charge_label")
-        self.first_bill_last_charge_label.setFont(font7)
+        self.first_bill_last_charge_label.setFont(font8)
         self.first_bill_last_charge_label.setStyleSheet(u"color: white;")
 
         self.verticalLayout_13.addWidget(self.first_bill_last_charge_label)
@@ -1659,7 +1822,7 @@ class Ui_Dashboard(object):
         self.verticalLayout_16.setObjectName(u"verticalLayout_16")
         self.second_bill_date_month_label = QLabel(self.second_bill_date_widget)
         self.second_bill_date_month_label.setObjectName(u"second_bill_date_month_label")
-        self.second_bill_date_month_label.setFont(font8)
+        self.second_bill_date_month_label.setFont(font9)
         self.second_bill_date_month_label.setStyleSheet(u"color:white;")
         self.second_bill_date_month_label.setAlignment(Qt.AlignCenter)
 
@@ -1682,21 +1845,21 @@ class Ui_Dashboard(object):
         self.verticalLayout_17.setContentsMargins(10, -1, -1, -1)
         self.second_bill_topic_label = QLabel(self.second_bill_widget)
         self.second_bill_topic_label.setObjectName(u"second_bill_topic_label")
-        self.second_bill_topic_label.setFont(font8)
+        self.second_bill_topic_label.setFont(font9)
         self.second_bill_topic_label.setStyleSheet(u"color: white;")
 
         self.verticalLayout_17.addWidget(self.second_bill_topic_label)
 
         self.second_bill_status_label = QLabel(self.second_bill_widget)
         self.second_bill_status_label.setObjectName(u"second_bill_status_label")
-        self.second_bill_status_label.setFont(font14)
+        self.second_bill_status_label.setFont(font15)
         self.second_bill_status_label.setStyleSheet(u"color: white;")
 
         self.verticalLayout_17.addWidget(self.second_bill_status_label)
 
         self.second_bill_last_charge_label = QLabel(self.second_bill_widget)
         self.second_bill_last_charge_label.setObjectName(u"second_bill_last_charge_label")
-        self.second_bill_last_charge_label.setFont(font7)
+        self.second_bill_last_charge_label.setFont(font8)
         self.second_bill_last_charge_label.setStyleSheet(u"color: white;")
 
         self.verticalLayout_17.addWidget(self.second_bill_last_charge_label)
@@ -1765,7 +1928,7 @@ class Ui_Dashboard(object):
         self.verticalLayout_30.setObjectName(u"verticalLayout_30")
         self.third_bill_date_month_label = QLabel(self.third_bill_date_widget)
         self.third_bill_date_month_label.setObjectName(u"third_bill_date_month_label")
-        self.third_bill_date_month_label.setFont(font8)
+        self.third_bill_date_month_label.setFont(font9)
         self.third_bill_date_month_label.setStyleSheet(u"color:white;")
         self.third_bill_date_month_label.setAlignment(Qt.AlignCenter)
 
@@ -1788,21 +1951,21 @@ class Ui_Dashboard(object):
         self.verticalLayout_31.setContentsMargins(10, -1, -1, -1)
         self.third_bill_topic_label = QLabel(self.third_bill_widget)
         self.third_bill_topic_label.setObjectName(u"third_bill_topic_label")
-        self.third_bill_topic_label.setFont(font8)
+        self.third_bill_topic_label.setFont(font9)
         self.third_bill_topic_label.setStyleSheet(u"color: white;")
 
         self.verticalLayout_31.addWidget(self.third_bill_topic_label)
 
         self.third_bill_status_label = QLabel(self.third_bill_widget)
         self.third_bill_status_label.setObjectName(u"third_bill_status_label")
-        self.third_bill_status_label.setFont(font14)
+        self.third_bill_status_label.setFont(font15)
         self.third_bill_status_label.setStyleSheet(u"color: white;")
 
         self.verticalLayout_31.addWidget(self.third_bill_status_label)
 
         self.third_bill_last_charge_label = QLabel(self.third_bill_widget)
         self.third_bill_last_charge_label.setObjectName(u"third_bill_last_charge_label")
-        self.third_bill_last_charge_label.setFont(font7)
+        self.third_bill_last_charge_label.setFont(font8)
         self.third_bill_last_charge_label.setStyleSheet(u"color: white;")
 
         self.verticalLayout_31.addWidget(self.third_bill_last_charge_label)
@@ -1892,21 +2055,21 @@ class Ui_Dashboard(object):
         self.gridLayout_12.setContentsMargins(10, 0, 0, 0)
         self.transaction_history_third_line_reciever_label = QLabel(self.widget_33)
         self.transaction_history_third_line_reciever_label.setObjectName(u"transaction_history_third_line_reciever_label")
-        self.transaction_history_third_line_reciever_label.setFont(font4)
+        self.transaction_history_third_line_reciever_label.setFont(font5)
         self.transaction_history_third_line_reciever_label.setStyleSheet(u"color: white;")
 
         self.gridLayout_12.addWidget(self.transaction_history_third_line_reciever_label, 0, 0, 1, 1)
 
         self.transaction_history_third_line_type_label = QLabel(self.widget_33)
         self.transaction_history_third_line_type_label.setObjectName(u"transaction_history_third_line_type_label")
-        self.transaction_history_third_line_type_label.setFont(font4)
+        self.transaction_history_third_line_type_label.setFont(font5)
         self.transaction_history_third_line_type_label.setStyleSheet(u"color:rgba(255,255,255,0.8);")
 
         self.gridLayout_12.addWidget(self.transaction_history_third_line_type_label, 0, 1, 1, 1)
 
         self.transaction_history_third_line_value_label = QLabel(self.widget_33)
         self.transaction_history_third_line_value_label.setObjectName(u"transaction_history_third_line_value_label")
-        self.transaction_history_third_line_value_label.setFont(font4)
+        self.transaction_history_third_line_value_label.setFont(font5)
         self.transaction_history_third_line_value_label.setStyleSheet(u"color: white;")
         self.transaction_history_third_line_value_label.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
 
@@ -1914,7 +2077,7 @@ class Ui_Dashboard(object):
 
         self.transaction_history_third_line_date_label = QLabel(self.widget_33)
         self.transaction_history_third_line_date_label.setObjectName(u"transaction_history_third_line_date_label")
-        self.transaction_history_third_line_date_label.setFont(font4)
+        self.transaction_history_third_line_date_label.setFont(font5)
         self.transaction_history_third_line_date_label.setStyleSheet(u"color:rgba(255,255,255,0.8);")
 
         self.gridLayout_12.addWidget(self.transaction_history_third_line_date_label, 0, 2, 1, 1)
@@ -1930,28 +2093,28 @@ class Ui_Dashboard(object):
         self.gridLayout_13.setContentsMargins(10, 0, 0, 0)
         self.transaction_history_fourth_line_type_label = QLabel(self.widget_34)
         self.transaction_history_fourth_line_type_label.setObjectName(u"transaction_history_fourth_line_type_label")
-        self.transaction_history_fourth_line_type_label.setFont(font4)
+        self.transaction_history_fourth_line_type_label.setFont(font5)
         self.transaction_history_fourth_line_type_label.setStyleSheet(u"color:rgba(255,255,255,0.8);")
 
         self.gridLayout_13.addWidget(self.transaction_history_fourth_line_type_label, 0, 1, 1, 1)
 
         self.transaction_history_fourth_line_date_label = QLabel(self.widget_34)
         self.transaction_history_fourth_line_date_label.setObjectName(u"transaction_history_fourth_line_date_label")
-        self.transaction_history_fourth_line_date_label.setFont(font4)
+        self.transaction_history_fourth_line_date_label.setFont(font5)
         self.transaction_history_fourth_line_date_label.setStyleSheet(u"color:rgba(255,255,255,0.8);")
 
         self.gridLayout_13.addWidget(self.transaction_history_fourth_line_date_label, 0, 2, 1, 1)
 
         self.transaction_history_fourth_line_reciever_label = QLabel(self.widget_34)
         self.transaction_history_fourth_line_reciever_label.setObjectName(u"transaction_history_fourth_line_reciever_label")
-        self.transaction_history_fourth_line_reciever_label.setFont(font4)
+        self.transaction_history_fourth_line_reciever_label.setFont(font5)
         self.transaction_history_fourth_line_reciever_label.setStyleSheet(u"color: white;")
 
         self.gridLayout_13.addWidget(self.transaction_history_fourth_line_reciever_label, 0, 0, 1, 1)
 
         self.transaction_history_fourth_line_value_label = QLabel(self.widget_34)
         self.transaction_history_fourth_line_value_label.setObjectName(u"transaction_history_fourth_line_value_label")
-        self.transaction_history_fourth_line_value_label.setFont(font4)
+        self.transaction_history_fourth_line_value_label.setFont(font5)
         self.transaction_history_fourth_line_value_label.setStyleSheet(u"color: white;")
         self.transaction_history_fourth_line_value_label.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
 
@@ -1962,7 +2125,7 @@ class Ui_Dashboard(object):
 
         self.transaction_history_topic_label = QLabel(self.transaction_history_widget)
         self.transaction_history_topic_label.setObjectName(u"transaction_history_topic_label")
-        self.transaction_history_topic_label.setFont(font2)
+        self.transaction_history_topic_label.setFont(font3)
         self.transaction_history_topic_label.setStyleSheet(u"color: white;")
 
         self.gridLayout_15.addWidget(self.transaction_history_topic_label, 0, 0, 1, 1)
@@ -1975,21 +2138,21 @@ class Ui_Dashboard(object):
         self.gridLayout_10.setContentsMargins(10, 0, 0, 0)
         self.transaction_history_first_line_reciever_label = QLabel(self.widget_31)
         self.transaction_history_first_line_reciever_label.setObjectName(u"transaction_history_first_line_reciever_label")
-        self.transaction_history_first_line_reciever_label.setFont(font4)
+        self.transaction_history_first_line_reciever_label.setFont(font5)
         self.transaction_history_first_line_reciever_label.setStyleSheet(u"color: white;")
 
         self.gridLayout_10.addWidget(self.transaction_history_first_line_reciever_label, 0, 0, 1, 1)
 
         self.transaction_history_first_line_type_label = QLabel(self.widget_31)
         self.transaction_history_first_line_type_label.setObjectName(u"transaction_history_first_line_type_label")
-        self.transaction_history_first_line_type_label.setFont(font4)
+        self.transaction_history_first_line_type_label.setFont(font5)
         self.transaction_history_first_line_type_label.setStyleSheet(u"color:rgba(255,255,255,0.8);")
 
         self.gridLayout_10.addWidget(self.transaction_history_first_line_type_label, 0, 1, 1, 1)
 
         self.transaction_history_first_line_value_label = QLabel(self.widget_31)
         self.transaction_history_first_line_value_label.setObjectName(u"transaction_history_first_line_value_label")
-        self.transaction_history_first_line_value_label.setFont(font4)
+        self.transaction_history_first_line_value_label.setFont(font5)
         self.transaction_history_first_line_value_label.setStyleSheet(u"color: white;")
         self.transaction_history_first_line_value_label.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
 
@@ -1997,7 +2160,7 @@ class Ui_Dashboard(object):
 
         self.transaction_history_first_line_date_label = QLabel(self.widget_31)
         self.transaction_history_first_line_date_label.setObjectName(u"transaction_history_first_line_date_label")
-        self.transaction_history_first_line_date_label.setFont(font4)
+        self.transaction_history_first_line_date_label.setFont(font5)
         self.transaction_history_first_line_date_label.setStyleSheet(u"color:rgba(255,255,255,0.8);")
 
         self.gridLayout_10.addWidget(self.transaction_history_first_line_date_label, 0, 2, 1, 1)
@@ -2013,14 +2176,14 @@ class Ui_Dashboard(object):
         self.gridLayout_14.setContentsMargins(10, 0, 0, 0)
         self.transaction_history_fifth_line_reciever_label = QLabel(self.widget_35)
         self.transaction_history_fifth_line_reciever_label.setObjectName(u"transaction_history_fifth_line_reciever_label")
-        self.transaction_history_fifth_line_reciever_label.setFont(font4)
+        self.transaction_history_fifth_line_reciever_label.setFont(font5)
         self.transaction_history_fifth_line_reciever_label.setStyleSheet(u"color: white;")
 
         self.gridLayout_14.addWidget(self.transaction_history_fifth_line_reciever_label, 0, 0, 1, 1)
 
         self.transaction_history_fifth_line_value_label = QLabel(self.widget_35)
         self.transaction_history_fifth_line_value_label.setObjectName(u"transaction_history_fifth_line_value_label")
-        self.transaction_history_fifth_line_value_label.setFont(font4)
+        self.transaction_history_fifth_line_value_label.setFont(font5)
         self.transaction_history_fifth_line_value_label.setStyleSheet(u"color: white;")
         self.transaction_history_fifth_line_value_label.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
 
@@ -2028,14 +2191,14 @@ class Ui_Dashboard(object):
 
         self.transaction_history_fifth_line_type_label = QLabel(self.widget_35)
         self.transaction_history_fifth_line_type_label.setObjectName(u"transaction_history_fifth_line_type_label")
-        self.transaction_history_fifth_line_type_label.setFont(font4)
+        self.transaction_history_fifth_line_type_label.setFont(font5)
         self.transaction_history_fifth_line_type_label.setStyleSheet(u"color:rgba(255,255,255,0.8);")
 
         self.gridLayout_14.addWidget(self.transaction_history_fifth_line_type_label, 0, 1, 1, 1)
 
         self.transaction_history_fifth_line_date_label = QLabel(self.widget_35)
         self.transaction_history_fifth_line_date_label.setObjectName(u"transaction_history_fifth_line_date_label")
-        self.transaction_history_fifth_line_date_label.setFont(font4)
+        self.transaction_history_fifth_line_date_label.setFont(font5)
         self.transaction_history_fifth_line_date_label.setStyleSheet(u"color:rgba(255,255,255,0.8);")
 
         self.gridLayout_14.addWidget(self.transaction_history_fifth_line_date_label, 0, 2, 1, 1)
@@ -2051,21 +2214,21 @@ class Ui_Dashboard(object):
         self.gridLayout_11.setContentsMargins(10, 0, 0, 0)
         self.transaction_history_second_line_date_label = QLabel(self.widget_32)
         self.transaction_history_second_line_date_label.setObjectName(u"transaction_history_second_line_date_label")
-        self.transaction_history_second_line_date_label.setFont(font4)
+        self.transaction_history_second_line_date_label.setFont(font5)
         self.transaction_history_second_line_date_label.setStyleSheet(u"color:rgba(255,255,255,0.8);")
 
         self.gridLayout_11.addWidget(self.transaction_history_second_line_date_label, 0, 2, 1, 1)
 
         self.transaction_history_second_line_reciever_label = QLabel(self.widget_32)
         self.transaction_history_second_line_reciever_label.setObjectName(u"transaction_history_second_line_reciever_label")
-        self.transaction_history_second_line_reciever_label.setFont(font4)
+        self.transaction_history_second_line_reciever_label.setFont(font5)
         self.transaction_history_second_line_reciever_label.setStyleSheet(u"color: white;")
 
         self.gridLayout_11.addWidget(self.transaction_history_second_line_reciever_label, 0, 0, 1, 1)
 
         self.transaction_history_second_line_value_label = QLabel(self.widget_32)
         self.transaction_history_second_line_value_label.setObjectName(u"transaction_history_second_line_value_label")
-        self.transaction_history_second_line_value_label.setFont(font4)
+        self.transaction_history_second_line_value_label.setFont(font5)
         self.transaction_history_second_line_value_label.setStyleSheet(u"color: white;")
         self.transaction_history_second_line_value_label.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
 
@@ -2073,7 +2236,7 @@ class Ui_Dashboard(object):
 
         self.transaction_history_second_line_type_label = QLabel(self.widget_32)
         self.transaction_history_second_line_type_label.setObjectName(u"transaction_history_second_line_type_label")
-        self.transaction_history_second_line_type_label.setFont(font4)
+        self.transaction_history_second_line_type_label.setFont(font5)
         self.transaction_history_second_line_type_label.setStyleSheet(u"color:rgba(255,255,255,0.8);")
 
         self.gridLayout_11.addWidget(self.transaction_history_second_line_type_label, 0, 1, 1, 1)
@@ -2093,7 +2256,7 @@ class Ui_Dashboard(object):
         self.horizontalLayout_30.setObjectName(u"horizontalLayout_30")
         self.transaction_history_topic_reciever_label = QLabel(self.transaction_history_widget)
         self.transaction_history_topic_reciever_label.setObjectName(u"transaction_history_topic_reciever_label")
-        self.transaction_history_topic_reciever_label.setFont(font3)
+        self.transaction_history_topic_reciever_label.setFont(font4)
         self.transaction_history_topic_reciever_label.setStyleSheet(u"color:rgba(255,255,255,0.8);")
 
         self.horizontalLayout_30.addWidget(self.transaction_history_topic_reciever_label)
@@ -2104,7 +2267,7 @@ class Ui_Dashboard(object):
 
         self.transaction_history_topic_type_label = QLabel(self.transaction_history_widget)
         self.transaction_history_topic_type_label.setObjectName(u"transaction_history_topic_type_label")
-        self.transaction_history_topic_type_label.setFont(font3)
+        self.transaction_history_topic_type_label.setFont(font4)
         self.transaction_history_topic_type_label.setStyleSheet(u"color:rgba(255,255,255,0.8);")
 
         self.horizontalLayout_30.addWidget(self.transaction_history_topic_type_label)
@@ -2115,7 +2278,7 @@ class Ui_Dashboard(object):
 
         self.transaction_history_topic_date_label = QLabel(self.transaction_history_widget)
         self.transaction_history_topic_date_label.setObjectName(u"transaction_history_topic_date_label")
-        self.transaction_history_topic_date_label.setFont(font3)
+        self.transaction_history_topic_date_label.setFont(font4)
         self.transaction_history_topic_date_label.setStyleSheet(u"color:rgba(255,255,255,0.8);")
 
         self.horizontalLayout_30.addWidget(self.transaction_history_topic_date_label)
@@ -2159,301 +2322,58 @@ class Ui_Dashboard(object):
 
         self.horizontalLayout_38.addItem(self.horizontalSpacer_53)
 
-        self.graph_comparison_widget_stacked = QStackedWidget(self.dashboard_widget)
-        self.graph_comparison_widget_stacked.setObjectName(u"graph_comparison_widget_stacked")
-        self.graph_comparison_widget_stacked.setMinimumSize(QSize(890, 300))
-        self.graph_comparison_widget_stacked.setMaximumSize(QSize(890, 300))
-        self.graph_comparison_widget_stacked.setStyleSheet(u"background-color: #535C91;\n"
-"border-radius: 23px;")
-        self.weekly_compariso_page = QWidget()
-        self.weekly_compariso_page.setObjectName(u"weekly_compariso_page")
-        self.graph_comparison_sixth_day_label = QLabel(self.weekly_compariso_page)
-        self.graph_comparison_sixth_day_label.setObjectName(u"graph_comparison_sixth_day_label")
-        self.graph_comparison_sixth_day_label.setGeometry(QRect(680, 240, 47, 13))
-        font15 = QFont()
-        font15.setFamilies([u"Poppins"])
-        self.graph_comparison_sixth_day_label.setFont(font15)
-        self.graph_comparison_sixth_day_label.setStyleSheet(u"color: rgba(255,250,250,1);")
-        self.graph_comparison_sixth_day_label.setAlignment(Qt.AlignCenter)
-        self.graph_comparison_third_line_label = QLabel(self.weekly_compariso_page)
-        self.graph_comparison_third_line_label.setObjectName(u"graph_comparison_third_line_label")
-        self.graph_comparison_third_line_label.setGeometry(QRect(30, 145, 47, 13))
-        self.graph_comparison_third_line_label.setFont(font15)
-        self.graph_comparison_third_line_label.setStyleSheet(u"color: rgba(255,250,250,0.6);")
-        self.graph_comparison_third_line_label.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
-        self.label_153 = QLabel(self.weekly_compariso_page)
-        self.label_153.setObjectName(u"label_153")
-        self.label_153.setGeometry(QRect(100, 150, 771, 1))
-        self.label_153.setStyleSheet(u"background-color:rgba(250, 250, 250, 0.6);")
-        self.graph_comparison_second_this_week_label = QLabel(self.weekly_compariso_page)
-        self.graph_comparison_second_this_week_label.setObjectName(u"graph_comparison_second_this_week_label")
-        self.graph_comparison_second_this_week_label.setGeometry(QRect(264, 120, 20, 111))
-        self.graph_comparison_second_this_week_label.setStyleSheet(u"background-color:#1B1A55;\n"
-"border-top-left-radius:5px;\n"
-"border-top-right-radius:5px;")
-        self.graph_comparison_fourth_last_week_label = QLabel(self.weekly_compariso_page)
-        self.graph_comparison_fourth_last_week_label.setObjectName(u"graph_comparison_fourth_last_week_label")
-        self.graph_comparison_fourth_last_week_label.setGeometry(QRect(464, 90, 16, 141))
-        self.graph_comparison_fourth_last_week_label.setStyleSheet(u"background-color:white;\n"
-"border-top-left-radius:5px;\n"
-"border-top-right-radius:5px;")
-        self.graph_comparison_fourth_line_label = QLabel(self.weekly_compariso_page)
-        self.graph_comparison_fourth_line_label.setObjectName(u"graph_comparison_fourth_line_label")
-        self.graph_comparison_fourth_line_label.setGeometry(QRect(30, 185, 47, 13))
-        self.graph_comparison_fourth_line_label.setFont(font15)
-        self.graph_comparison_fourth_line_label.setStyleSheet(u"color: rgba(255,250,250,0.6);")
-        self.graph_comparison_fourth_line_label.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
-        self.label_157 = QLabel(self.weekly_compariso_page)
-        self.label_157.setObjectName(u"label_157")
-        self.label_157.setGeometry(QRect(100, 230, 771, 1))
-        self.label_157.setStyleSheet(u"background-color:rgba(250, 250, 250, 0.6);")
-        self.graph_comparison_third_last_week_label = QLabel(self.weekly_compariso_page)
-        self.graph_comparison_third_last_week_label.setObjectName(u"graph_comparison_third_last_week_label")
-        self.graph_comparison_third_last_week_label.setGeometry(QRect(354, 90, 16, 141))
-        self.graph_comparison_third_last_week_label.setStyleSheet(u"background-color:white;\n"
-"border-top-left-radius:5px;\n"
-"border-top-right-radius:5px;")
-        self.label_159 = QLabel(self.weekly_compariso_page)
-        self.label_159.setObjectName(u"label_159")
-        self.label_159.setGeometry(QRect(100, 190, 771, 1))
-        self.label_159.setStyleSheet(u"background-color:rgba(250, 250, 250, 0.6);")
-        self.graph_comparison_fourth_this_week_label = QLabel(self.weekly_compariso_page)
-        self.graph_comparison_fourth_this_week_label.setObjectName(u"graph_comparison_fourth_this_week_label")
-        self.graph_comparison_fourth_this_week_label.setGeometry(QRect(484, 120, 20, 111))
-        self.graph_comparison_fourth_this_week_label.setStyleSheet(u"background-color:#1B1A55;\n"
-"border-top-left-radius:5px;\n"
-"border-top-right-radius:5px;")
-        self.graph_comparison_sixth_this_week_label = QLabel(self.weekly_compariso_page)
-        self.graph_comparison_sixth_this_week_label.setObjectName(u"graph_comparison_sixth_this_week_label")
-        self.graph_comparison_sixth_this_week_label.setGeometry(QRect(704, 120, 20, 111))
-        self.graph_comparison_sixth_this_week_label.setStyleSheet(u"background-color:#1B1A55;\n"
-"border-top-left-radius:5px;\n"
-"border-top-right-radius:5px;")
-        self.graph_comparison_first_line_label = QLabel(self.weekly_compariso_page)
-        self.graph_comparison_first_line_label.setObjectName(u"graph_comparison_first_line_label")
-        self.graph_comparison_first_line_label.setGeometry(QRect(30, 65, 47, 13))
-        self.graph_comparison_first_line_label.setFont(font15)
-        self.graph_comparison_first_line_label.setStyleSheet(u"color: rgba(255,250,250,0.6);")
-        self.graph_comparison_first_line_label.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
-        self.graph_comparison_fourth_day_label = QLabel(self.weekly_compariso_page)
-        self.graph_comparison_fourth_day_label.setObjectName(u"graph_comparison_fourth_day_label")
-        self.graph_comparison_fourth_day_label.setGeometry(QRect(460, 240, 47, 13))
-        self.graph_comparison_fourth_day_label.setFont(font15)
-        self.graph_comparison_fourth_day_label.setStyleSheet(u"color: rgba(255,250,250,1);")
-        self.graph_comparison_fourth_day_label.setAlignment(Qt.AlignCenter)
-        self.graph_comparison_seventh_this_week_label = QLabel(self.weekly_compariso_page)
-        self.graph_comparison_seventh_this_week_label.setObjectName(u"graph_comparison_seventh_this_week_label")
-        self.graph_comparison_seventh_this_week_label.setGeometry(QRect(824, 120, 20, 111))
-        self.graph_comparison_seventh_this_week_label.setStyleSheet(u"background-color:#1B1A55;\n"
-"border-top-left-radius:5px;\n"
-"border-top-right-radius:5px;")
-        self.graph_comparison_fifth_day_label = QLabel(self.weekly_compariso_page)
-        self.graph_comparison_fifth_day_label.setObjectName(u"graph_comparison_fifth_day_label")
-        self.graph_comparison_fifth_day_label.setGeometry(QRect(560, 240, 47, 13))
-        self.graph_comparison_fifth_day_label.setFont(font15)
-        self.graph_comparison_fifth_day_label.setStyleSheet(u"color: rgba(255,250,250,1);")
-        self.graph_comparison_fifth_day_label.setAlignment(Qt.AlignCenter)
-        self.label_166 = QLabel(self.weekly_compariso_page)
-        self.label_166.setObjectName(u"label_166")
-        self.label_166.setGeometry(QRect(100, 70, 771, 1))
-        self.label_166.setStyleSheet(u"background-color:rgba(250, 250, 250, 0.6);")
-        self.graph_comparison_second_line_label = QLabel(self.weekly_compariso_page)
-        self.graph_comparison_second_line_label.setObjectName(u"graph_comparison_second_line_label")
-        self.graph_comparison_second_line_label.setGeometry(QRect(30, 105, 47, 13))
-        self.graph_comparison_second_line_label.setFont(font15)
-        self.graph_comparison_second_line_label.setStyleSheet(u"color: rgba(255,250,250,0.6);")
-        self.graph_comparison_second_line_label.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
-        self.graph_comparison_third_day_label = QLabel(self.weekly_compariso_page)
-        self.graph_comparison_third_day_label.setObjectName(u"graph_comparison_third_day_label")
-        self.graph_comparison_third_day_label.setGeometry(QRect(350, 240, 47, 13))
-        self.graph_comparison_third_day_label.setFont(font15)
-        self.graph_comparison_third_day_label.setStyleSheet(u"color: rgba(255,250,250,1);")
-        self.graph_comparison_third_day_label.setAlignment(Qt.AlignCenter)
-        self.graph_comparison_third_this_week_label = QLabel(self.weekly_compariso_page)
-        self.graph_comparison_third_this_week_label.setObjectName(u"graph_comparison_third_this_week_label")
-        self.graph_comparison_third_this_week_label.setGeometry(QRect(374, 120, 20, 111))
-        self.graph_comparison_third_this_week_label.setStyleSheet(u"background-color:#1B1A55;\n"
-"border-top-left-radius:5px;\n"
-"border-top-right-radius:5px;")
-        self.label_170 = QLabel(self.weekly_compariso_page)
-        self.label_170.setObjectName(u"label_170")
-        self.label_170.setGeometry(QRect(100, 110, 771, 1))
-        self.label_170.setStyleSheet(u"background-color:rgba(250, 250, 250, 0.6);")
-        self.graph_comparison_fifth_this_week_label = QLabel(self.weekly_compariso_page)
-        self.graph_comparison_fifth_this_week_label.setObjectName(u"graph_comparison_fifth_this_week_label")
-        self.graph_comparison_fifth_this_week_label.setGeometry(QRect(584, 120, 20, 111))
-        self.graph_comparison_fifth_this_week_label.setStyleSheet(u"background-color:#1B1A55;\n"
-"border-top-left-radius:5px;\n"
-"border-top-right-radius:5px;")
-        self.graph_comparison_seventh_day_label = QLabel(self.weekly_compariso_page)
-        self.graph_comparison_seventh_day_label.setObjectName(u"graph_comparison_seventh_day_label")
-        self.graph_comparison_seventh_day_label.setGeometry(QRect(800, 240, 47, 13))
-        self.graph_comparison_seventh_day_label.setFont(font15)
-        self.graph_comparison_seventh_day_label.setStyleSheet(u"color: rgba(255,250,250,1);")
-        self.graph_comparison_seventh_day_label.setAlignment(Qt.AlignCenter)
-        self.graph_comparison_combobox = QComboBox(self.weekly_compariso_page)
-        self.graph_comparison_combobox.addItem("")
-        self.graph_comparison_combobox.addItem("")
-        self.graph_comparison_combobox.setObjectName(u"graph_comparison_combobox")
-        self.graph_comparison_combobox.setGeometry(QRect(40, 25, 171, 21))
-        self.graph_comparison_combobox.setFont(font4)
-        self.graph_comparison_combobox.setStyleSheet(u"QComboBox\n"
-"{\n"
-"	color:white;\n"
-"	background-color:transparent;\n"
-"}\n"
-"QComboBox:editable {\n"
-"    color: white;\n"
-"	background-color:transparent;\n"
-"}\n"
+        self.widget_5 = QWidget(self.dashboard_widget)
+        self.widget_5.setObjectName(u"widget_5")
+        self.widget_5.setMinimumSize(QSize(890, 300))
+        self.widget_5.setStyleSheet(u"background-color: #535C91;\n"
+"border-radius: 23px;\n"
+"color:white;\n"
 "\n"
-"QComboBox::drop-down\n"
-"{\n"
-"	border:none;\n"
-"    color: white;\n"
-"	background-color:transparent;\n"
-"}\n"
-"\n"
-"QComboBox::down-arrow\n"
-"{\n"
-"	image: url(:/img/img/chevron-down.svg);\n"
-"	width:32px;\n"
-"	height:32px;\n"
-"	margin-right:20px;\n"
-"    color: white;\n"
-"	background-color:transparent;\n"
-"}\n"
-"QComboBox::down-arrow:on\n"
-"{	\n"
-"	image: url(:/img/img/chevron-up.svg);\n"
-"	width:32px;\n"
-"	height:32px;\n"
-"	margin-right:20px;\n"
-"    color: white;\n"
-"	background-color:transparent;\n"
-"}")
-        self.graph_comparison_first_day_label = QLabel(self.weekly_compariso_page)
-        self.graph_comparison_first_day_label.setObjectName(u"graph_comparison_first_day_label")
-        self.graph_comparison_first_day_label.setGeometry(QRect(150, 240, 47, 13))
-        self.graph_comparison_first_day_label.setFont(font15)
-        self.graph_comparison_first_day_label.setStyleSheet(u"color: rgba(255,250,250,1);")
-        self.graph_comparison_first_day_label.setAlignment(Qt.AlignCenter)
-        self.graph_comparison_second_last_week_label = QLabel(self.weekly_compariso_page)
-        self.graph_comparison_second_last_week_label.setObjectName(u"graph_comparison_second_last_week_label")
-        self.graph_comparison_second_last_week_label.setGeometry(QRect(244, 90, 16, 141))
-        self.graph_comparison_second_last_week_label.setStyleSheet(u"background-color:white;\n"
-"border-top-left-radius:5px;\n"
-"border-top-right-radius:5px;")
-        self.graph_comparison_fifth_line_label = QLabel(self.weekly_compariso_page)
-        self.graph_comparison_fifth_line_label.setObjectName(u"graph_comparison_fifth_line_label")
-        self.graph_comparison_fifth_line_label.setGeometry(QRect(30, 225, 47, 13))
-        self.graph_comparison_fifth_line_label.setFont(font15)
-        self.graph_comparison_fifth_line_label.setStyleSheet(u"color: rgba(255,250,250,0.6);")
-        self.graph_comparison_fifth_line_label.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
-        self.graph_comparison_sixth_last_week_label = QLabel(self.weekly_compariso_page)
-        self.graph_comparison_sixth_last_week_label.setObjectName(u"graph_comparison_sixth_last_week_label")
-        self.graph_comparison_sixth_last_week_label.setGeometry(QRect(684, 90, 16, 141))
-        self.graph_comparison_sixth_last_week_label.setStyleSheet(u"background-color:white;\n"
-"border-top-left-radius:5px;\n"
-"border-top-right-radius:5px;")
-        self.graph_comparison_first_this_week_label = QLabel(self.weekly_compariso_page)
-        self.graph_comparison_first_this_week_label.setObjectName(u"graph_comparison_first_this_week_label")
-        self.graph_comparison_first_this_week_label.setGeometry(QRect(174, 120, 20, 111))
-        self.graph_comparison_first_this_week_label.setStyleSheet(u"background-color:#1B1A55;\n"
-"border-top-left-radius:5px;\n"
-"border-top-right-radius:5px;")
-        self.graph_comparison_seventh_last_week_label = QLabel(self.weekly_compariso_page)
-        self.graph_comparison_seventh_last_week_label.setObjectName(u"graph_comparison_seventh_last_week_label")
-        self.graph_comparison_seventh_last_week_label.setGeometry(QRect(804, 90, 16, 141))
-        self.graph_comparison_seventh_last_week_label.setStyleSheet(u"background-color:white;\n"
-"border-top-left-radius:5px;\n"
-"border-top-right-radius:5px;")
-        self.graph_comparison_first_last_week_label = QLabel(self.weekly_compariso_page)
-        self.graph_comparison_first_last_week_label.setObjectName(u"graph_comparison_first_last_week_label")
-        self.graph_comparison_first_last_week_label.setGeometry(QRect(154, 90, 16, 141))
-        self.graph_comparison_first_last_week_label.setStyleSheet(u"background-color:white;\n"
-"border-top-left-radius:5px;\n"
-"border-top-right-radius:5px;")
-        self.graph_comparison_second_day_label = QLabel(self.weekly_compariso_page)
-        self.graph_comparison_second_day_label.setObjectName(u"graph_comparison_second_day_label")
-        self.graph_comparison_second_day_label.setGeometry(QRect(240, 240, 47, 13))
-        self.graph_comparison_second_day_label.setFont(font15)
-        self.graph_comparison_second_day_label.setStyleSheet(u"color: rgba(255,250,250,1);")
-        self.graph_comparison_second_day_label.setAlignment(Qt.AlignCenter)
-        self.graph_comparison_fifth_last_week_label = QLabel(self.weekly_compariso_page)
-        self.graph_comparison_fifth_last_week_label.setObjectName(u"graph_comparison_fifth_last_week_label")
-        self.graph_comparison_fifth_last_week_label.setGeometry(QRect(564, 90, 16, 141))
-        self.graph_comparison_fifth_last_week_label.setStyleSheet(u"background-color:white;\n"
-"border-top-left-radius:5px;\n"
-"border-top-right-radius:5px;")
-        self.thi_week_color_widget = QWidget(self.weekly_compariso_page)
-        self.thi_week_color_widget.setObjectName(u"thi_week_color_widget")
-        self.thi_week_color_widget.setGeometry(QRect(660, 10, 16, 11))
-        self.thi_week_color_widget.setMinimumSize(QSize(16, 11))
-        self.thi_week_color_widget.setMaximumSize(QSize(16, 11))
-        self.thi_week_color_widget.setStyleSheet(u"background-color:#1B1A55;\n"
-"border-radius:3px;")
-        self.last_week_color_widget = QWidget(self.weekly_compariso_page)
+"")
+        self.barchart_view = QChartView(self.widget_5)
+        self.barchart_view.setObjectName(u"barchart_view")
+        self.barchart_view.setGeometry(QRect(0, 20, 890, 280))
+        self.barchart_view.setMinimumSize(QSize(890, 280))
+        self.barchart_view.setMaximumSize(QSize(890, 280))
+        self.barchart_view.setFont(font5)
+        self.barchart_view.setStyleSheet(u"background-color: #535C91;\n"
+"border-radius: 23px;\n"
+"color:white;\n"
+"")
+        self.this_week_label = QLabel(self.widget_5)
+        self.this_week_label.setObjectName(u"this_week_label")
+        self.this_week_label.setGeometry(QRect(790, 9, 81, 16))
+        self.this_week_label.setFont(font5)
+        self.this_week_label.setStyleSheet(u"background-color:transparent;\n"
+"color:white;")
+        self.last_week_color_widget = QWidget(self.widget_5)
         self.last_week_color_widget.setObjectName(u"last_week_color_widget")
-        self.last_week_color_widget.setGeometry(QRect(770, 10, 16, 11))
+        self.last_week_color_widget.setGeometry(QRect(660, 11, 16, 11))
         self.last_week_color_widget.setMinimumSize(QSize(16, 11))
         self.last_week_color_widget.setMaximumSize(QSize(16, 11))
         self.last_week_color_widget.setStyleSheet(u"background-color:white;\n"
 "border-radius:3px;")
-        self.this_week_label = QLabel(self.weekly_compariso_page)
-        self.this_week_label.setObjectName(u"this_week_label")
-        self.this_week_label.setGeometry(QRect(680, 9, 81, 16))
-        self.this_week_label.setFont(font4)
-        self.this_week_label.setStyleSheet(u"background-color:transparent;\n"
-"color:white;")
-        self.last_week_label = QLabel(self.weekly_compariso_page)
+        self.last_week_label = QLabel(self.widget_5)
         self.last_week_label.setObjectName(u"last_week_label")
-        self.last_week_label.setGeometry(QRect(790, 9, 81, 16))
-        self.last_week_label.setFont(font4)
+        self.last_week_label.setGeometry(QRect(680, 9, 81, 16))
+        self.last_week_label.setFont(font5)
         self.last_week_label.setStyleSheet(u"background-color:transparent;\n"
 "color:white;")
-        self.graph_comparison_widget_stacked.addWidget(self.weekly_compariso_page)
-        self.graph_comparison_sixth_day_label.raise_()
-        self.graph_comparison_third_line_label.raise_()
-        self.label_153.raise_()
-        self.graph_comparison_fourth_last_week_label.raise_()
-        self.graph_comparison_fourth_line_label.raise_()
-        self.label_157.raise_()
-        self.graph_comparison_third_last_week_label.raise_()
-        self.label_159.raise_()
-        self.graph_comparison_sixth_this_week_label.raise_()
-        self.graph_comparison_first_line_label.raise_()
-        self.graph_comparison_fourth_day_label.raise_()
-        self.graph_comparison_seventh_this_week_label.raise_()
-        self.graph_comparison_fifth_day_label.raise_()
-        self.label_166.raise_()
-        self.graph_comparison_second_line_label.raise_()
-        self.graph_comparison_third_day_label.raise_()
-        self.label_170.raise_()
-        self.graph_comparison_seventh_day_label.raise_()
-        self.graph_comparison_combobox.raise_()
-        self.graph_comparison_first_day_label.raise_()
-        self.graph_comparison_second_last_week_label.raise_()
-        self.graph_comparison_fifth_line_label.raise_()
-        self.graph_comparison_sixth_last_week_label.raise_()
-        self.graph_comparison_first_this_week_label.raise_()
-        self.graph_comparison_seventh_last_week_label.raise_()
-        self.graph_comparison_first_last_week_label.raise_()
-        self.graph_comparison_second_day_label.raise_()
-        self.graph_comparison_fifth_last_week_label.raise_()
-        self.graph_comparison_fifth_this_week_label.raise_()
-        self.graph_comparison_fourth_this_week_label.raise_()
-        self.graph_comparison_third_this_week_label.raise_()
-        self.graph_comparison_second_this_week_label.raise_()
-        self.thi_week_color_widget.raise_()
-        self.last_week_color_widget.raise_()
-        self.this_week_label.raise_()
-        self.last_week_label.raise_()
-        self.page_5 = QWidget()
-        self.page_5.setObjectName(u"page_5")
-        self.graph_comparison_widget_stacked.addWidget(self.page_5)
+        self.thi_week_color_widget = QWidget(self.widget_5)
+        self.thi_week_color_widget.setObjectName(u"thi_week_color_widget")
+        self.thi_week_color_widget.setGeometry(QRect(770, 11, 16, 11))
+        self.thi_week_color_widget.setMinimumSize(QSize(16, 11))
+        self.thi_week_color_widget.setMaximumSize(QSize(16, 11))
+        self.thi_week_color_widget.setStyleSheet(u"background-color:#1B1A55;\n"
+"border-radius:3px;")
+        self.this_week_label_2 = QLabel(self.widget_5)
+        self.this_week_label_2.setObjectName(u"this_week_label_2")
+        self.this_week_label_2.setGeometry(QRect(20, 10, 151, 16))
+        self.this_week_label_2.setFont(font3)
+        self.this_week_label_2.setStyleSheet(u"background-color:transparent;\n"
+"color:white;")
 
-        self.horizontalLayout_38.addWidget(self.graph_comparison_widget_stacked)
+        self.horizontalLayout_38.addWidget(self.widget_5)
 
         self.horizontalSpacer_54 = QSpacerItem(18, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
@@ -2467,250 +2387,261 @@ class Ui_Dashboard(object):
         self.verticalLayout_26.addItem(self.verticalSpacer_41)
 
         self.main_screen_stacked_widget.addWidget(self.dashboard_widget)
-        self.page_2 = QWidget()
-        self.page_2.setObjectName(u"page_2")
-        self.main_screen_stacked_widget.addWidget(self.page_2)
-
-        self.gridLayout.addWidget(self.main_screen_stacked_widget, 1, 2, 1, 1)
-
-        self.top_bar_widget = QWidget(self.centralwidget)
-        self.top_bar_widget.setObjectName(u"top_bar_widget")
-        self.top_bar_widget.setStyleSheet(u"QWidget{\n"
-"	background-color:#1B1A55;\n"
-"}\n"
-"QPushButton{\n"
-"	border:none;\n"
-"}\n"
-"")
-        self.horizontalLayout_39 = QHBoxLayout(self.top_bar_widget)
-        self.horizontalLayout_39.setObjectName(u"horizontalLayout_39")
-        self.horizontalLayout_2 = QHBoxLayout()
-        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
-        self.slider_button = QPushButton(self.top_bar_widget)
-        self.slider_button.setObjectName(u"slider_button")
+        self.analist_page = QWidget()
+        self.analist_page.setObjectName(u"analist_page")
+        self.label_8 = QLabel(self.analist_page)
+        self.label_8.setObjectName(u"label_8")
+        self.label_8.setGeometry(QRect(630, 380, 721, 131))
         font16 = QFont()
         font16.setFamilies([u"Poppins"])
-        font16.setPointSize(14)
-        font16.setBold(True)
-        self.slider_button.setFont(font16)
-        self.slider_button.setStyleSheet(u"QPushButton{\n"
-"	color: white;\n"
-"	height:42px;\n"
-"	width: 32px;\n"
-"	padding-left: 10px;\n"
-"}")
-        icon13 = QIcon()
-        icon13.addFile(u":/img/img/menu.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.slider_button.setIcon(icon13)
-        self.slider_button.setIconSize(QSize(32, 32))
-        self.slider_button.setCheckable(True)
-        self.slider_button.setAutoRepeat(False)
-        self.slider_button.setAutoExclusive(False)
-
-        self.horizontalLayout_2.addWidget(self.slider_button)
-
-        self.fi_wallet_button = QPushButton(self.top_bar_widget)
-        self.fi_wallet_button.setObjectName(u"fi_wallet_button")
-        self.fi_wallet_button.setFont(font16)
-        self.fi_wallet_button.setStyleSheet(u"color: white;\n"
-"height:50px;\n"
-"text-align: left;")
-        icon14 = QIcon()
-        icon14.addFile(u":/img/img/fi_wallet.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.fi_wallet_button.setIcon(icon14)
-        self.fi_wallet_button.setIconSize(QSize(75, 75))
-        self.fi_wallet_button.setCheckable(True)
-        self.fi_wallet_button.setAutoRepeat(False)
-        self.fi_wallet_button.setAutoExclusive(False)
-
-        self.horizontalLayout_2.addWidget(self.fi_wallet_button)
-
-
-        self.horizontalLayout_39.addLayout(self.horizontalLayout_2)
-
-        self.horizontalSpacer_2 = QSpacerItem(503, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout_39.addItem(self.horizontalSpacer_2)
-
-        self.horizontalLayout = QHBoxLayout()
-        self.horizontalLayout.setSpacing(0)
-        self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.search_line_edit = QLineEdit(self.top_bar_widget)
-        self.search_line_edit.setObjectName(u"search_line_edit")
-        self.search_line_edit.setMinimumSize(QSize(700, 36))
-        self.search_line_edit.setMaximumSize(QSize(700, 36))
-        self.search_line_edit.setStyleSheet(u"background-color: rgb(146, 144, 195);\n"
-"font: 14pt \"Poppins\";\n"
-"color:rgba(255,255,255,0.4);\n"
-"border-top-left-radius: 10px;\n"
-"border-bottom-left-radius: 10px;\n"
-" width: 700px;")
-        self.search_line_edit.setFrame(False)
-        self.search_line_edit.setAlignment(Qt.AlignCenter)
-        self.search_line_edit.setReadOnly(False)
-        self.search_line_edit.setClearButtonEnabled(True)
-
-        self.horizontalLayout.addWidget(self.search_line_edit)
-
-        self.search_button = QPushButton(self.top_bar_widget)
-        self.search_button.setObjectName(u"search_button")
-        self.search_button.setMinimumSize(QSize(32, 36))
-        self.search_button.setMaximumSize(QSize(32, 36))
-        self.search_button.setStyleSheet(u"background-color: rgb(146, 144, 195);\n"
-"border-top-right-radius: 10px;\n"
-"border-bottom-right-radius: 10px;\n"
-"height:36px;")
-        icon15 = QIcon()
-        icon15.addFile(u":/img/img/search.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.search_button.setIcon(icon15)
-        self.search_button.setIconSize(QSize(28, 28))
-        self.search_button.setCheckable(True)
-        self.search_button.setAutoExclusive(True)
-
-        self.horizontalLayout.addWidget(self.search_button)
-
-
-        self.horizontalLayout_39.addLayout(self.horizontalLayout)
-
-        self.horizontalSpacer_55 = QSpacerItem(150, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout_39.addItem(self.horizontalSpacer_55)
-
-        self.horizontalLayout_3 = QHBoxLayout()
-        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
-        self.notification_button = QPushButton(self.top_bar_widget)
-        self.notification_button.setObjectName(u"notification_button")
-        self.notification_button.setMinimumSize(QSize(40, 40))
-        self.notification_button.setMaximumSize(QSize(40, 40))
-        self.notification_button.setStyleSheet(u"QPushButton{\n"
-"	wight: 40px;\n"
-"	height: 40px;\n"
-"	border-radius:5px;\n"
-"}\n"
-"QPushButton:checked{\n"
-"	background-color:#9290C3;\n"
-"	color: #9290C3;\n"
-"	font-weight:bold;\n"
-"}")
-        icon16 = QIcon()
-        icon16.addFile(u":/img/img/bell.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.notification_button.setIcon(icon16)
-        self.notification_button.setIconSize(QSize(25, 25))
-        self.notification_button.setCheckable(True)
-        self.notification_button.setAutoExclusive(True)
-
-        self.horizontalLayout_3.addWidget(self.notification_button)
-
-        self.calculator_button = QPushButton(self.top_bar_widget)
-        self.calculator_button.setObjectName(u"calculator_button")
-        sizePolicy = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.calculator_button.sizePolicy().hasHeightForWidth())
-        self.calculator_button.setSizePolicy(sizePolicy)
-        self.calculator_button.setMinimumSize(QSize(40, 40))
-        self.calculator_button.setMaximumSize(QSize(40, 40))
-        self.calculator_button.setStyleSheet(u"QPushButton{\n"
-"	wight: 40px;\n"
-"	height: 40px;\n"
-"	border-radius:5px;\n"
-"}\n"
-"QPushButton:checked{\n"
-"	background-color:#9290C3;\n"
-"	color: #9290C3;\n"
-"	font-weight:bold;\n"
-"}")
-        icon17 = QIcon()
-        icon17.addFile(u":/img/img/calculator.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.calculator_button.setIcon(icon17)
-        self.calculator_button.setIconSize(QSize(35, 35))
-        self.calculator_button.setCheckable(True)
-        self.calculator_button.setAutoExclusive(True)
-
-        self.horizontalLayout_3.addWidget(self.calculator_button)
-
-
-        self.horizontalLayout_39.addLayout(self.horizontalLayout_3)
-
-        self.horizontalSpacer = QSpacerItem(24, 10, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout_39.addItem(self.horizontalSpacer)
-
-        self.horizontalLayout_4 = QHBoxLayout()
-        self.horizontalLayout_4.setSpacing(0)
-        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
-        self.full_screen_button = QPushButton(self.top_bar_widget)
-        self.full_screen_button.setObjectName(u"full_screen_button")
-        self.full_screen_button.setStyleSheet(u"wight: 40px;\n"
-"height: 40px;")
-        icon18 = QIcon()
-        icon18.addFile(u":/img/img/maximize-2.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.full_screen_button.setIcon(icon18)
-        self.full_screen_button.setIconSize(QSize(25, 25))
-        self.full_screen_button.setCheckable(True)
-        self.full_screen_button.setAutoExclusive(True)
-
-        self.horizontalLayout_4.addWidget(self.full_screen_button)
-
-        self.screen_minimize_button = QPushButton(self.top_bar_widget)
-        self.screen_minimize_button.setObjectName(u"screen_minimize_button")
-        self.screen_minimize_button.setStyleSheet(u"wight: 40px;\n"
-"height: 40px;")
-        icon19 = QIcon()
-        icon19.addFile(u":/img/img/window_minimize.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.screen_minimize_button.setIcon(icon19)
-        self.screen_minimize_button.setIconSize(QSize(25, 25))
-        self.screen_minimize_button.setCheckable(True)
-        self.screen_minimize_button.setAutoExclusive(True)
-
-        self.horizontalLayout_4.addWidget(self.screen_minimize_button)
-
-        self.maximize_screen_button = QCheckBox(self.top_bar_widget)
-        self.maximize_screen_button.setObjectName(u"maximize_screen_button")
-        self.maximize_screen_button.setFont(font)
-        self.maximize_screen_button.setStyleSheet(u"QCheckBox{\n"
-"	color:white;\n"
-"	padding-left: 10px;\n"
-"	background-color:transparent;\n"
-"}\n"
-"QCheckBox::indicator {\n"
-"	width: 28px;\n"
-"	height: 28px;\n"
-"}\n"
+        font16.setPointSize(72)
+        self.label_8.setFont(font16)
+        self.label_8.setStyleSheet(u"color:white;\n"
+"background-color:transparent;")
+        self.main_screen_stacked_widget.addWidget(self.analist_page)
+        self.performance_page = QWidget()
+        self.performance_page.setObjectName(u"performance_page")
+        self.label_9 = QLabel(self.performance_page)
+        self.label_9.setObjectName(u"label_9")
+        self.label_9.setGeometry(QRect(400, 420, 961, 121))
+        self.label_9.setFont(font16)
+        self.label_9.setStyleSheet(u"color:white;\n"
+"background-color:transparent;")
+        self.main_screen_stacked_widget.addWidget(self.performance_page)
+        self.bills_page = QWidget()
+        self.bills_page.setObjectName(u"bills_page")
+        self.label_10 = QLabel(self.bills_page)
+        self.label_10.setObjectName(u"label_10")
+        self.label_10.setGeometry(QRect(550, 390, 861, 171))
+        self.label_10.setFont(font16)
+        self.label_10.setStyleSheet(u"color:white;\n"
+"background-color:transparent;")
+        self.main_screen_stacked_widget.addWidget(self.bills_page)
+        self.wallet_page = QWidget()
+        self.wallet_page.setObjectName(u"wallet_page")
+        self.total_balance_widget_2 = QWidget(self.wallet_page)
+        self.total_balance_widget_2.setObjectName(u"total_balance_widget_2")
+        self.total_balance_widget_2.setGeometry(QRect(40, 110, 500, 350))
+        self.total_balance_widget_2.setMinimumSize(QSize(500, 350))
+        self.total_balance_widget_2.setMaximumSize(QSize(500, 350))
+        self.total_balance_widget_2.setStyleSheet(u"background-color: #535C91;\n"
+"border-radius: 25px;")
+        self.label = QLabel(self.total_balance_widget_2)
+        self.label.setObjectName(u"label")
+        self.label.setGeometry(QRect(70, 130, 291, 51))
+        font17 = QFont()
+        font17.setFamilies([u"Poppins"])
+        font17.setPointSize(17)
+        font17.setBold(True)
+        self.label.setFont(font17)
+        self.label.setStyleSheet(u"background-color:transparent;\n"
 "\n"
-"QCheckBox::indicator:checked{\n"
-"	image: url(:/img/img/window_screen.svg);\n"
-"}\n"
+"border-radius:5px;\n"
+"color: white;")
+        self.label_3 = QLabel(self.total_balance_widget_2)
+        self.label_3.setObjectName(u"label_3")
+        self.label_3.setGeometry(QRect(60, 110, 151, 31))
+        self.label_3.setFont(font5)
+        self.label_3.setStyleSheet(u"background-color:transparent;\n"
 "\n"
-"QCheckBox::indicator:unchecked{\n"
-"	image: url(:/img/img/square.svg);\n"
-"}")
-        self.maximize_screen_button.setCheckable(True)
-        self.maximize_screen_button.setAutoExclusive(True)
+"border-radius:5px;\n"
+"color:rgba(255,255,255,0.4);")
+        self.label_4 = QLabel(self.total_balance_widget_2)
+        self.label_4.setObjectName(u"label_4")
+        self.label_4.setGeometry(QRect(70, 210, 291, 41))
+        self.label_4.setFont(font17)
+        self.label_4.setStyleSheet(u"background-color:transparent;\n"
+"\n"
+"border-radius:5px;\n"
+"color: white;")
+        self.label_5 = QLabel(self.total_balance_widget_2)
+        self.label_5.setObjectName(u"label_5")
+        self.label_5.setGeometry(QRect(60, 180, 151, 31))
+        self.label_5.setFont(font5)
+        self.label_5.setStyleSheet(u"background-color:transparent;\n"
+"\n"
+"border-radius:5px;\n"
+"color:rgba(255,255,255,0.4);")
+        self.label_7 = QLabel(self.total_balance_widget_2)
+        self.label_7.setObjectName(u"label_7")
+        self.label_7.setGeometry(QRect(10, 80, 470, 1))
+        self.label_7.setMinimumSize(QSize(470, 1))
+        self.label_7.setMaximumSize(QSize(470, 1))
+        self.label_7.setStyleSheet(u"background-color :rgba(255,255,255,0.4);")
+        self.layoutWidget = QWidget(self.total_balance_widget_2)
+        self.layoutWidget.setObjectName(u"layoutWidget")
+        self.layoutWidget.setGeometry(QRect(40, 20, 416, 53))
+        self.horizontalLayout_42 = QHBoxLayout(self.layoutWidget)
+        self.horizontalLayout_42.setObjectName(u"horizontalLayout_42")
+        self.horizontalLayout_42.setContentsMargins(0, 0, 0, 0)
+        self.label_2 = QLabel(self.layoutWidget)
+        self.label_2.setObjectName(u"label_2")
+        font18 = QFont()
+        font18.setFamilies([u"Poppins"])
+        font18.setPointSize(12)
+        self.label_2.setFont(font18)
+        self.label_2.setStyleSheet(u"background-color:transparent;\n"
+"\n"
+"border-radius:5px;\n"
+"color: white;")
 
-        self.horizontalLayout_4.addWidget(self.maximize_screen_button)
+        self.horizontalLayout_42.addWidget(self.label_2)
 
+        self.horizontalSpacer_60 = QSpacerItem(228, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
+        self.horizontalLayout_42.addItem(self.horizontalSpacer_60)
 
-        self.close_button = QPushButton(self.top_bar_widget)
-        self.close_button.setObjectName(u"close_button")
-        self.close_button.setStyleSheet(u"wight: 40px;\n"
-"height: 40px;")
-        icon20 = QIcon()
-        icon20.addFile(u":/img/img/x.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.close_button.setIcon(icon20)
-        self.close_button.setIconSize(QSize(32, 32))
-        self.close_button.setCheckable(True)
-        self.close_button.setAutoExclusive(True)
+        self.label_6 = QLabel(self.layoutWidget)
+        self.label_6.setObjectName(u"label_6")
+        self.label_6.setMinimumSize(QSize(81, 51))
+        self.label_6.setMaximumSize(QSize(81, 51))
+        self.label_6.setStyleSheet(u"background-color:transparent;\n"
+"image: url(:/img/img/MasterCard.png);")
 
-        self.horizontalLayout_4.addWidget(self.close_button)
+        self.horizontalLayout_42.addWidget(self.label_6)
 
+        self.layoutWidget1 = QWidget(self.total_balance_widget_2)
+        self.layoutWidget1.setObjectName(u"layoutWidget1")
+        self.layoutWidget1.setGeometry(QRect(40, 270, 443, 53))
+        self.horizontalLayout_43 = QHBoxLayout(self.layoutWidget1)
+        self.horizontalLayout_43.setObjectName(u"horizontalLayout_43")
+        self.horizontalLayout_43.setContentsMargins(0, 0, 0, 0)
+        self.toolButton_4 = QToolButton(self.layoutWidget1)
+        self.toolButton_4.setObjectName(u"toolButton_4")
+        self.toolButton_4.setMinimumSize(QSize(100, 51))
+        self.toolButton_4.setMaximumSize(QSize(100, 51))
+        font19 = QFont()
+        font19.setFamilies([u"Poppins"])
+        font19.setPointSize(12)
+        font19.setBold(True)
+        font19.setItalic(False)
+        font19.setUnderline(False)
+        font19.setStrikeOut(False)
+        self.toolButton_4.setFont(font19)
+        self.toolButton_4.setStyleSheet(u"background-color:transparent;\n"
+"\n"
+"border-radius:5px;\n"
+"color: white;")
 
-        self.horizontalLayout_39.addLayout(self.horizontalLayout_4)
+        self.horizontalLayout_43.addWidget(self.toolButton_4)
 
+        self.horizontalSpacer_61 = QSpacerItem(148, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
-        self.gridLayout.addWidget(self.top_bar_widget, 0, 0, 1, 3)
-        self.close_button.clicked.connect(MainWindow.close)
+        self.horizontalLayout_43.addItem(self.horizontalSpacer_61)
+
+        self.toolButton_3 = QToolButton(self.layoutWidget1)
+        self.toolButton_3.setObjectName(u"toolButton_3")
+        self.toolButton_3.setMinimumSize(QSize(181, 51))
+        self.toolButton_3.setMaximumSize(QSize(181, 51))
+        self.toolButton_3.setFont(font19)
+        self.toolButton_3.setStyleSheet(u"background-color:#1B1A55;\n"
+"border-radius:5px;\n"
+"color: white;")
+
+        self.horizontalLayout_43.addWidget(self.toolButton_3)
+
+        self.total_balance_widget_3 = QWidget(self.wallet_page)
+        self.total_balance_widget_3.setObjectName(u"total_balance_widget_3")
+        self.total_balance_widget_3.setGeometry(QRect(580, 110, 500, 350))
+        self.total_balance_widget_3.setMinimumSize(QSize(500, 350))
+        self.total_balance_widget_3.setMaximumSize(QSize(500, 350))
+        self.total_balance_widget_3.setStyleSheet(u"background-color: #535C91;\n"
+"border-radius: 25px;")
+        self.layoutWidget2 = QWidget(self.total_balance_widget_3)
+        self.layoutWidget2.setObjectName(u"layoutWidget2")
+        self.layoutWidget2.setGeometry(QRect(0, 120, 501, 53))
+        self.horizontalLayout_40 = QHBoxLayout(self.layoutWidget2)
+        self.horizontalLayout_40.setObjectName(u"horizontalLayout_40")
+        self.horizontalLayout_40.setContentsMargins(0, 0, 0, 0)
+        self.horizontalSpacer_56 = QSpacerItem(148, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_40.addItem(self.horizontalSpacer_56)
+
+        self.toolButton = QToolButton(self.layoutWidget2)
+        self.toolButton.setObjectName(u"toolButton")
+        self.toolButton.setMinimumSize(QSize(181, 51))
+        self.toolButton.setMaximumSize(QSize(181, 51))
+        font20 = QFont()
+        font20.setFamilies([u"Poppins"])
+        font20.setPointSize(11)
+        font20.setBold(True)
+        font20.setItalic(False)
+        font20.setUnderline(False)
+        font20.setStrikeOut(False)
+        self.toolButton.setFont(font20)
+        self.toolButton.setStyleSheet(u"background-color:#1B1A55;\n"
+"border-radius:5px;\n"
+"color: white;")
+
+        self.horizontalLayout_40.addWidget(self.toolButton)
+
+        self.horizontalSpacer_57 = QSpacerItem(168, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_40.addItem(self.horizontalSpacer_57)
+
+        self.layoutWidget3 = QWidget(self.total_balance_widget_3)
+        self.layoutWidget3.setObjectName(u"layoutWidget3")
+        self.layoutWidget3.setGeometry(QRect(0, 190, 501, 53))
+        self.horizontalLayout_41 = QHBoxLayout(self.layoutWidget3)
+        self.horizontalLayout_41.setObjectName(u"horizontalLayout_41")
+        self.horizontalLayout_41.setContentsMargins(0, 0, 0, 0)
+        self.horizontalSpacer_58 = QSpacerItem(148, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_41.addItem(self.horizontalSpacer_58)
+
+        self.toolButton_2 = QToolButton(self.layoutWidget3)
+        self.toolButton_2.setObjectName(u"toolButton_2")
+        self.toolButton_2.setMinimumSize(QSize(181, 51))
+        self.toolButton_2.setMaximumSize(QSize(181, 51))
+        self.toolButton_2.setFont(font20)
+        self.toolButton_2.setStyleSheet(u"background-color:transparent;\n"
+"\n"
+"border-radius:5px;\n"
+"color: white;")
+
+        self.horizontalLayout_41.addWidget(self.toolButton_2)
+
+        self.horizontalSpacer_59 = QSpacerItem(168, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_41.addItem(self.horizontalSpacer_59)
+
+        self.total_balance_label_2 = QLabel(self.wallet_page)
+        self.total_balance_label_2.setObjectName(u"total_balance_label_2")
+        self.total_balance_label_2.setGeometry(QRect(40, 40, 131, 41))
+        self.total_balance_label_2.setFont(font17)
+        self.total_balance_label_2.setStyleSheet(u"color: white;\n"
+"text-align: left;\n"
+"background-color:transparent;")
+        self.main_screen_stacked_widget.addWidget(self.wallet_page)
+        self.goal_page = QWidget()
+        self.goal_page.setObjectName(u"goal_page")
+        self.label_11 = QLabel(self.goal_page)
+        self.label_11.setObjectName(u"label_11")
+        self.label_11.setGeometry(QRect(550, 400, 571, 161))
+        self.label_11.setFont(font16)
+        self.label_11.setStyleSheet(u"color:white;\n"
+"background-color:transparent;")
+        self.main_screen_stacked_widget.addWidget(self.goal_page)
+        self.settings_page = QWidget()
+        self.settings_page.setObjectName(u"settings_page")
+        self.label_12 = QLabel(self.settings_page)
+        self.label_12.setObjectName(u"label_12")
+        self.label_12.setGeometry(QRect(510, 390, 701, 201))
+        self.label_12.setFont(font16)
+        self.label_12.setStyleSheet(u"color:white;\n"
+"background-color:transparent;")
+        self.main_screen_stacked_widget.addWidget(self.settings_page)
+        self.profile_page = QWidget()
+        self.profile_page.setObjectName(u"profile_page")
+        self.label_13 = QLabel(self.profile_page)
+        self.label_13.setObjectName(u"label_13")
+        self.label_13.setGeometry(QRect(540, 350, 661, 231))
+        self.label_13.setFont(font16)
+        self.label_13.setStyleSheet(u"color:white;\n"
+"background-color:transparent;")
+        self.main_screen_stacked_widget.addWidget(self.profile_page)
+
+        self.gridLayout.addWidget(self.main_screen_stacked_widget, 1, 2, 1, 1)
 
         MainWindow.setCentralWidget(self.centralwidget)
 
@@ -2740,6 +2671,7 @@ class Ui_Dashboard(object):
         self.fi_wallet_button.toggled.connect(self.minimize_slider_menu_widget.setHidden)
         self.fi_wallet_button.toggled.connect(self.maximize_slider_menu_widget.setVisible)
 
+        self.main_screen_stacked_widget.setCurrentIndex(0)
         self.cards_stacked_widget.setCurrentIndex(0)
 
 
@@ -2748,6 +2680,17 @@ class Ui_Dashboard(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
+        self.pushButton_2.setText("")
+        self.dashboard_minimize_button.setText("")
+        self.analist_minimize_button.setText("")
+        self.performance_minimize_button.setText("")
+        self.bills_minimize_button.setText("")
+        self.wallet_minimize_button.setText("")
+        self.goal_minimize_button.setText("")
+        self.thema_minimize_button.setText("")
+        self.settings_minimize_button.setText("")
+        self.logout_minimize_button.setText("")
+        self.profile_minimize_button.setText("")
         self.profiles_combobox.setItemText(0, QCoreApplication.translate("MainWindow", u"Add Profile", None))
         self.profiles_combobox.setItemText(1, QCoreApplication.translate("MainWindow", u"Deneme", None))
 
@@ -2761,17 +2704,13 @@ class Ui_Dashboard(object):
         self.settings_button.setText(QCoreApplication.translate("MainWindow", u"Settings", None))
         self.logout_button.setText(QCoreApplication.translate("MainWindow", u"Log Out", None))
         self.profile_button.setText(QCoreApplication.translate("MainWindow", u"User Name", None))
-        self.pushButton_2.setText("")
-        self.dashboard_minimize_button.setText("")
-        self.analist_minimize_button.setText("")
-        self.performance_minimize_button.setText("")
-        self.bills_minimize_button.setText("")
-        self.wallet_minimize_button.setText("")
-        self.goal_minimize_button.setText("")
-        self.thema_minimize_button.setText("")
-        self.settings_minimize_button.setText("")
-        self.logout_minimize_button.setText("")
-        self.profile_minimize_button.setText("")
+        self.slider_button.setText("")
+        self.fi_wallet_button.setText(QCoreApplication.translate("MainWindow", u"Fi-Wallet", None))
+        self.search_line_edit.setText("")
+        self.search_line_edit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Search", None))
+        self.search_button.setText("")
+        self.notification_button.setText("")
+        self.calculator_button.setText("")
         self.total_balance_green_wallet_icon_button.setText("")
         self.total_balance_label.setText(QCoreApplication.translate("MainWindow", u"Total Balance", None))
         self.tota_balance_value_label.setText(QCoreApplication.translate("MainWindow", u"$13256.20", None))
@@ -2861,51 +2800,26 @@ class Ui_Dashboard(object):
         self.transaction_history_topic_reciever_label.setText(QCoreApplication.translate("MainWindow", u"Reciever", None))
         self.transaction_history_topic_type_label.setText(QCoreApplication.translate("MainWindow", u"Type", None))
         self.transaction_history_topic_date_label.setText(QCoreApplication.translate("MainWindow", u"Date", None))
-        self.graph_comparison_sixth_day_label.setText(QCoreApplication.translate("MainWindow", u"22 Fri", None))
-        self.graph_comparison_third_line_label.setText(QCoreApplication.translate("MainWindow", u"$10k", None))
-        self.label_153.setText("")
-        self.graph_comparison_second_this_week_label.setText("")
-        self.graph_comparison_fourth_last_week_label.setText("")
-        self.graph_comparison_fourth_line_label.setText(QCoreApplication.translate("MainWindow", u"$2k", None))
-        self.label_157.setText("")
-        self.graph_comparison_third_last_week_label.setText("")
-        self.label_159.setText("")
-        self.graph_comparison_fourth_this_week_label.setText("")
-        self.graph_comparison_sixth_this_week_label.setText("")
-        self.graph_comparison_first_line_label.setText(QCoreApplication.translate("MainWindow", u"$250k", None))
-        self.graph_comparison_fourth_day_label.setText(QCoreApplication.translate("MainWindow", u"20 Wed", None))
-        self.graph_comparison_seventh_this_week_label.setText("")
-        self.graph_comparison_fifth_day_label.setText(QCoreApplication.translate("MainWindow", u"21 Thu", None))
-        self.label_166.setText("")
-        self.graph_comparison_second_line_label.setText(QCoreApplication.translate("MainWindow", u"$50k", None))
-        self.graph_comparison_third_day_label.setText(QCoreApplication.translate("MainWindow", u"19 Tue", None))
-        self.graph_comparison_third_this_week_label.setText("")
-        self.label_170.setText("")
-        self.graph_comparison_fifth_this_week_label.setText("")
-        self.graph_comparison_seventh_day_label.setText(QCoreApplication.translate("MainWindow", u"23 Sat", None))
-        self.graph_comparison_combobox.setItemText(0, QCoreApplication.translate("MainWindow", u"Weekly Comparison", None))
-        self.graph_comparison_combobox.setItemText(1, QCoreApplication.translate("MainWindow", u"Deneme", None))
-
-        self.graph_comparison_first_day_label.setText(QCoreApplication.translate("MainWindow", u"17 Sun", None))
-        self.graph_comparison_second_last_week_label.setText("")
-        self.graph_comparison_fifth_line_label.setText(QCoreApplication.translate("MainWindow", u"$0", None))
-        self.graph_comparison_sixth_last_week_label.setText("")
-        self.graph_comparison_first_this_week_label.setText("")
-        self.graph_comparison_seventh_last_week_label.setText("")
-        self.graph_comparison_first_last_week_label.setText("")
-        self.graph_comparison_second_day_label.setText(QCoreApplication.translate("MainWindow", u"18 Mon", None))
-        self.graph_comparison_fifth_last_week_label.setText("")
         self.this_week_label.setText(QCoreApplication.translate("MainWindow", u"This week", None))
         self.last_week_label.setText(QCoreApplication.translate("MainWindow", u"Last week", None))
-        self.slider_button.setText("")
-        self.fi_wallet_button.setText(QCoreApplication.translate("MainWindow", u"Fi-Wallet", None))
-        self.search_line_edit.setText("")
-        self.search_line_edit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Search", None))
-        self.search_button.setText("")
-        self.notification_button.setText("")
-        self.calculator_button.setText("")
-        self.full_screen_button.setText("")
-        self.screen_minimize_button.setText("")
-        self.maximize_screen_button.setText("")
-        self.close_button.setText("")
+        self.this_week_label_2.setText(QCoreApplication.translate("MainWindow", u"Weekly Comparison", None))
+        self.label_8.setText(QCoreApplication.translate("MainWindow", u"ANALIST PAGE", None))
+        self.label_9.setText(QCoreApplication.translate("MainWindow", u"PERFORMANCE PAGE", None))
+        self.label_10.setText(QCoreApplication.translate("MainWindow", u"BILLS PAGE", None))
+        self.label.setText(QCoreApplication.translate("MainWindow", u"3388 4556 8860 8*** ", None))
+        self.label_3.setText(QCoreApplication.translate("MainWindow", u"Account Number", None))
+        self.label_4.setText(QCoreApplication.translate("MainWindow", u"$250000", None))
+        self.label_5.setText(QCoreApplication.translate("MainWindow", u"Total Amount", None))
+        self.label_7.setText("")
+        self.label_2.setText(QCoreApplication.translate("MainWindow", u"Credit Card", None))
+        self.label_6.setText("")
+        self.toolButton_4.setText(QCoreApplication.translate("MainWindow", u"REMOVE", None))
+        self.toolButton_3.setText(QCoreApplication.translate("MainWindow", u"DETAILS           >", None))
+        self.toolButton.setText(QCoreApplication.translate("MainWindow", u"ADD ACCOUNT", None))
+        self.toolButton_2.setText(QCoreApplication.translate("MainWindow", u"EDIT ACCOUNT", None))
+        self.total_balance_label_2.setText(QCoreApplication.translate("MainWindow", u"BALANCES", None))
+        self.label_11.setText(QCoreApplication.translate("MainWindow", u"GOAL PAGE", None))
+        self.label_12.setText(QCoreApplication.translate("MainWindow", u"SETTINGS PAGE", None))
+        self.label_13.setText(QCoreApplication.translate("MainWindow", u"PROFILE PAGE", None))
     # retranslateUi
+

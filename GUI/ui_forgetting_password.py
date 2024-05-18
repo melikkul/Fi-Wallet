@@ -17,7 +17,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QLabel, QLineEdit, QMainWindow,
     QPushButton, QSizePolicy, QWidget)
-import forgetting_password_rc
+from GRC import forgetting_password_rc
 
 class Ui_Forgetting_Password(object):
     def setupUi(self, en_main_widget):

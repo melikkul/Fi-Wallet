@@ -17,7 +17,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QCheckBox, QLabel, QLineEdit,
     QMainWindow, QPushButton, QSizePolicy, QWidget)
-import register_rc
+from GRC import register_rc
 
 class Ui_Register(object):
                  

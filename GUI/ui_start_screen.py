@@ -17,7 +17,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QFrame, QLabel, QSizePolicy,
     QWidget)
-import start_screen_rc
+from GRC import start_screen_rc
 
 class Ui_Start_Screen(object):
     def setupUi(self, Form):

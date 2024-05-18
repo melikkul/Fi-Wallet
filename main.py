@@ -6,11 +6,12 @@ from firmy_db import UserRegistration as db
 import time
 
 ##########################  PAGES  ##########################
-from ui_dashboard import Ui_Dashboard
-from ui_forgetting_password import Ui_Forgetting_Password
-from ui_login_screen import Ui_Login_Screen
-from ui_register import Ui_Register
-from ui_start_screen import Ui_Start_Screen
+from GUI.ui_dashboard import Ui_MainWindow
+from charts import ChartyApp
+from GUI.ui_forgetting_password import Ui_Forgetting_Password
+from GUI.ui_login_screen import Ui_Login_Screen
+from GUI.ui_register import Ui_Register
+from GUI.ui_start_screen import Ui_Start_Screen
 ##############################################################
 
 class MainWindow(QMainWindow):
@@ -54,19 +55,9 @@ class MainWindow(QMainWindow):
         
 
     def dashboard(self):
-        self.ui = Ui_Dashboard()
+        self.ui = ChartyApp()
         self.ui.setupUi(self)
-        self.show()
-        self.showMaximized()
-        self.ui.maximize_screen_button.stateChanged.connect(self.toggle_maximize)
-
-
-    def toggle_maximize(self, state):
-        if state == 2:
-            self.showMaximized()  # Eğer buton işaretlenmişse ekranı tam ekran yap
-        else:
-            self.resize(1280, 720)  # Belirtilen boyutlara yeniden boyutlandır
-
+        self.ui.showMaximized()
 
 
     def forgetting_password(self):

@@ -894,7 +894,7 @@ padding-left: 10px;</string>
      <widget class="QWidget" name="top_bar_widget" native="true">
       <property name="styleSheet">
        <string notr="true">QWidget{
-	background-color:#1B1A55;
+	background-color:#070F2B;
 }
 QPushButton{
 	border:none;
@@ -1207,145 +1207,6 @@ QPushButton:checked{
          </item>
         </layout>
        </item>
-       <item>
-        <spacer name="horizontalSpacer">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>24</width>
-           <height>10</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_4">
-         <property name="spacing">
-          <number>0</number>
-         </property>
-         <item>
-          <widget class="QPushButton" name="full_screen_button">
-           <property name="styleSheet">
-            <string notr="true">wight: 40px;
-height: 40px;</string>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="icon">
-            <iconset resource="dashboard.qrc">
-             <normaloff>:/img/img/maximize-2.svg</normaloff>:/img/img/maximize-2.svg</iconset>
-           </property>
-           <property name="iconSize">
-            <size>
-             <width>25</width>
-             <height>25</height>
-            </size>
-           </property>
-           <property name="checkable">
-            <bool>true</bool>
-           </property>
-           <property name="autoExclusive">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="screen_minimize_button">
-           <property name="styleSheet">
-            <string notr="true">wight: 40px;
-height: 40px;</string>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="icon">
-            <iconset resource="dashboard.qrc">
-             <normaloff>:/img/img/window_minimize.png</normaloff>:/img/img/window_minimize.png</iconset>
-           </property>
-           <property name="iconSize">
-            <size>
-             <width>25</width>
-             <height>25</height>
-            </size>
-           </property>
-           <property name="checkable">
-            <bool>true</bool>
-           </property>
-           <property name="autoExclusive">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QCheckBox" name="maximize_screen_button">
-           <property name="font">
-            <font>
-             <family>Poppins</family>
-             <pointsize>14</pointsize>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">QCheckBox{
-	color:white;
-	padding-left: 10px;
-	background-color:transparent;
-}
-QCheckBox::indicator {
-	width: 28px;
-	height: 28px;
-}
-
-QCheckBox::indicator:checked{
-	image: url(:/img/img/window_screen.svg);
-}
-
-QCheckBox::indicator:unchecked{
-	image: url(:/img/img/square.svg);
-}</string>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="checkable">
-            <bool>true</bool>
-           </property>
-           <property name="autoExclusive">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="close_button">
-           <property name="styleSheet">
-            <string notr="true">wight: 40px;
-height: 40px;</string>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="icon">
-            <iconset resource="dashboard.qrc">
-             <normaloff>:/img/img/x.svg</normaloff>:/img/img/x.svg</iconset>
-           </property>
-           <property name="iconSize">
-            <size>
-             <width>32</width>
-             <height>32</height>
-            </size>
-           </property>
-           <property name="checkable">
-            <bool>true</bool>
-           </property>
-           <property name="autoExclusive">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
       </layout>
      </widget>
     </item>
@@ -1355,7 +1216,7 @@ height: 40px;</string>
        <string notr="true">background-color:#070F2B;</string>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="dashboard_widget">
        <layout class="QVBoxLayout" name="verticalLayout_26">
@@ -4951,14 +4812,8 @@ border-radius:0.5px;</string>
            </spacer>
           </item>
           <item>
-           <widget class="QStackedWidget" name="graph_comparison_widget_stacked">
+           <widget class="QWidget" name="widget_5" native="true">
             <property name="minimumSize">
-             <size>
-              <width>890</width>
-              <height>300</height>
-             </size>
-            </property>
-            <property name="maximumSize">
              <size>
               <width>890</width>
               <height>300</height>
@@ -4966,828 +4821,169 @@ border-radius:0.5px;</string>
             </property>
             <property name="styleSheet">
              <string notr="true">background-color: #535C91;
-border-radius: 23px;</string>
+border-radius: 23px;
+color:white;
+
+</string>
             </property>
-            <widget class="QWidget" name="weekly_compariso_page">
-             <widget class="QLabel" name="graph_comparison_sixth_day_label">
-              <property name="geometry">
-               <rect>
-                <x>680</x>
-                <y>240</y>
-                <width>47</width>
-                <height>13</height>
-               </rect>
-              </property>
-              <property name="font">
-               <font>
-                <family>Poppins</family>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">color: rgba(255,250,250,1);</string>
-              </property>
-              <property name="text">
-               <string>22 Fri</string>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
-              </property>
-             </widget>
-             <widget class="QLabel" name="graph_comparison_third_line_label">
-              <property name="geometry">
-               <rect>
-                <x>30</x>
-                <y>145</y>
-                <width>47</width>
-                <height>13</height>
-               </rect>
-              </property>
-              <property name="font">
-               <font>
-                <family>Poppins</family>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">color: rgba(255,250,250,0.6);</string>
-              </property>
-              <property name="text">
-               <string>$10k</string>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-              </property>
-             </widget>
-             <widget class="QLabel" name="label_153">
-              <property name="geometry">
-               <rect>
-                <x>100</x>
-                <y>150</y>
-                <width>771</width>
-                <height>1</height>
-               </rect>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">background-color:rgba(250, 250, 250, 0.6);</string>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-             </widget>
-             <widget class="QLabel" name="graph_comparison_second_this_week_label">
-              <property name="geometry">
-               <rect>
-                <x>264</x>
-                <y>120</y>
-                <width>20</width>
-                <height>111</height>
-               </rect>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">background-color:#1B1A55;
-border-top-left-radius:5px;
-border-top-right-radius:5px;</string>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-             </widget>
-             <widget class="QLabel" name="graph_comparison_fourth_last_week_label">
-              <property name="geometry">
-               <rect>
-                <x>464</x>
-                <y>90</y>
-                <width>16</width>
-                <height>141</height>
-               </rect>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">background-color:white;
-border-top-left-radius:5px;
-border-top-right-radius:5px;</string>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-             </widget>
-             <widget class="QLabel" name="graph_comparison_fourth_line_label">
-              <property name="geometry">
-               <rect>
-                <x>30</x>
-                <y>185</y>
-                <width>47</width>
-                <height>13</height>
-               </rect>
-              </property>
-              <property name="font">
-               <font>
-                <family>Poppins</family>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">color: rgba(255,250,250,0.6);</string>
-              </property>
-              <property name="text">
-               <string>$2k</string>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-              </property>
-             </widget>
-             <widget class="QLabel" name="label_157">
-              <property name="geometry">
-               <rect>
-                <x>100</x>
-                <y>230</y>
-                <width>771</width>
-                <height>1</height>
-               </rect>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">background-color:rgba(250, 250, 250, 0.6);</string>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-             </widget>
-             <widget class="QLabel" name="graph_comparison_third_last_week_label">
-              <property name="geometry">
-               <rect>
-                <x>354</x>
-                <y>90</y>
-                <width>16</width>
-                <height>141</height>
-               </rect>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">background-color:white;
-border-top-left-radius:5px;
-border-top-right-radius:5px;</string>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-             </widget>
-             <widget class="QLabel" name="label_159">
-              <property name="geometry">
-               <rect>
-                <x>100</x>
-                <y>190</y>
-                <width>771</width>
-                <height>1</height>
-               </rect>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">background-color:rgba(250, 250, 250, 0.6);</string>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-             </widget>
-             <widget class="QLabel" name="graph_comparison_fourth_this_week_label">
-              <property name="geometry">
-               <rect>
-                <x>484</x>
-                <y>120</y>
-                <width>20</width>
-                <height>111</height>
-               </rect>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">background-color:#1B1A55;
-border-top-left-radius:5px;
-border-top-right-radius:5px;</string>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-             </widget>
-             <widget class="QLabel" name="graph_comparison_sixth_this_week_label">
-              <property name="geometry">
-               <rect>
-                <x>704</x>
-                <y>120</y>
-                <width>20</width>
-                <height>111</height>
-               </rect>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">background-color:#1B1A55;
-border-top-left-radius:5px;
-border-top-right-radius:5px;</string>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-             </widget>
-             <widget class="QLabel" name="graph_comparison_first_line_label">
-              <property name="geometry">
-               <rect>
-                <x>30</x>
-                <y>65</y>
-                <width>47</width>
-                <height>13</height>
-               </rect>
-              </property>
-              <property name="font">
-               <font>
-                <family>Poppins</family>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">color: rgba(255,250,250,0.6);</string>
-              </property>
-              <property name="text">
-               <string>$250k</string>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-              </property>
-             </widget>
-             <widget class="QLabel" name="graph_comparison_fourth_day_label">
-              <property name="geometry">
-               <rect>
-                <x>460</x>
-                <y>240</y>
-                <width>47</width>
-                <height>13</height>
-               </rect>
-              </property>
-              <property name="font">
-               <font>
-                <family>Poppins</family>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">color: rgba(255,250,250,1);</string>
-              </property>
-              <property name="text">
-               <string>20 Wed</string>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
-              </property>
-             </widget>
-             <widget class="QLabel" name="graph_comparison_seventh_this_week_label">
-              <property name="geometry">
-               <rect>
-                <x>824</x>
-                <y>120</y>
-                <width>20</width>
-                <height>111</height>
-               </rect>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">background-color:#1B1A55;
-border-top-left-radius:5px;
-border-top-right-radius:5px;</string>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-             </widget>
-             <widget class="QLabel" name="graph_comparison_fifth_day_label">
-              <property name="geometry">
-               <rect>
-                <x>560</x>
-                <y>240</y>
-                <width>47</width>
-                <height>13</height>
-               </rect>
-              </property>
-              <property name="font">
-               <font>
-                <family>Poppins</family>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">color: rgba(255,250,250,1);</string>
-              </property>
-              <property name="text">
-               <string>21 Thu</string>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
-              </property>
-             </widget>
-             <widget class="QLabel" name="label_166">
-              <property name="geometry">
-               <rect>
-                <x>100</x>
-                <y>70</y>
-                <width>771</width>
-                <height>1</height>
-               </rect>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">background-color:rgba(250, 250, 250, 0.6);</string>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-             </widget>
-             <widget class="QLabel" name="graph_comparison_second_line_label">
-              <property name="geometry">
-               <rect>
-                <x>30</x>
-                <y>105</y>
-                <width>47</width>
-                <height>13</height>
-               </rect>
-              </property>
-              <property name="font">
-               <font>
-                <family>Poppins</family>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">color: rgba(255,250,250,0.6);</string>
-              </property>
-              <property name="text">
-               <string>$50k</string>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-              </property>
-             </widget>
-             <widget class="QLabel" name="graph_comparison_third_day_label">
-              <property name="geometry">
-               <rect>
-                <x>350</x>
-                <y>240</y>
-                <width>47</width>
-                <height>13</height>
-               </rect>
-              </property>
-              <property name="font">
-               <font>
-                <family>Poppins</family>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">color: rgba(255,250,250,1);</string>
-              </property>
-              <property name="text">
-               <string>19 Tue</string>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
-              </property>
-             </widget>
-             <widget class="QLabel" name="graph_comparison_third_this_week_label">
-              <property name="geometry">
-               <rect>
-                <x>374</x>
-                <y>120</y>
-                <width>20</width>
-                <height>111</height>
-               </rect>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">background-color:#1B1A55;
-border-top-left-radius:5px;
-border-top-right-radius:5px;</string>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-             </widget>
-             <widget class="QLabel" name="label_170">
-              <property name="geometry">
-               <rect>
-                <x>100</x>
-                <y>110</y>
-                <width>771</width>
-                <height>1</height>
-               </rect>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">background-color:rgba(250, 250, 250, 0.6);</string>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-             </widget>
-             <widget class="QLabel" name="graph_comparison_fifth_this_week_label">
-              <property name="geometry">
-               <rect>
-                <x>584</x>
-                <y>120</y>
-                <width>20</width>
-                <height>111</height>
-               </rect>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">background-color:#1B1A55;
-border-top-left-radius:5px;
-border-top-right-radius:5px;</string>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-             </widget>
-             <widget class="QLabel" name="graph_comparison_seventh_day_label">
-              <property name="geometry">
-               <rect>
-                <x>800</x>
-                <y>240</y>
-                <width>47</width>
-                <height>13</height>
-               </rect>
-              </property>
-              <property name="font">
-               <font>
-                <family>Poppins</family>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">color: rgba(255,250,250,1);</string>
-              </property>
-              <property name="text">
-               <string>23 Sat</string>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
-              </property>
-             </widget>
-             <widget class="QComboBox" name="graph_comparison_combobox">
-              <property name="geometry">
-               <rect>
-                <x>40</x>
-                <y>25</y>
-                <width>171</width>
-                <height>21</height>
-               </rect>
-              </property>
-              <property name="font">
-               <font>
-                <family>Poppins</family>
-                <pointsize>10</pointsize>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">QComboBox
-{
-	color:white;
-	background-color:transparent;
-}
-QComboBox:editable {
-    color: white;
-	background-color:transparent;
-}
-
-QComboBox::drop-down
-{
-	border:none;
-    color: white;
-	background-color:transparent;
-}
-
-QComboBox::down-arrow
-{
-	image: url(:/img/img/chevron-down.svg);
-	width:32px;
-	height:32px;
-	margin-right:20px;
-    color: white;
-	background-color:transparent;
-}
-QComboBox::down-arrow:on
-{	
-	image: url(:/img/img/chevron-up.svg);
-	width:32px;
-	height:32px;
-	margin-right:20px;
-    color: white;
-	background-color:transparent;
-}</string>
-              </property>
-              <item>
-               <property name="text">
-                <string>Weekly Comparison</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>Deneme</string>
-               </property>
-              </item>
-             </widget>
-             <widget class="QLabel" name="graph_comparison_first_day_label">
-              <property name="geometry">
-               <rect>
-                <x>150</x>
-                <y>240</y>
-                <width>47</width>
-                <height>13</height>
-               </rect>
-              </property>
-              <property name="font">
-               <font>
-                <family>Poppins</family>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">color: rgba(255,250,250,1);</string>
-              </property>
-              <property name="text">
-               <string>17 Sun</string>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
-              </property>
-             </widget>
-             <widget class="QLabel" name="graph_comparison_second_last_week_label">
-              <property name="geometry">
-               <rect>
-                <x>244</x>
-                <y>90</y>
-                <width>16</width>
-                <height>141</height>
-               </rect>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">background-color:white;
-border-top-left-radius:5px;
-border-top-right-radius:5px;</string>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-             </widget>
-             <widget class="QLabel" name="graph_comparison_fifth_line_label">
-              <property name="geometry">
-               <rect>
-                <x>30</x>
-                <y>225</y>
-                <width>47</width>
-                <height>13</height>
-               </rect>
-              </property>
-              <property name="font">
-               <font>
-                <family>Poppins</family>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">color: rgba(255,250,250,0.6);</string>
-              </property>
-              <property name="text">
-               <string>$0</string>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-              </property>
-             </widget>
-             <widget class="QLabel" name="graph_comparison_sixth_last_week_label">
-              <property name="geometry">
-               <rect>
-                <x>684</x>
-                <y>90</y>
-                <width>16</width>
-                <height>141</height>
-               </rect>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">background-color:white;
-border-top-left-radius:5px;
-border-top-right-radius:5px;</string>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-             </widget>
-             <widget class="QLabel" name="graph_comparison_first_this_week_label">
-              <property name="geometry">
-               <rect>
-                <x>174</x>
-                <y>120</y>
-                <width>20</width>
-                <height>111</height>
-               </rect>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">background-color:#1B1A55;
-border-top-left-radius:5px;
-border-top-right-radius:5px;</string>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-             </widget>
-             <widget class="QLabel" name="graph_comparison_seventh_last_week_label">
-              <property name="geometry">
-               <rect>
-                <x>804</x>
-                <y>90</y>
-                <width>16</width>
-                <height>141</height>
-               </rect>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">background-color:white;
-border-top-left-radius:5px;
-border-top-right-radius:5px;</string>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-             </widget>
-             <widget class="QLabel" name="graph_comparison_first_last_week_label">
-              <property name="geometry">
-               <rect>
-                <x>154</x>
-                <y>90</y>
-                <width>16</width>
-                <height>141</height>
-               </rect>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">background-color:white;
-border-top-left-radius:5px;
-border-top-right-radius:5px;</string>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-             </widget>
-             <widget class="QLabel" name="graph_comparison_second_day_label">
-              <property name="geometry">
-               <rect>
-                <x>240</x>
-                <y>240</y>
-                <width>47</width>
-                <height>13</height>
-               </rect>
-              </property>
-              <property name="font">
-               <font>
-                <family>Poppins</family>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">color: rgba(255,250,250,1);</string>
-              </property>
-              <property name="text">
-               <string>18 Mon</string>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
-              </property>
-             </widget>
-             <widget class="QLabel" name="graph_comparison_fifth_last_week_label">
-              <property name="geometry">
-               <rect>
-                <x>564</x>
-                <y>90</y>
-                <width>16</width>
-                <height>141</height>
-               </rect>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">background-color:white;
-border-top-left-radius:5px;
-border-top-right-radius:5px;</string>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-             </widget>
-             <widget class="QWidget" name="thi_week_color_widget" native="true">
-              <property name="geometry">
-               <rect>
-                <x>660</x>
-                <y>10</y>
-                <width>16</width>
-                <height>11</height>
-               </rect>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>16</width>
-                <height>11</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>16</width>
-                <height>11</height>
-               </size>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">background-color:#1B1A55;
-border-radius:3px;</string>
-              </property>
-             </widget>
-             <widget class="QWidget" name="last_week_color_widget" native="true">
-              <property name="geometry">
-               <rect>
-                <x>770</x>
-                <y>10</y>
-                <width>16</width>
-                <height>11</height>
-               </rect>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>16</width>
-                <height>11</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>16</width>
-                <height>11</height>
-               </size>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">background-color:white;
-border-radius:3px;</string>
-              </property>
-             </widget>
-             <widget class="QLabel" name="this_week_label">
-              <property name="geometry">
-               <rect>
-                <x>680</x>
-                <y>9</y>
-                <width>81</width>
-                <height>16</height>
-               </rect>
-              </property>
-              <property name="font">
-               <font>
-                <family>Poppins</family>
-                <pointsize>10</pointsize>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">background-color:transparent;
-color:white;</string>
-              </property>
-              <property name="text">
-               <string>This week</string>
-              </property>
-             </widget>
-             <widget class="QLabel" name="last_week_label">
-              <property name="geometry">
-               <rect>
-                <x>790</x>
-                <y>9</y>
-                <width>81</width>
-                <height>16</height>
-               </rect>
-              </property>
-              <property name="font">
-               <font>
-                <family>Poppins</family>
-                <pointsize>10</pointsize>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">background-color:transparent;
-color:white;</string>
-              </property>
-              <property name="text">
-               <string>Last week</string>
-              </property>
-             </widget>
-             <zorder>graph_comparison_sixth_day_label</zorder>
-             <zorder>graph_comparison_third_line_label</zorder>
-             <zorder>label_153</zorder>
-             <zorder>graph_comparison_fourth_last_week_label</zorder>
-             <zorder>graph_comparison_fourth_line_label</zorder>
-             <zorder>label_157</zorder>
-             <zorder>graph_comparison_third_last_week_label</zorder>
-             <zorder>label_159</zorder>
-             <zorder>graph_comparison_sixth_this_week_label</zorder>
-             <zorder>graph_comparison_first_line_label</zorder>
-             <zorder>graph_comparison_fourth_day_label</zorder>
-             <zorder>graph_comparison_seventh_this_week_label</zorder>
-             <zorder>graph_comparison_fifth_day_label</zorder>
-             <zorder>label_166</zorder>
-             <zorder>graph_comparison_second_line_label</zorder>
-             <zorder>graph_comparison_third_day_label</zorder>
-             <zorder>label_170</zorder>
-             <zorder>graph_comparison_seventh_day_label</zorder>
-             <zorder>graph_comparison_combobox</zorder>
-             <zorder>graph_comparison_first_day_label</zorder>
-             <zorder>graph_comparison_second_last_week_label</zorder>
-             <zorder>graph_comparison_fifth_line_label</zorder>
-             <zorder>graph_comparison_sixth_last_week_label</zorder>
-             <zorder>graph_comparison_first_this_week_label</zorder>
-             <zorder>graph_comparison_seventh_last_week_label</zorder>
-             <zorder>graph_comparison_first_last_week_label</zorder>
-             <zorder>graph_comparison_second_day_label</zorder>
-             <zorder>graph_comparison_fifth_last_week_label</zorder>
-             <zorder>graph_comparison_fifth_this_week_label</zorder>
-             <zorder>graph_comparison_fourth_this_week_label</zorder>
-             <zorder>graph_comparison_third_this_week_label</zorder>
-             <zorder>graph_comparison_second_this_week_label</zorder>
-             <zorder>thi_week_color_widget</zorder>
-             <zorder>last_week_color_widget</zorder>
-             <zorder>this_week_label</zorder>
-             <zorder>last_week_label</zorder>
+            <widget class="QChartView" name="barchart_view">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>20</y>
+               <width>890</width>
+               <height>280</height>
+              </rect>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>890</width>
+               <height>280</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>890</width>
+               <height>280</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>Poppins</family>
+               <pointsize>10</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: #535C91;
+border-radius: 23px;
+color:white;
+</string>
+             </property>
             </widget>
-            <widget class="QWidget" name="page_5"/>
+            <widget class="QLabel" name="this_week_label">
+             <property name="geometry">
+              <rect>
+               <x>790</x>
+               <y>9</y>
+               <width>81</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <family>Poppins</family>
+               <pointsize>10</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color:transparent;
+color:white;</string>
+             </property>
+             <property name="text">
+              <string>This week</string>
+             </property>
+            </widget>
+            <widget class="QWidget" name="last_week_color_widget" native="true">
+             <property name="geometry">
+              <rect>
+               <x>660</x>
+               <y>11</y>
+               <width>16</width>
+               <height>11</height>
+              </rect>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>16</width>
+               <height>11</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16</width>
+               <height>11</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color:white;
+border-radius:3px;</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="last_week_label">
+             <property name="geometry">
+              <rect>
+               <x>680</x>
+               <y>9</y>
+               <width>81</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <family>Poppins</family>
+               <pointsize>10</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color:transparent;
+color:white;</string>
+             </property>
+             <property name="text">
+              <string>Last week</string>
+             </property>
+            </widget>
+            <widget class="QWidget" name="thi_week_color_widget" native="true">
+             <property name="geometry">
+              <rect>
+               <x>770</x>
+               <y>11</y>
+               <width>16</width>
+               <height>11</height>
+              </rect>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>16</width>
+               <height>11</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16</width>
+               <height>11</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color:#1B1A55;
+border-radius:3px;</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="this_week_label_2">
+             <property name="geometry">
+              <rect>
+               <x>20</x>
+               <y>10</y>
+               <width>151</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <family>Poppins</family>
+               <pointsize>10</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+               <underline>true</underline>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color:transparent;
+color:white;</string>
+             </property>
+             <property name="text">
+              <string>Weekly Comparison</string>
+             </property>
+            </widget>
            </widget>
           </item>
           <item>
@@ -5820,7 +5016,82 @@ color:white;</string>
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="page_2">
+      <widget class="QWidget" name="analist_page">
+       <widget class="QLabel" name="label_8">
+        <property name="geometry">
+         <rect>
+          <x>630</x>
+          <y>380</y>
+          <width>721</width>
+          <height>131</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Poppins</family>
+          <pointsize>72</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color:white;
+background-color:transparent;</string>
+        </property>
+        <property name="text">
+         <string>ANALIST PAGE</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="performance_page">
+       <widget class="QLabel" name="label_9">
+        <property name="geometry">
+         <rect>
+          <x>400</x>
+          <y>420</y>
+          <width>961</width>
+          <height>121</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Poppins</family>
+          <pointsize>72</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color:white;
+background-color:transparent;</string>
+        </property>
+        <property name="text">
+         <string>PERFORMANCE PAGE</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="bills_page">
+       <widget class="QLabel" name="label_10">
+        <property name="geometry">
+         <rect>
+          <x>550</x>
+          <y>390</y>
+          <width>861</width>
+          <height>171</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Poppins</family>
+          <pointsize>72</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color:white;
+background-color:transparent;</string>
+        </property>
+        <property name="text">
+         <string>BILLS PAGE</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="wallet_page">
        <widget class="QWidget" name="total_balance_widget_2" native="true">
         <property name="geometry">
          <rect>
@@ -6342,11 +5613,93 @@ background-color:transparent;</string>
         </property>
        </widget>
       </widget>
+      <widget class="QWidget" name="goal_page">
+       <widget class="QLabel" name="label_11">
+        <property name="geometry">
+         <rect>
+          <x>550</x>
+          <y>400</y>
+          <width>571</width>
+          <height>161</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Poppins</family>
+          <pointsize>72</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color:white;
+background-color:transparent;</string>
+        </property>
+        <property name="text">
+         <string>GOAL PAGE</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="settings_page">
+       <widget class="QLabel" name="label_12">
+        <property name="geometry">
+         <rect>
+          <x>510</x>
+          <y>390</y>
+          <width>701</width>
+          <height>201</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Poppins</family>
+          <pointsize>72</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color:white;
+background-color:transparent;</string>
+        </property>
+        <property name="text">
+         <string>SETTINGS PAGE</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="profile_page">
+       <widget class="QLabel" name="label_13">
+        <property name="geometry">
+         <rect>
+          <x>540</x>
+          <y>350</y>
+          <width>661</width>
+          <height>231</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Poppins</family>
+          <pointsize>72</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color:white;
+background-color:transparent;</string>
+        </property>
+        <property name="text">
+         <string>PROFILE PAGE</string>
+        </property>
+       </widget>
+      </widget>
      </widget>
     </item>
    </layout>
   </widget>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QChartView</class>
+   <extends>QGraphicsView</extends>
+   <header>qchartview.h</header>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="dashboard.qrc"/>
  </resources>
