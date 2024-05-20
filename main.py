@@ -2,6 +2,7 @@ import sys
 from PySide6.QtCore import QTimer
 from PySide6.QtWidgets import QApplication, QMainWindow
 from PySide6.QtCore import Qt
+from firmy_db import Data
 
 ##########################  PAGES  ##########################
 from GUI.ui_dashboard import Ui_MainWindow as Ui_Dashboard
@@ -137,13 +138,15 @@ class MainWindow(QMainWindow):
         self.show()
         QTimer.singleShot(5000, self.login)
 
+        self.database = Data('firmy_db.xlsx')
+
     def login(self):
         self.setWindowFlags(Qt.FramelessWindowHint)  # Frameless window for login screen
         self.ui = Ui_Login_Screen()
         self.ui.setupUi(self)
         self.show()
         self.ui.pushButton_3.clicked.connect(self.Click_to_Register)
-        self.ui.pushButton_2.clicked.connect(self.open_dashboard)
+        self.ui.pushButton_2.clicked.connect(self.check_login)
         self.ui.label_3.clicked.connect(self.forgetting_password)
 
     def Click_to_Register(self):
@@ -152,6 +155,26 @@ class MainWindow(QMainWindow):
         self.ui.setupUi(self)
         self.show()
         self.ui.kayitbuton.clicked.connect(self.register_user)
+
+    def register_user(self):
+        name = self.ui.isim.text()
+        surname = self.ui.soyadi.text()
+        email = self.ui.mail.text()
+        password = self.ui.sifre.text()
+
+        # Veritabanı sınıfındaki update_db fonksiyonunu çağırarak kullanıcıyı kaydet
+        self.database.update_db(name, surname, email, password)
+        self.login()
+    
+    def check_login(self):
+        email = self.ui.lineEdit.text()
+        password = self.ui.lineEdit_2.text()
+        result = Data().sign_db(email, password)
+        if result == True:
+            self.open_dashboard()
+        else:
+            print("Şifre Hatalı")
+
 
     def open_dashboard(self):
         self.close()  # Mevcut pencereyi kapat

@@ -1,73 +1,83 @@
 import pandas as pd
+import os
 from datetime import datetime
 
-class UserRegistration:
+class Data:
     def __init__(self, file_path):
         self.file_path = file_path
+        # Eğer dosya mevcut değilse, boş bir DataFrame oluşturarak dosyayı oluştur
+        if not os.path.exists(file_path):
+            self.data = pd.DataFrame(columns=['userID', 'firstName', 'lastName', 'eMail', 'password', 'keepMeSign'])
+            self.save()
+        else:
+            self.load_data()
 
-    def setup_database(self):
-        """
-        Veritabanı dosyasını oluşturur veya mevcut dosyayı okur.
-        """
-        try:
-            df = pd.read_excel(self.file_path)
-        except FileNotFoundError:
-            df = pd.DataFrame(columns=['UserID', 'FirstName', 'LastName', 'Email', 'Password'])
-            df.to_excel(self.file_path, index=False)
+    def load_data(self):
+        self.data = pd.read_excel(self.file_path)
+        self.columns = self.data.columns.tolist()
+        for column in self.columns:
+            setattr(self, column.lower(), self.data[column])
 
+    def search_db(self, email):
+        found = self.data[self.data['eMail'] == email]
+        if not found.empty:
+            password = found['password'].iloc[0]
+            input_password = input("Enter password for validation: ")
+            if input_password == password:
+                print("Password is correct.")
+            else:
+                print("Password is incorrect.")
+        else:
+            print("E-mail not found in the database.")
 
-    def generate_user_id(self):
-        """
-        Kullanıcı ID'si oluşturur. Bu ID kayıt yılı, ayı, günü, saati ve saniyeyi içerir.
-        """
-        now = datetime.now()
-        user_id = now.strftime('%Y%m%d%H%M%S')
-        return user_id
-
-    def register_user(self, first_name, last_name, email, password):
-        """
-        Yeni bir kullanıcı kaydeder.
-        :param first_name: Kullanıcının adı
-        :param last_name: Kullanıcının soyadı
-        :param email: Kullanıcının e-posta adresi
-        :param password: Kullanıcının şifresi
-        """
-        user_id = self.generate_user_id()
-        new_user = {
-            'UserID': user_id,
-            'FirstName': first_name,
-            'LastName': last_name,
-            'Email': email,
-            'Password': password
-        }
-        
-        try:
-            df = pd.read_excel(self.file_path)
-            new_user_series = pd.Series(new_user)
-            df = df.append(new_user_series, ignore_index=True)
-            df.to_excel(self.file_path, index=False)
-            print(f"Yeni kullanıcı başarıyla kaydedildi: {user_id}")
-        except Exception as e:
-            print(f"Kullanıcı kaydedilirken hata oluştu: {e}")
-
-    def authenticate_user(self, username, password):
-        #Kullanıcı doğrulaması
-        try:
-            df = pd.read_excel(self.file_path)
-            user = df[(df['Email'] == username) & (df['Password'] == password)]
-            if len(user) > 0:
+    def sign_db(self, email, password):
+        found = self.data[self.data['eMail'] == email]
+        if not found.empty:
+            if found['password'].iloc[0] == password:
+                print("Login successful.")
                 return True
             else:
-                return False
-        except Exception as e:
-            print(f"Kullanıcı doğrulanırken hata oluştu: {e}")
-            return False
+                print("Incorrect password.")
+        else:
+            print("E-mail not found in the database.")
+        return False
+
+    def update_db(self, name, surname, email, password):
+        # E-posta benzersiz mi kontrol et
+        if email in self.data['eMail'].values:
+            print("Error: This email is already registered.")
+            return
+
+        new_data = {'userID': [], 'firstName': [], 'lastName': [], 'eMail': [], 'password': [], 'keepMeSign': []}
+        for column in self.columns:
+            if column.lower() == 'userid':
+                current_time = datetime.now()
+                id_value = current_time.strftime('%y%m%d%H%M%S%f')
+                new_data['userID'].append(id_value)
+            elif column.lower() == 'firstname':
+                new_data['firstName'].append(name)
+            elif column.lower() == 'lastname':
+                new_data['lastName'].append(surname)
+            elif column.lower() == 'email':
+                new_data['eMail'].append(email)
+            elif column.lower() == 'password':
+                new_data['password'].append(password)
+            elif column.lower() == 'keepmesign':
+                new_data['keepMeSign'].append(None)
+            else:
+                print(f"Column {column} not found in the database.")
         
-if __name__ == "__main__":
-    user_reg = UserRegistration("user_database.xlsx")
-    user_reg.setup_database()
-    
-    user_reg.register_user()
-    
-    is_authenticated = user_reg.authenticate_user("", "")
-    print(f"Kullanıcı girişi {'başarılı' if is_authenticated else 'başarısız'}.")
+        # Yeni verileri DataFrame'e ekleyin
+        new_entries_df = pd.DataFrame(new_data)
+        self.data = pd.concat([self.data, new_entries_df], ignore_index=True)
+
+        # Veritabanını kaydet
+        self.save()
+
+    def save(self):
+        # Veritabanını Excel dosyasına kaydetme
+        self.data.to_excel(self.file_path, index=False)
+
+# Kullanım örneği:
+# Dosya yolu ile bir Data nesnesi oluşturulur
+database = Data('firmy_db.xlsx')

@@ -1,5 +1,5 @@
 from PySide6.QtWidgets import *
-from ui_register import Ui_Register
+from ..GUI.ui_register import Ui_Register
 from PySide6.QtCore import Qt
 from PySide6.QtGui import * 
 

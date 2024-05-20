@@ -188,7 +188,7 @@ class Ui_Login_Screen(object):
         self.pushButton.setText(QCoreApplication.translate("MainWindow", u"Fi-Wallet", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"Email Address: ", None))
         self.lineEdit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"example@email.com", None))
-        self.lineEdit_2.setPlaceholderText("")
+        self.lineEdit_2.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Password", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"Password:", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"Forgot password?", None))
         self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"  Login", None))
