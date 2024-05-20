@@ -46,7 +46,8 @@ class Data:
         # E-posta benzersiz mi kontrol et
         if email in self.data['eMail'].values:
             print("Error: This email is already registered.")
-            return
+            return 0
+        
 
         new_data = {'userID': [], 'firstName': [], 'lastName': [], 'eMail': [], 'password': [], 'keepMeSign': []}
         for column in self.columns:
@@ -73,6 +74,7 @@ class Data:
 
         # Veritabanını kaydet
         self.save()
+        return 1
 
     def save(self):
         # Veritabanını Excel dosyasına kaydetme

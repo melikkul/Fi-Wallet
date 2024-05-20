@@ -155,6 +155,7 @@ class MainWindow(QMainWindow):
         self.ui.setupUi(self)
         self.show()
         self.ui.kayitbuton.clicked.connect(self.register_user)
+        #self.ui.kayitbuton.clicked.connect(self.reset_styles) 
 
     def register_user(self):
         name = self.ui.isim.text()
@@ -162,10 +163,63 @@ class MainWindow(QMainWindow):
         email = self.ui.mail.text()
         password = self.ui.sifre.text()
 
+        # Reset styles before checking for empty fields
+        self.reset_styles()
+
+        if name == "":
+            self.ui.isim.setStyleSheet("background-color:white;\n"
+                                            "border: 2px solid red;\n"
+                                            "border-radius: 5px;")
+            return
+        elif surname == "":
+            self.ui.soyadi.setStyleSheet("background-color:white;\n"
+                                            "border: 2px solid red;\n"
+                                            "border-radius: 5px;")
+            return
+        elif email == "":
+            self.ui.mail.setStyleSheet("background-color:white;\n"
+                                            "border: 2px solid red;\n"
+                                            "border-radius: 5px;")
+            return
+        elif password == "":
+            self.ui.sifre.setStyleSheet("background-color:white;\n"
+                                            "border: 2px solid red;\n"
+                                            "border-radius: 5px;")
+            return
+        
+            # Check if the checkbox is checked
+        if not self.ui.onayla.isChecked():
+            # Display an error message or raise an exception
+            self.ui.onayla.setStyleSheet("background-color: transparent; color: red; font-weight: bold;")
+            print("Hata: Onay kutusu işaretlenmemiş!")
+            return
+
         # Veritabanı sınıfındaki update_db fonksiyonunu çağırarak kullanıcıyı kaydet
-        self.database.update_db(name, surname, email, password)
-        self.login()
+        reslut = self.database.update_db(name, surname, email, password)
+        if reslut == 1:
+            print("Kayıt Başarılı")
+            self.login()
+        elif reslut == 0:
+            self.ui.mail.setStyleSheet("background-color:white;\n"
+                                            "border: 2px solid red;\n"
+                                            "border-radius: 5px;")
+        else:
+            print("Hata!")
+
+
+        
     
+    def reset_styles(self):
+        self.ui.isim.setStyleSheet(u"background-color:white;\n"
+"border-radius:5px;")
+        self.ui.soyadi.setStyleSheet(u"background-color:white;\n"
+"border-radius:5px;")
+        self.ui.mail.setStyleSheet(u"background-color:white;\n"
+"border-radius:5px;")
+        self.ui.sifre.setStyleSheet(u"background-color:white;\n"
+"border-radius:5px;")
+        self.ui.onayla.setStyleSheet("background-color: transparent; color: white")
+
     def check_login(self):
         email = self.ui.lineEdit.text()
         password = self.ui.lineEdit_2.text()
