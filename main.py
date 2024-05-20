@@ -1,77 +1,171 @@
 import sys
 from PySide6.QtCore import QTimer
-from PySide6.QtWidgets import QApplication, QMainWindow, QPushButton
+from PySide6.QtWidgets import QApplication, QMainWindow
 from PySide6.QtCore import Qt
-from firmy_db import UserRegistration as db
-import time
 
 ##########################  PAGES  ##########################
-from GUI.ui_dashboard import Ui_MainWindow
-from charts import ChartyApp
+from GUI.ui_dashboard import Ui_MainWindow as Ui_Dashboard
 from GUI.ui_forgetting_password import Ui_Forgetting_Password
 from GUI.ui_login_screen import Ui_Login_Screen
 from GUI.ui_register import Ui_Register
 from GUI.ui_start_screen import Ui_Start_Screen
 ##############################################################
 
+from PySide6.QtGui import QBrush, QColor, QPainterPath
+from PySide6 import QtCharts
+
+class RoundedBar(QtCharts.QBarSet):
+    def __init__(self, label):
+        super().__init__(label)
+
+    def paint(self, painter, option, widget):
+        for i in range(len(self)):
+            rect = self.barRect(i)
+            path = QPainterPath()
+            path.addRoundedRect(rect, 10, 10)  # Radius of 10
+            # painter.fillPath(path, self.brush())
+
+class ChartyApp(QMainWindow, Ui_Dashboard):
+    def __init__(self, parent=None):
+        super(ChartyApp, self).__init__(parent)
+        self.setupUi(self)
+        self.minimize_slider_menu_widget.setHidden(True)
+        self.bar_graph()
+
+        self.dashboard_minimize_button.clicked.connect(self.switch_to_dashboard_page)
+        self.dashboard_button.clicked.connect(self.switch_to_dashboard_page)
+
+        self.analist_minimize_button.clicked.connect(self.switch_to_analist_page)
+        self.analist_button.clicked.connect(self.switch_to_analist_page)
+
+        self.performance_minimize_button.clicked.connect(self.switch_to_performance_page)
+        self.performance_button.clicked.connect(self.switch_to_performance_page)
+
+        self.bills_minimize_button.clicked.connect(self.switch_to_bills_page)
+        self.bills_button.clicked.connect(self.switch_to_bills_page)
+
+        self.wallet_minimize_button.clicked.connect(self.switch_to_wallet_page)
+        self.wallet_button.clicked.connect(self.switch_to_wallet_page)
+
+        self.goal_minimize_button.clicked.connect(self.switch_to_goal_page)
+        self.goal_button.clicked.connect(self.switch_to_goal_page)
+
+        self.settings_minimize_button.clicked.connect(self.switch_to_settings_page)
+        self.settings_button.clicked.connect(self.switch_to_settings_page)
+
+        self.profile_minimize_button.clicked.connect(self.switch_to_profile_page)
+        self.profile_button.clicked.connect(self.switch_to_profile_page)
+
+    def switch_to_dashboard_page(self):
+        self.main_screen_stacked_widget.setCurrentWidget(self.dashboard_widget)
+
+    def switch_to_analist_page(self):
+        self.main_screen_stacked_widget.setCurrentWidget(self.analist_page)
+
+    def switch_to_performance_page(self):
+        self.main_screen_stacked_widget.setCurrentWidget(self.performance_page)
+
+    def switch_to_bills_page(self):
+        self.main_screen_stacked_widget.setCurrentWidget(self.bills_page)
+
+    def switch_to_wallet_page(self):
+        self.main_screen_stacked_widget.setCurrentWidget(self.wallet_page)
+
+    def switch_to_goal_page(self):
+        self.main_screen_stacked_widget.setCurrentWidget(self.goal_page)
+
+    def switch_to_settings_page(self):
+        self.main_screen_stacked_widget.setCurrentWidget(self.settings_page)
+
+    def switch_to_profile_page(self):
+        self.main_screen_stacked_widget.setCurrentWidget(self.profile_page)
+
+    def bar_graph(self):
+        series = QtCharts.QBarSeries()
+        series.setName("Weekly Comparisons")
+
+        weeks = ["17 Sun", "18 Mon", "19 Tue", "20 Wed", "21 Thu", "22 Fri", "23 Sat"]
+        this_week = [18, 120, 35, 25, 3, 45, 40]
+        last_week = [12, 24, 31, 28, 5, 40, 24]
+
+        bar_set_this_week = RoundedBar("This Week")
+        bar_set_last_week = RoundedBar("Last Week")
+
+        for i in range(len(weeks)):
+            bar_set_last_week.append(last_week[i])
+            bar_set_this_week.append(this_week[i])
+
+        # Set bar colors using color codes
+        bar_set_this_week.setBrush(QBrush(QColor("#ffffff")))  # Beyaz renk
+        bar_set_last_week.setBrush(QBrush(QColor("#1B1A55")))  # Koyu mavi renk
+
+        series.append(bar_set_this_week)
+        series.append(bar_set_last_week)
+
+        chart = QtCharts.QChart()
+        chart.addSeries(series)
+        chart.setAnimationOptions(QtCharts.QChart.SeriesAnimations)
+
+        axis_x = QtCharts.QBarCategoryAxis()
+        axis_x.append(weeks)
+        axis_x.setLabelsBrush(QBrush(QColor("#FFFFFF")))
+        axis_x.setGridLineVisible(False)  # X eksenindeki çizgileri gizle
+        chart.addAxis(axis_x, Qt.AlignBottom)
+        series.attachAxis(axis_x)
+
+        axis_y = QtCharts.QValueAxis()
+        axis_y.setRange(0, max(max(this_week), max(last_week)) + 10)
+        axis_y.setLabelsBrush(QBrush(QColor("#FFFFFF")))
+        chart.addAxis(axis_y, Qt.AlignLeft)
+        series.attachAxis(axis_y)
+
+        # Set background color to light gray
+        chart.setBackgroundBrush(QBrush(QColor("#535C91")))  # Açık gri renk
+
+        # Remove title and legend
+        chart.setTitle("")
+        chart.legend().setVisible(False)
+
+        self.barchart_view.setChart(chart)
+
 class MainWindow(QMainWindow):
     def __init__(self):
-        super().__init__()      
+        super().__init__()
         self.ui = Ui_Start_Screen()
         self.ui.setupUi(self)
         self.setWindowFlags(Qt.FramelessWindowHint)
         self.show()
-        self.db = db("firmy_database_register.xlsx")  # FirmyDB sınıfından bir örnek oluşturuluyor
-        self.db.setup_database()  # Veritabanı kurulumu
         QTimer.singleShot(5000, self.login)
 
     def login(self):
+        self.setWindowFlags(Qt.FramelessWindowHint)  # Frameless window for login screen
         self.ui = Ui_Login_Screen()
         self.ui.setupUi(self)
         self.show()
         self.ui.pushButton_3.clicked.connect(self.Click_to_Register)
-        self.ui.pushButton_2.clicked.connect(self.dashboard)
+        self.ui.pushButton_2.clicked.connect(self.open_dashboard)
         self.ui.label_3.clicked.connect(self.forgetting_password)
-        username = "example_username"
-        password = "example_password"
-        if self.db.authenticate_user(username, password):
-            print("Kullanıcı girişi başarılı.")
-        else:
-            print("Kullanıcı girişi başarısız.")
 
     def Click_to_Register(self):
+        self.setWindowFlags(Qt.FramelessWindowHint)  # Frameless window for register screen
         self.ui = Ui_Register()
         self.ui.setupUi(self)
         self.show()
         self.ui.kayitbuton.clicked.connect(self.register_user)
-        
-    def register_user(self):
-        first_name = self.ui.isim.text()
-        last_name = self.ui.soyadi.text()
-        email = self.ui.mail.text()
-        password = self.ui.sifre.text()
-        self.db.register_user(first_name, last_name, email, password)
-        self.login()
 
-        
-
-    def dashboard(self):
-        self.ui = ChartyApp()
-        self.ui.setupUi(self)
-        self.ui.showMaximized()
-
+    def open_dashboard(self):
+        self.close()  # Mevcut pencereyi kapat
+        self.dashboard_window = ChartyApp()  # Yeni dashboard penceresini oluştur
+        self.dashboard_window.setWindowFlags(Qt.Window)  # Normal window for dashboard screen
+        self.dashboard_window.showMaximized()  # Dashboard ekranını maximize yap
 
     def forgetting_password(self):
+        self.setWindowFlags(Qt.FramelessWindowHint)  # Frameless window for forgetting password screen
         self.ui = Ui_Forgetting_Password()
         self.ui.setupUi(self)
         self.show()
-        
-    def closeEvent(self, event):
-        self.db.close()  # Uygulama kapatıldığında veritabanı bağlantısı kapatılıyor
-                                        
 
 if __name__ == "__main__":
     app = QApplication([])
     window = MainWindow()
     app.exec()
-    
