@@ -45,7 +45,6 @@ class Data:
     def update_db(self, name, surname, email, password):
         # E-posta benzersiz mi kontrol et
         if email in self.data['eMail'].values:
-            print("Error: This email is already registered.")
             return 0
         
 

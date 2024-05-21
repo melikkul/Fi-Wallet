@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'untitled.ui'
+## Form generated from reading UI file 'register.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.6.3
+## Created by: Qt User Interface Compiler version 6.7.0
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -20,14 +20,6 @@ from PySide6.QtWidgets import (QApplication, QCheckBox, QLabel, QLineEdit,
 from GRC import register_rc
 
 class Ui_Register(object):
-                 
-    def toggle_password_visibility(self):
-        if self.sifre.echoMode() == QLineEdit.Password:
-                self.sifre.setEchoMode(QLineEdit.Normal)
-        else:
-                self.sifre.setEchoMode(QLineEdit.Password)
-
-
     def setupUi(self, anasayfa):
         if not anasayfa.objectName():
             anasayfa.setObjectName(u"anasayfa")
@@ -45,7 +37,7 @@ class Ui_Register(object):
         font.setPointSize(25)
         self.sayfa3.setFont(font)
         self.sayfa3.setStyleSheet(u"background-color: qlineargradient(spread:reflect, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(83, 92, 145, 255), stop:1 rgba(27, 26, 85, 255));\n"
-                                  "border-radius: 75px;")
+                                  "border-radius: 75px;\n")
         self.pushButton = QPushButton(self.sayfa3)
         self.pushButton.setObjectName(u"pushButton")
         self.pushButton.setGeometry(QRect(260, 0, 291, 141))
@@ -80,9 +72,9 @@ class Ui_Register(object):
 "color:white;")
         self.firstname = QLabel(self.sayfa3)
         self.firstname.setObjectName(u"firstname")
-        self.firstname.setGeometry(QRect(250, 260, 101, 31))
+        self.firstname.setGeometry(QRect(220, 260, 101, 31))
         font4 = QFont()
-        font4.setPointSize(9)
+        font4.setPointSize(10)
         self.firstname.setFont(font4)
         self.firstname.setStyleSheet(u"background-color:transparent;\n"
 "color:white;")
@@ -94,46 +86,46 @@ class Ui_Register(object):
 "color:white;")
         self.email = QLabel(self.sayfa3)
         self.email.setObjectName(u"email")
-        self.email.setGeometry(QRect(250, 310, 101, 31))
+        self.email.setGeometry(QRect(220, 310, 101, 31))
         self.email.setFont(font4)
         self.email.setStyleSheet(u"background-color:transparent;\n"
 "color:white;")
         self.password = QLabel(self.sayfa3)
         self.password.setObjectName(u"password")
-        self.password.setGeometry(QRect(250, 360, 101, 31))
+        self.password.setGeometry(QRect(220, 360, 101, 31))
         self.password.setFont(font4)
         self.password.setStyleSheet(u"background-color:transparent;\n"
 "color:white;")
         self.isim = QLineEdit(self.sayfa3)
         self.isim.setObjectName(u"isim")
-        self.isim.setGeometry(QRect(250, 290, 113, 25))
+        self.isim.setGeometry(QRect(222, 290, 141, 25))
         font5 = QFont()
         font5.setFamilies([u"Poppins"])
-        font5.setPointSize(8)
+        font5.setPointSize(10)
         self.isim.setFont(font5)
         self.isim.setStyleSheet(u"background-color:white;\n"
 "border-radius:5px;")
         self.soyadi = QLineEdit(self.sayfa3)
         self.soyadi.setObjectName(u"soyadi")
-        self.soyadi.setGeometry(QRect(450, 290, 111, 25))
+        self.soyadi.setGeometry(QRect(450, 290, 151, 25))
         self.soyadi.setFont(font5)
         self.soyadi.setStyleSheet(u"background-color:white;\n"
 "border-radius:5px;")
         self.mail = QLineEdit(self.sayfa3)
         self.mail.setObjectName(u"mail")
-        self.mail.setGeometry(QRect(250, 340, 311, 25))
+        self.mail.setGeometry(QRect(220, 340, 381, 25))
         self.mail.setFont(font5)
         self.mail.setStyleSheet(u"background-color:white;\n"
 "border-radius:5px;")
         self.onayla = QCheckBox(self.sayfa3)
         self.onayla.setObjectName(u"onayla")
-        self.onayla.setGeometry(QRect(260, 420, 351, 20))
+        self.onayla.setGeometry(QRect(240, 430, 351, 20))
         self.onayla.setFont(font5)
         self.onayla.setStyleSheet(u"background-color:transparent;\n"
 "color:white;")
         self.sifre = QLineEdit(self.sayfa3)
         self.sifre.setObjectName(u"sifre")
-        self.sifre.setGeometry(QRect(250, 390, 311, 25))
+        self.sifre.setGeometry(QRect(220, 390, 381, 25))
         self.sifre.setFont(font5)
         self.sifre.setStyleSheet(u"background-color:white;\n"
 "border-radius:5px;")
@@ -151,7 +143,7 @@ class Ui_Register(object):
 "border-radius:5px;")
         self.sifregoster = QCheckBox(self.sayfa3)
         self.sifregoster.setObjectName(u"sifregoster")
-        self.sifregoster.setGeometry(QRect(530, 390, 21, 20))
+        self.sifregoster.setGeometry(QRect(580, 390, 21, 20))
         self.sifregoster.setStyleSheet(u"QCheckBox{\n"
 "    background-color:white;\n"
 "    border-top-right-radius: 10px;\n"
@@ -173,10 +165,14 @@ class Ui_Register(object):
 "    \n"
 "\n"
 "}")
+        self.error = QLabel(self.sayfa3)
+        self.error.setObjectName(u"error")
+        self.error.setGeometry(QRect(186, 219, 441, 41))
+        self.error.setFont(font5)
+        self.error.setStyleSheet("background-color: transparent; color: red; font-weight: bold;")
+        self.error.setAlignment(Qt.AlignCenter)
         anasayfa.setCentralWidget(self.sayfa2)
-
-        
-        self.sifregoster.clicked.connect(self.toggle_password_visibility)
+        self.sifregoster.stateChanged.connect(self.toggle_password_visibility)
 
         self.retranslateUi(anasayfa)
 
@@ -213,5 +209,13 @@ class Ui_Register(object):
         self.sifre.setPlaceholderText(QCoreApplication.translate("anasayfa", u"*************", None))
         self.kayitbuton.setText(QCoreApplication.translate("anasayfa", u"Register", None))
         self.sifregoster.setText("")
+        self.error.setText("")
     # retranslateUi
+
+        
+    def toggle_password_visibility(self):
+                if self.sifre.echoMode() == QLineEdit.Password:
+                        self.sifre.setEchoMode(QLineEdit.Normal)
+                else:
+                        self.sifre.setEchoMode(QLineEdit.Password)
 

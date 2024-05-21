@@ -138,7 +138,7 @@ color:white;</string>
     <widget class="QLabel" name="firstname">
      <property name="geometry">
       <rect>
-       <x>250</x>
+       <x>220</x>
        <y>260</y>
        <width>101</width>
        <height>31</height>
@@ -146,7 +146,7 @@ color:white;</string>
      </property>
      <property name="font">
       <font>
-       <pointsize>9</pointsize>
+       <pointsize>10</pointsize>
       </font>
      </property>
      <property name="styleSheet">
@@ -168,7 +168,7 @@ color:white;</string>
      </property>
      <property name="font">
       <font>
-       <pointsize>9</pointsize>
+       <pointsize>10</pointsize>
       </font>
      </property>
      <property name="styleSheet">
@@ -182,7 +182,7 @@ color:white;</string>
     <widget class="QLabel" name="email">
      <property name="geometry">
       <rect>
-       <x>250</x>
+       <x>220</x>
        <y>310</y>
        <width>101</width>
        <height>31</height>
@@ -190,7 +190,7 @@ color:white;</string>
      </property>
      <property name="font">
       <font>
-       <pointsize>9</pointsize>
+       <pointsize>10</pointsize>
       </font>
      </property>
      <property name="styleSheet">
@@ -204,7 +204,7 @@ color:white;</string>
     <widget class="QLabel" name="password">
      <property name="geometry">
       <rect>
-       <x>250</x>
+       <x>220</x>
        <y>360</y>
        <width>101</width>
        <height>31</height>
@@ -212,7 +212,7 @@ color:white;</string>
      </property>
      <property name="font">
       <font>
-       <pointsize>9</pointsize>
+       <pointsize>10</pointsize>
       </font>
      </property>
      <property name="styleSheet">
@@ -226,16 +226,16 @@ color:white;</string>
     <widget class="QLineEdit" name="isim">
      <property name="geometry">
       <rect>
-       <x>250</x>
+       <x>222</x>
        <y>290</y>
-       <width>113</width>
+       <width>141</width>
        <height>25</height>
       </rect>
      </property>
      <property name="font">
       <font>
        <family>Poppins</family>
-       <pointsize>8</pointsize>
+       <pointsize>10</pointsize>
       </font>
      </property>
      <property name="accessibleName">
@@ -254,14 +254,14 @@ border-radius:5px;</string>
       <rect>
        <x>450</x>
        <y>290</y>
-       <width>111</width>
+       <width>151</width>
        <height>25</height>
       </rect>
      </property>
      <property name="font">
       <font>
        <family>Poppins</family>
-       <pointsize>8</pointsize>
+       <pointsize>10</pointsize>
       </font>
      </property>
      <property name="accessibleName">
@@ -278,16 +278,16 @@ border-radius:5px;</string>
     <widget class="QLineEdit" name="mail">
      <property name="geometry">
       <rect>
-       <x>250</x>
+       <x>220</x>
        <y>340</y>
-       <width>311</width>
+       <width>381</width>
        <height>25</height>
       </rect>
      </property>
      <property name="font">
       <font>
        <family>Poppins</family>
-       <pointsize>8</pointsize>
+       <pointsize>10</pointsize>
       </font>
      </property>
      <property name="accessibleName">
@@ -307,8 +307,8 @@ border-radius:5px;</string>
     <widget class="QCheckBox" name="onayla">
      <property name="geometry">
       <rect>
-       <x>260</x>
-       <y>420</y>
+       <x>240</x>
+       <y>430</y>
        <width>351</width>
        <height>20</height>
       </rect>
@@ -316,7 +316,7 @@ border-radius:5px;</string>
      <property name="font">
       <font>
        <family>Poppins</family>
-       <pointsize>8</pointsize>
+       <pointsize>10</pointsize>
       </font>
      </property>
      <property name="styleSheet">
@@ -330,16 +330,16 @@ color:white;</string>
     <widget class="QLineEdit" name="sifre">
      <property name="geometry">
       <rect>
-       <x>250</x>
+       <x>220</x>
        <y>390</y>
-       <width>311</width>
+       <width>381</width>
        <height>25</height>
       </rect>
      </property>
      <property name="font">
       <font>
        <family>Poppins</family>
-       <pointsize>8</pointsize>
+       <pointsize>10</pointsize>
       </font>
      </property>
      <property name="accessibleName">
@@ -387,7 +387,7 @@ border-radius:5px;</string>
     <widget class="QCheckBox" name="sifregoster">
      <property name="geometry">
       <rect>
-       <x>530</x>
+       <x>580</x>
        <y>390</y>
        <width>21</width>
        <height>20</height>
@@ -418,6 +418,32 @@ QCheckBox::indicator:unchecked{
      </property>
      <property name="text">
       <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="error">
+     <property name="geometry">
+      <rect>
+       <x>186</x>
+       <y>219</y>
+       <width>441</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Poppins</family>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: transparent;
+color: white;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
      </property>
     </widget>
    </widget>

@@ -170,28 +170,32 @@ class MainWindow(QMainWindow):
             self.ui.isim.setStyleSheet("background-color:white;\n"
                                             "border: 2px solid red;\n"
                                             "border-radius: 5px;")
+            self.ui.error.setText("Please enter your name!")
             return
         elif surname == "":
             self.ui.soyadi.setStyleSheet("background-color:white;\n"
                                             "border: 2px solid red;\n"
                                             "border-radius: 5px;")
+            self.ui.error.setText("Please enter your surname!")
             return
         elif email == "":
             self.ui.mail.setStyleSheet("background-color:white;\n"
                                             "border: 2px solid red;\n"
                                             "border-radius: 5px;")
+            self.ui.error.setText("Please enter your email!")
             return
         elif password == "":
             self.ui.sifre.setStyleSheet("background-color:white;\n"
                                             "border: 2px solid red;\n"
                                             "border-radius: 5px;")
+            self.ui.error.setText("Please enter your password!")
             return
         
             # Check if the checkbox is checked
         if not self.ui.onayla.isChecked():
             # Display an error message or raise an exception
             self.ui.onayla.setStyleSheet("background-color: transparent; color: red; font-weight: bold;")
-            print("Hata: Onay kutusu işaretlenmemiş!")
+            self.ui.error.setText("Please check the checkbox!")
             return
 
         # Veritabanı sınıfındaki update_db fonksiyonunu çağırarak kullanıcıyı kaydet
@@ -203,6 +207,7 @@ class MainWindow(QMainWindow):
             self.ui.mail.setStyleSheet("background-color:white;\n"
                                             "border: 2px solid red;\n"
                                             "border-radius: 5px;")
+            self.ui.error.setText("This email is already registered!")
         else:
             print("Hata!")
 
@@ -219,6 +224,7 @@ class MainWindow(QMainWindow):
         self.ui.sifre.setStyleSheet(u"background-color:white;\n"
 "border-radius:5px;")
         self.ui.onayla.setStyleSheet("background-color: transparent; color: white")
+        self.ui.error.setText("")
 
     def check_login(self):
         email = self.ui.lineEdit.text()
