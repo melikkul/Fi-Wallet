@@ -5,8 +5,9 @@ from datetime import datetime
 class Data:
     def __init__(self, file_path):
         self.file_path = file_path
+        self.columns = ['userID', 'firstName', 'lastName', 'eMail', 'password', 'keepMeSign', 'keepMeSignCount']
         if not os.path.exists(file_path):
-            self.data = pd.DataFrame(columns=['userID', 'firstName', 'lastName', 'eMail', 'password', 'keepMeSign', 'keepMeSignCount'])
+            self.data = pd.DataFrame(columns=self.columns)
             self.save()
         else:
             self.load_data()
