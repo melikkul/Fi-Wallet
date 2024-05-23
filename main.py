@@ -23,7 +23,7 @@ class RoundedBar(QtCharts.QBarSet):
         for i in range(len(self)):
             rect = self.barRect(i)
             path = QPainterPath()
-            path.addRoundedRect(rect, 10, 10)  # Radius of 10
+            path.addRoundedRect(rect, 10, 10)
             # painter.fillPath(path, self.brush())
 
 class ChartyApp(QMainWindow, Ui_Dashboard):
@@ -96,9 +96,8 @@ class ChartyApp(QMainWindow, Ui_Dashboard):
             bar_set_last_week.append(last_week[i])
             bar_set_this_week.append(this_week[i])
 
-        # Set bar colors using color codes
-        bar_set_this_week.setBrush(QBrush(QColor("#ffffff")))  # Beyaz renk
-        bar_set_last_week.setBrush(QBrush(QColor("#1B1A55")))  # Koyu mavi renk
+        bar_set_this_week.setBrush(QBrush(QColor("#ffffff")))
+        bar_set_last_week.setBrush(QBrush(QColor("#1B1A55")))
 
         series.append(bar_set_this_week)
         series.append(bar_set_last_week)
@@ -110,7 +109,7 @@ class ChartyApp(QMainWindow, Ui_Dashboard):
         axis_x = QtCharts.QBarCategoryAxis()
         axis_x.append(weeks)
         axis_x.setLabelsBrush(QBrush(QColor("#FFFFFF")))
-        axis_x.setGridLineVisible(False)  # X eksenindeki çizgileri gizle
+        axis_x.setGridLineVisible(False)
         chart.addAxis(axis_x, Qt.AlignBottom)
         series.attachAxis(axis_x)
 
@@ -120,10 +119,8 @@ class ChartyApp(QMainWindow, Ui_Dashboard):
         chart.addAxis(axis_y, Qt.AlignLeft)
         series.attachAxis(axis_y)
 
-        # Set background color to light gray
-        chart.setBackgroundBrush(QBrush(QColor("#535C91")))  # Açık gri renk
+        chart.setBackgroundBrush(QBrush(QColor("#535C91")))
 
-        # Remove title and legend
         chart.setTitle("")
         chart.legend().setVisible(False)
 
@@ -136,21 +133,37 @@ class MainWindow(QMainWindow):
         self.ui.setupUi(self)
         self.setWindowFlags(Qt.FramelessWindowHint)
         self.show()
-        QTimer.singleShot(5000, self.login)
+        QTimer.singleShot(5000, self.check_auto_login)
 
         self.database = Data('firmy_db.xlsx')
 
+    def check_auto_login(self):
+        # Check if there's a user with keepMeSign set to True
+        user = self.database.get_keep_me_signed_in_user()
+        if user is not None:
+            email = user['eMail']
+            keep_me_sign_count = user['keepMeSignCount']
+            
+            if keep_me_sign_count < 5:
+                self.database.increment_keep_me_sign_count(email)
+                self.open_dashboard()
+                return
+            else:
+                self.database.reset_keep_me_sign(email)
+        
+        self.login()
+
     def login(self):
-        self.setWindowFlags(Qt.FramelessWindowHint)  # Frameless window for login screen
+        self.setWindowFlags(Qt.FramelessWindowHint)
         self.ui = Ui_Login_Screen()
         self.ui.setupUi(self)
         self.show()
         self.ui.pushButton_3.clicked.connect(self.Click_to_Register)
         self.ui.pushButton_2.clicked.connect(self.check_login)
-        self.ui.label_3.clicked.connect(self.forgetting_password)
+        self.ui.label_3.mouseReleaseEvent = self.forgetting_password
 
     def Click_to_Register(self):
-        self.setWindowFlags(Qt.FramelessWindowHint)  # Frameless window for register screen
+        self.setWindowFlags(Qt.FramelessWindowHint)
         self.ui = Ui_Register()
         self.ui.setupUi(self)
         self.show()
@@ -163,8 +176,7 @@ class MainWindow(QMainWindow):
         email = self.ui.mail.text()
         password = self.ui.sifre.text()
 
-        # Reset styles before checking for empty fields
-        self.reset_styles()
+        self.reset_styles_register()
 
         if name == "":
             self.ui.isim.setStyleSheet("background-color:white;\n"
@@ -191,14 +203,11 @@ class MainWindow(QMainWindow):
             self.ui.error.setText("Please enter your password!")
             return
         
-            # Check if the checkbox is checked
         if not self.ui.onayla.isChecked():
-            # Display an error message or raise an exception
             self.ui.onayla.setStyleSheet("background-color: transparent; color: red; font-weight: bold;")
             self.ui.error.setText("Please check the checkbox!")
             return
 
-        # Veritabanı sınıfındaki update_db fonksiyonunu çağırarak kullanıcıyı kaydet
         reslut = self.database.update_db(name, surname, email, password)
         if reslut == 1:
             print("Kayıt Başarılı")
@@ -214,7 +223,7 @@ class MainWindow(QMainWindow):
 
         
     
-    def reset_styles(self):
+    def reset_styles_register(self):
         self.ui.isim.setStyleSheet(u"background-color:white;\n"
 "border-radius:5px;")
         self.ui.soyadi.setStyleSheet(u"background-color:white;\n"
@@ -229,21 +238,51 @@ class MainWindow(QMainWindow):
     def check_login(self):
         email = self.ui.lineEdit.text()
         password = self.ui.lineEdit_2.text()
-        result = Data().sign_db(email, password)
-        if result == True:
+
+        self.reset_stylesheet_login()
+
+        if email == "":
+            self.ui.lineEdit.setStyleSheet("background-color:white;\n"
+                                            "border: 2px solid red;\n"
+                                            "border-radius: 5px;")
+            self.ui.error.setText("Please enter your email!")
+            return
+
+        elif password == "":
+            self.ui.lineEdit_2.setStyleSheet("background-color:white;\n"
+                                            "border: 2px solid red;\n"
+                                            "border-radius: 5px;")
+            self.ui.error.setText("Please enter your password!")
+            return
+
+        keep = self.ui.checkBox_2.isChecked()
+
+        data_instance = Data('firmy_db.xlsx')
+        result = data_instance.sign_db(email, password)
+        if result:
+            data_instance.update_keep_me_signed_in(email, keep)
             self.open_dashboard()
         else:
-            print("Şifre Hatalı")
+            self.ui.error.setText("Incorrect email or password!")
+
+    def reset_stylesheet_login(self):
+
+        self.ui.lineEdit_2.setStyleSheet(u"background-color:white;\n"
+"border-radius:5px;")
+        self.ui.lineEdit.setStyleSheet(u"background-color:white;\n"
+"border-radius:5px;")
+        self.ui.error.setText("")
+
 
 
     def open_dashboard(self):
-        self.close()  # Mevcut pencereyi kapat
-        self.dashboard_window = ChartyApp()  # Yeni dashboard penceresini oluştur
-        self.dashboard_window.setWindowFlags(Qt.Window)  # Normal window for dashboard screen
-        self.dashboard_window.showMaximized()  # Dashboard ekranını maximize yap
+        self.close()
+        self.dashboard_window = ChartyApp()
+        self.dashboard_window.setWindowFlags(Qt.Window)
+        self.dashboard_window.showMaximized()
 
-    def forgetting_password(self):
-        self.setWindowFlags(Qt.FramelessWindowHint)  # Frameless window for forgetting password screen
+    def forgetting_password(self, event):
+        self.setWindowFlags(Qt.FramelessWindowHint)
         self.ui = Ui_Forgetting_Password()
         self.ui.setupUi(self)
         self.show()

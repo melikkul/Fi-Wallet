@@ -63,7 +63,7 @@ color:white;</string>
       <string>Fi-Wallet</string>
      </property>
      <property name="icon">
-      <iconset resource="login ekranı.qrc">
+      <iconset resource="login_screen.qrc">
        <normaloff>:/img/img/logo.drawio.svg</normaloff>:/img/img/logo.drawio.svg</iconset>
      </property>
      <property name="iconSize">
@@ -234,7 +234,7 @@ color: white;</string>
       <string>  Login</string>
      </property>
      <property name="icon">
-      <iconset resource="login ekranı.qrc">
+      <iconset resource="login_screen.qrc">
        <normaloff>:/img/img/log-in.svg</normaloff>:/img/img/log-in.svg</iconset>
      </property>
     </widget>
@@ -264,7 +264,7 @@ color: white;</string>
       <string>    Create an account</string>
      </property>
      <property name="icon">
-      <iconset resource="login ekranı.qrc">
+      <iconset resource="login_screen.qrc">
        <normaloff>:/img/img/arrow-right-circle.svg</normaloff>:/img/img/arrow-right-circle.svg</iconset>
      </property>
     </widget>
@@ -347,11 +347,37 @@ QCheckBox::indicator:unchecked{
       <string>Keep me signed in  </string>
      </property>
     </widget>
+    <widget class="QLabel" name="error">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>170</y>
+       <width>371</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Poppins</family>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:transparent;
+color:white;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
    </widget>
   </widget>
  </widget>
  <resources>
-  <include location="login ekranı.qrc"/>
+  <include location="login_screen.qrc"/>
  </resources>
  <connections/>
 </ui>

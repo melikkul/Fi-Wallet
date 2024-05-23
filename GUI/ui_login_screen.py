@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'login_screen.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.6.2
+## Created by: Qt User Interface Compiler version 6.7.0
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -18,14 +18,9 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWidgets import (QApplication, QCheckBox, QLabel, QLineEdit,
     QMainWindow, QPushButton, QSizePolicy, QWidget)
 from GRC import login_screen_rc
-from PySide6.QtWidgets import QLineEdit
 
 class Ui_Login_Screen(object):
-
-  
     def setupUi(self, MainWindow):
-        
-        
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
         MainWindow.resize(780, 590)
@@ -143,7 +138,6 @@ class Ui_Login_Screen(object):
 "     \n"
 "	image: url(:/img/img/eye-off.svg);\n"
 "}")
-        
         self.checkBox_2 = QCheckBox(self.widget)
         self.checkBox_2.setObjectName(u"checkBox_2")
         self.checkBox_2.setGeometry(QRect(210, 360, 151, 21))
@@ -172,14 +166,23 @@ class Ui_Login_Screen(object):
 "		image: url(:/img/img/circle.svg);\n"
 "\n"
 "}")
-        
-
+        self.error = QLabel(self.widget)
+        self.error.setObjectName(u"error")
+        self.error.setGeometry(QRect(210, 170, 371, 20))
+        font5 = QFont()
+        font5.setFamilies([u"Poppins"])
+        font5.setPointSize(10)
+        self.error.setFont(font5)
+        self.error.setStyleSheet(u"background-color:transparent;\n"
+"color:red;\n"
+"font-weight: bold;")
+        self.error.setAlignment(Qt.AlignCenter)
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
 
         QMetaObject.connectSlotsByName(MainWindow)
-        
+
         self.checkBox.stateChanged.connect(self.toggle_password_visibility)
     # setupUi
 
@@ -188,20 +191,18 @@ class Ui_Login_Screen(object):
         self.pushButton.setText(QCoreApplication.translate("MainWindow", u"Fi-Wallet", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"Email Address: ", None))
         self.lineEdit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"example@email.com", None))
-        self.lineEdit_2.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Password", None))
+        self.lineEdit_2.setPlaceholderText("")
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"Password:", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"Forgot password?", None))
         self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"  Login", None))
         self.pushButton_3.setText(QCoreApplication.translate("MainWindow", u"    Create an account", None))
         self.checkBox.setText("")
         self.checkBox_2.setText(QCoreApplication.translate("MainWindow", u"Keep me signed in  ", None))
-    
-    
+        self.error.setText("")
+    # retranslateUi
+
     def toggle_password_visibility(self):
         if self.lineEdit_2.echoMode() == QLineEdit.Password:
                 self.lineEdit_2.setEchoMode(QLineEdit.Normal)
         else:
                 self.lineEdit_2.setEchoMode(QLineEdit.Password)
-
-
-

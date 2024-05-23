@@ -5,9 +5,8 @@ from datetime import datetime
 class Data:
     def __init__(self, file_path):
         self.file_path = file_path
-        # Eğer dosya mevcut değilse, boş bir DataFrame oluşturarak dosyayı oluştur
         if not os.path.exists(file_path):
-            self.data = pd.DataFrame(columns=['userID', 'firstName', 'lastName', 'eMail', 'password', 'keepMeSign'])
+            self.data = pd.DataFrame(columns=['userID', 'firstName', 'lastName', 'eMail', 'password', 'keepMeSign', 'keepMeSignCount'])
             self.save()
         else:
             self.load_data()
@@ -43,12 +42,10 @@ class Data:
         return False
 
     def update_db(self, name, surname, email, password):
-        # E-posta benzersiz mi kontrol et
         if email in self.data['eMail'].values:
             return 0
-        
 
-        new_data = {'userID': [], 'firstName': [], 'lastName': [], 'eMail': [], 'password': [], 'keepMeSign': []}
+        new_data = {'userID': [], 'firstName': [], 'lastName': [], 'eMail': [], 'password': [], 'keepMeSign': [], 'keepMeSignCount': []}
         for column in self.columns:
             if column.lower() == 'userid':
                 current_time = datetime.now()
@@ -63,11 +60,12 @@ class Data:
             elif column.lower() == 'password':
                 new_data['password'].append(password)
             elif column.lower() == 'keepmesign':
-                new_data['keepMeSign'].append(None)
+                new_data['keepMeSign'].append(False)
+            elif column.lower() == 'keepmesigncount':
+                new_data['keepMeSignCount'].append(0)
             else:
                 print(f"Column {column} not found in the database.")
         
-        # Yeni verileri DataFrame'e ekleyin
         new_entries_df = pd.DataFrame(new_data)
         self.data = pd.concat([self.data, new_entries_df], ignore_index=True)
 
@@ -75,10 +73,26 @@ class Data:
         self.save()
         return 1
 
-    def save(self):
-        # Veritabanını Excel dosyasına kaydetme
-        self.data.to_excel(self.file_path, index=False)
+    def update_keep_me_signed_in(self, email, keep):
+        self.data.loc[self.data['eMail'] == email, 'keepMeSign'] = keep
+        if keep:
+            self.data.loc[self.data['eMail'] == email, 'keepMeSignCount'] = 0
+        self.save()
 
-# Kullanım örneği:
-# Dosya yolu ile bir Data nesnesi oluşturulur
-database = Data('firmy_db.xlsx')
+    def get_keep_me_signed_in_user(self):
+        found = self.data[self.data['keepMeSign'] == True]
+        if not found.empty:
+            return found.iloc[0]
+        return None
+
+    def increment_keep_me_sign_count(self, email):
+        self.data.loc[self.data['eMail'] == email, 'keepMeSignCount'] += 1
+        self.save()
+
+    def reset_keep_me_sign(self, email):
+        self.data.loc[self.data['eMail'] == email, 'keepMeSign'] = False
+        self.data.loc[self.data['eMail'] == email, 'keepMeSignCount'] = 0
+        self.save()
+
+    def save(self):
+        self.data.to_excel(self.file_path, index=False)
