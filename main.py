@@ -262,13 +262,16 @@ class MainWindow(QMainWindow):
             return
 
         data_instance = Data('firmy_db.xlsx')
-        result = data_instance.register_db(name, surname, email, password)
+        result = data_instance.update_db(name, surname, email, password)
         if result == 1:
             self.ui.error.setText("User registration successful!")
-        elif result == -1:
+            self.login()
+        elif result == 0:
             self.ui.error.setText("This email is already registered!")
         else:
             print("Hata!")
+
+        
 
     def reset_styles_register(self):
         self.ui.isim.setStyleSheet(u"background-color:white;\n"
