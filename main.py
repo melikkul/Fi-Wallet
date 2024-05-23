@@ -77,8 +77,8 @@ class ChartyApp(QMainWindow, Ui_Dashboard):
         self.logout_button.clicked.connect(self.open_logout)
 
     def open_logout(self):
-        self.dashboard_button.setEnabled(False)  # Dashboard butonunu devre dışı bırak
-        self.analist_button.setEnabled(False)   # Diğer butonları da aynı şekilde devre dışı bırakabilirsiniz
+        self.dashboard_button.setEnabled(False)
+        self.analist_button.setEnabled(False)
         self.performance_button.setEnabled(False)
         self.bills_button.setEnabled(False)
         self.wallet_button.setEnabled(False)
@@ -97,7 +97,6 @@ class ChartyApp(QMainWindow, Ui_Dashboard):
         self.logout_dialog = LogoutDialog(self)
         self.logout_dialog.exec()
 
-        # Logout ekranı kapatıldığında butonları tekrar etkinleştir
         self.dashboard_button.setEnabled(True)
         self.analist_button.setEnabled(True)
         self.performance_button.setEnabled(True)
