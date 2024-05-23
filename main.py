@@ -1,7 +1,6 @@
 import sys
-from PySide6.QtCore import QTimer
-from PySide6.QtWidgets import QApplication, QMainWindow
-from PySide6.QtCore import Qt
+from PySide6.QtCore import QTimer, Qt
+from PySide6.QtWidgets import QApplication, QMainWindow, QDialog
 from firmy_db import Data
 
 ##########################  PAGES  ##########################
@@ -10,6 +9,7 @@ from GUI.ui_forgetting_password import Ui_Forgetting_Password
 from GUI.ui_login_screen import Ui_Login_Screen
 from GUI.ui_register import Ui_Register
 from GUI.ui_start_screen import Ui_Start_Screen
+from GUI.ui_logout import Ui_Logout
 ##############################################################
 
 from PySide6.QtGui import QBrush, QColor, QPainterPath
@@ -24,7 +24,24 @@ class RoundedBar(QtCharts.QBarSet):
             rect = self.barRect(i)
             path = QPainterPath()
             path.addRoundedRect(rect, 10, 10)
-            # painter.fillPath(path, self.brush())
+            painter.fillPath(path, self.brush())
+
+class LogoutDialog(QDialog, Ui_Logout):
+    def __init__(self, parent=None):
+        super(LogoutDialog, self).__init__(parent)
+        self.setupUi(self)
+        self.setWindowFlags(Qt.FramelessWindowHint)
+        self.pushButton.clicked.connect(self.close)
+        self.pushButton_2.clicked.connect(self.close_application)
+
+    def close_application(self):
+        self.database = Data('firmy_db.xlsx')
+        user = self.database.get_keep_me_signed_in_user()
+        email = user['eMail']
+        self.database.reset_keep_me_sign(email)
+        self.parent().close()
+        self.close()
+
 
 class ChartyApp(QMainWindow, Ui_Dashboard):
     def __init__(self, parent=None):
@@ -56,6 +73,47 @@ class ChartyApp(QMainWindow, Ui_Dashboard):
 
         self.profile_minimize_button.clicked.connect(self.switch_to_profile_page)
         self.profile_button.clicked.connect(self.switch_to_profile_page)
+
+        self.logout_button.clicked.connect(self.open_logout)
+
+    def open_logout(self):
+        self.dashboard_button.setEnabled(False)  # Dashboard butonunu devre dışı bırak
+        self.analist_button.setEnabled(False)   # Diğer butonları da aynı şekilde devre dışı bırakabilirsiniz
+        self.performance_button.setEnabled(False)
+        self.bills_button.setEnabled(False)
+        self.wallet_button.setEnabled(False)
+        self.goal_button.setEnabled(False)
+        self.settings_button.setEnabled(False)
+        self.profile_button.setEnabled(False)
+        self.thema_button.setEnabled(False)
+        self.profiles_combobox.setEnabled(False)
+        self.pushButton_2.setEnabled(False)
+        self.slider_button.setEnabled(False)
+        self.search_line_edit.setEnabled(False)
+        self.search_button.setEnabled(False)
+        self.notification_button.setEnabled(False)
+        self.calculator_button.setEnabled(False)
+
+        self.logout_dialog = LogoutDialog(self)
+        self.logout_dialog.exec()
+
+        # Logout ekranı kapatıldığında butonları tekrar etkinleştir
+        self.dashboard_button.setEnabled(True)
+        self.analist_button.setEnabled(True)
+        self.performance_button.setEnabled(True)
+        self.bills_button.setEnabled(True)
+        self.wallet_button.setEnabled(True)
+        self.goal_button.setEnabled(True)
+        self.settings_button.setEnabled(True)
+        self.profile_button.setEnabled(True)
+        self.thema_button.setEnabled(True)
+        self.profiles_combobox.setEnabled(True)
+        self.pushButton_2.setEnabled(True)
+        self.slider_button.setEnabled(True)
+        self.search_line_edit.setEnabled(True)
+        self.search_button.setEnabled(True)
+        self.notification_button.setEnabled(True)
+        self.calculator_button.setEnabled(True)
 
     def switch_to_dashboard_page(self):
         self.main_screen_stacked_widget.setCurrentWidget(self.dashboard_widget)
@@ -138,7 +196,6 @@ class MainWindow(QMainWindow):
         self.database = Data('firmy_db.xlsx')
 
     def check_auto_login(self):
-        # Check if there's a user with keepMeSign set to True
         user = self.database.get_keep_me_signed_in_user()
         if user is not None:
             email = user['eMail']
@@ -168,7 +225,6 @@ class MainWindow(QMainWindow):
         self.ui.setupUi(self)
         self.show()
         self.ui.kayitbuton.clicked.connect(self.register_user)
-        #self.ui.kayitbuton.clicked.connect(self.reset_styles) 
 
     def register_user(self):
         name = self.ui.isim.text()
@@ -180,58 +236,50 @@ class MainWindow(QMainWindow):
 
         if name == "":
             self.ui.isim.setStyleSheet("background-color:white;\n"
-                                            "border: 2px solid red;\n"
-                                            "border-radius: 5px;")
+                                       "border: 2px solid red;\n"
+                                       "border-radius: 5px;")
             self.ui.error.setText("Please enter your name!")
             return
-        elif surname == "":
+
+        if surname == "":
             self.ui.soyadi.setStyleSheet("background-color:white;\n"
-                                            "border: 2px solid red;\n"
-                                            "border-radius: 5px;")
+                                         "border: 2px solid red;\n"
+                                         "border-radius: 5px;")
             self.ui.error.setText("Please enter your surname!")
             return
-        elif email == "":
+
+        if email == "":
             self.ui.mail.setStyleSheet("background-color:white;\n"
-                                            "border: 2px solid red;\n"
-                                            "border-radius: 5px;")
+                                       "border: 2px solid red;\n"
+                                       "border-radius: 5px;")
             self.ui.error.setText("Please enter your email!")
             return
-        elif password == "":
+
+        if password == "":
             self.ui.sifre.setStyleSheet("background-color:white;\n"
-                                            "border: 2px solid red;\n"
-                                            "border-radius: 5px;")
+                                        "border: 2px solid red;\n"
+                                        "border-radius: 5px;")
             self.ui.error.setText("Please enter your password!")
             return
-        
-        if not self.ui.onayla.isChecked():
-            self.ui.onayla.setStyleSheet("background-color: transparent; color: red; font-weight: bold;")
-            self.ui.error.setText("Please check the checkbox!")
-            return
 
-        reslut = self.database.update_db(name, surname, email, password)
-        if reslut == 1:
-            print("Kayıt Başarılı")
-            self.login()
-        elif reslut == 0:
-            self.ui.mail.setStyleSheet("background-color:white;\n"
-                                            "border: 2px solid red;\n"
-                                            "border-radius: 5px;")
+        data_instance = Data('firmy_db.xlsx')
+        result = data_instance.register_db(name, surname, email, password)
+        if result == 1:
+            self.ui.error.setText("User registration successful!")
+        elif result == -1:
             self.ui.error.setText("This email is already registered!")
         else:
             print("Hata!")
 
-
-        
-    
     def reset_styles_register(self):
         self.ui.isim.setStyleSheet(u"background-color:white;\n"
-"border-radius:5px;")
+                                   "border-radius:5px;")
         self.ui.soyadi.setStyleSheet(u"background-color:white;\n"
-"border-radius:5px;")
+                                     "border-radius:5px;")
         self.ui.mail.setStyleSheet(u"background-color:white;\n"
-"border-radius:5px;")
+                                   "border-radius:5px;")
         self.ui.sifre.setStyleSheet(u"background-color:white;\n"
-"border-radius:5px;")
+                                    "border-radius:5px;")
         self.ui.onayla.setStyleSheet("background-color: transparent; color: white")
         self.ui.error.setText("")
 
@@ -243,15 +291,15 @@ class MainWindow(QMainWindow):
 
         if email == "":
             self.ui.lineEdit.setStyleSheet("background-color:white;\n"
-                                            "border: 2px solid red;\n"
-                                            "border-radius: 5px;")
+                                           "border: 2px solid red;\n"
+                                           "border-radius: 5px;")
             self.ui.error.setText("Please enter your email!")
             return
 
         elif password == "":
             self.ui.lineEdit_2.setStyleSheet("background-color:white;\n"
-                                            "border: 2px solid red;\n"
-                                            "border-radius: 5px;")
+                                             "border: 2px solid red;\n"
+                                             "border-radius: 5px;")
             self.ui.error.setText("Please enter your password!")
             return
 
@@ -266,14 +314,11 @@ class MainWindow(QMainWindow):
             self.ui.error.setText("Incorrect email or password!")
 
     def reset_stylesheet_login(self):
-
         self.ui.lineEdit_2.setStyleSheet(u"background-color:white;\n"
-"border-radius:5px;")
+                                         "border-radius:5px;")
         self.ui.lineEdit.setStyleSheet(u"background-color:white;\n"
-"border-radius:5px;")
+                                       "border-radius:5px;")
         self.ui.error.setText("")
-
-
 
     def open_dashboard(self):
         self.close()

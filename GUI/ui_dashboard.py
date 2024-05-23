@@ -462,6 +462,7 @@ class Ui_MainWindow(object):
 
 
         self.gridLayout.addWidget(self.maximize_slider_menu_widget, 1, 1, 1, 1)
+        
 
         self.top_bar_widget = QWidget(self.centralwidget)
         self.top_bar_widget.setObjectName(u"top_bar_widget")
