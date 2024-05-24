@@ -2,6 +2,7 @@ import sys
 from PySide6.QtCore import QTimer, Qt
 from PySide6.QtWidgets import QApplication, QMainWindow, QDialog
 from firmy_db import Data
+from widget_manager import WidgetManager
 
 ##########################  PAGES  ##########################
 from GUI.ui_dashboard import Ui_MainWindow as Ui_Dashboard
@@ -50,6 +51,11 @@ class ChartyApp(QMainWindow, Ui_Dashboard):
         self.minimize_slider_menu_widget.setHidden(True)
         self.bar_graph()
 
+        self.toolButton.clicked.connect(self.add_new_widget)
+
+        # Widget yönetimini sağlamak için WidgetManager örneği oluştur
+        self.widget_manager = WidgetManager(self.wallet_page)
+
         self.dashboard_minimize_button.clicked.connect(self.switch_to_dashboard_page)
         self.dashboard_button.clicked.connect(self.switch_to_dashboard_page)
 
@@ -75,6 +81,10 @@ class ChartyApp(QMainWindow, Ui_Dashboard):
         self.profile_button.clicked.connect(self.switch_to_profile_page)
 
         self.logout_button.clicked.connect(self.open_logout)
+
+    def add_new_widget(self):
+        self.widget_manager.add_widget()
+
 
     def open_logout(self):
         self.dashboard_button.setEnabled(False)
@@ -113,6 +123,7 @@ class ChartyApp(QMainWindow, Ui_Dashboard):
         self.search_button.setEnabled(True)
         self.notification_button.setEnabled(True)
         self.calculator_button.setEnabled(True)
+
 
     def switch_to_dashboard_page(self):
         self.main_screen_stacked_widget.setCurrentWidget(self.dashboard_widget)
