@@ -228,6 +228,168 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.minimize_slider_menu_widget, 1, 0, 1, 1)
 
+        self.top_bar_widget = QWidget(self.centralwidget)
+        self.top_bar_widget.setObjectName(u"top_bar_widget")
+        self.top_bar_widget.setStyleSheet(u"QWidget{\n"
+"	background-color:#070F2B;\n"
+"}\n"
+"QPushButton{\n"
+"	border:none;\n"
+"}\n"
+"")
+        self.horizontalLayout_39 = QHBoxLayout(self.top_bar_widget)
+        self.horizontalLayout_39.setObjectName(u"horizontalLayout_39")
+        self.horizontalLayout_2 = QHBoxLayout()
+        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.slider_button = QPushButton(self.top_bar_widget)
+        self.slider_button.setObjectName(u"slider_button")
+        font1 = QFont()
+        font1.setFamilies([u"Poppins"])
+        font1.setPointSize(14)
+        font1.setBold(True)
+        self.slider_button.setFont(font1)
+        self.slider_button.setStyleSheet(u"QPushButton{\n"
+"	color: white;\n"
+"	height:42px;\n"
+"	width: 32px;\n"
+"	padding-left: 10px;\n"
+"}")
+        icon10 = QIcon()
+        icon10.addFile(u":/img/img/menu.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.slider_button.setIcon(icon10)
+        self.slider_button.setIconSize(QSize(32, 32))
+        self.slider_button.setCheckable(True)
+        self.slider_button.setAutoRepeat(False)
+        self.slider_button.setAutoExclusive(False)
+
+        self.horizontalLayout_2.addWidget(self.slider_button)
+
+        self.fi_wallet_button = QPushButton(self.top_bar_widget)
+        self.fi_wallet_button.setObjectName(u"fi_wallet_button")
+        self.fi_wallet_button.setFont(font1)
+        self.fi_wallet_button.setStyleSheet(u"color: white;\n"
+"height:50px;\n"
+"text-align: left;")
+        icon11 = QIcon()
+        icon11.addFile(u":/img/img/fi_wallet.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.fi_wallet_button.setIcon(icon11)
+        self.fi_wallet_button.setIconSize(QSize(75, 75))
+        self.fi_wallet_button.setCheckable(True)
+        self.fi_wallet_button.setAutoRepeat(False)
+        self.fi_wallet_button.setAutoExclusive(False)
+
+        self.horizontalLayout_2.addWidget(self.fi_wallet_button)
+
+
+        self.horizontalLayout_39.addLayout(self.horizontalLayout_2)
+
+        self.horizontalSpacer_2 = QSpacerItem(503, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_39.addItem(self.horizontalSpacer_2)
+
+        self.horizontalLayout = QHBoxLayout()
+        self.horizontalLayout.setSpacing(0)
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.search_line_edit = QLineEdit(self.top_bar_widget)
+        self.search_line_edit.setObjectName(u"search_line_edit")
+        self.search_line_edit.setMinimumSize(QSize(700, 36))
+        self.search_line_edit.setMaximumSize(QSize(700, 36))
+        self.search_line_edit.setStyleSheet(u"background-color: rgb(146, 144, 195);\n"
+"font: 14pt \"Poppins\";\n"
+"color:rgba(255,255,255,0.4);\n"
+"border-top-left-radius: 10px;\n"
+"border-bottom-left-radius: 10px;\n"
+" width: 700px;")
+        self.search_line_edit.setFrame(False)
+        self.search_line_edit.setAlignment(Qt.AlignCenter)
+        self.search_line_edit.setReadOnly(False)
+        self.search_line_edit.setClearButtonEnabled(True)
+
+        self.horizontalLayout.addWidget(self.search_line_edit)
+
+        self.search_button = QPushButton(self.top_bar_widget)
+        self.search_button.setObjectName(u"search_button")
+        self.search_button.setMinimumSize(QSize(32, 36))
+        self.search_button.setMaximumSize(QSize(32, 36))
+        self.search_button.setStyleSheet(u"background-color: rgb(146, 144, 195);\n"
+"border-top-right-radius: 10px;\n"
+"border-bottom-right-radius: 10px;\n"
+"height:36px;")
+        icon12 = QIcon()
+        icon12.addFile(u":/img/img/search.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.search_button.setIcon(icon12)
+        self.search_button.setIconSize(QSize(28, 28))
+        self.search_button.setCheckable(True)
+        self.search_button.setAutoExclusive(True)
+
+        self.horizontalLayout.addWidget(self.search_button)
+
+
+        self.horizontalLayout_39.addLayout(self.horizontalLayout)
+
+        self.horizontalSpacer_55 = QSpacerItem(150, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_39.addItem(self.horizontalSpacer_55)
+
+        self.horizontalLayout_3 = QHBoxLayout()
+        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.notification_button = QPushButton(self.top_bar_widget)
+        self.notification_button.setObjectName(u"notification_button")
+        self.notification_button.setMinimumSize(QSize(40, 40))
+        self.notification_button.setMaximumSize(QSize(40, 40))
+        self.notification_button.setStyleSheet(u"QPushButton{\n"
+"	wight: 40px;\n"
+"	height: 40px;\n"
+"	border-radius:5px;\n"
+"}\n"
+"QPushButton:checked{\n"
+"	background-color:#9290C3;\n"
+"	color: #9290C3;\n"
+"	font-weight:bold;\n"
+"}")
+        icon13 = QIcon()
+        icon13.addFile(u":/img/img/bell.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.notification_button.setIcon(icon13)
+        self.notification_button.setIconSize(QSize(25, 25))
+        self.notification_button.setCheckable(True)
+        self.notification_button.setAutoExclusive(True)
+
+        self.horizontalLayout_3.addWidget(self.notification_button)
+
+        self.calculator_button = QPushButton(self.top_bar_widget)
+        self.calculator_button.setObjectName(u"calculator_button")
+        sizePolicy = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.calculator_button.sizePolicy().hasHeightForWidth())
+        self.calculator_button.setSizePolicy(sizePolicy)
+        self.calculator_button.setMinimumSize(QSize(40, 40))
+        self.calculator_button.setMaximumSize(QSize(40, 40))
+        self.calculator_button.setStyleSheet(u"QPushButton{\n"
+"	wight: 40px;\n"
+"	height: 40px;\n"
+"	border-radius:5px;\n"
+"}\n"
+"QPushButton:checked{\n"
+"	background-color:#9290C3;\n"
+"	color: #9290C3;\n"
+"	font-weight:bold;\n"
+"}")
+        icon14 = QIcon()
+        icon14.addFile(u":/img/img/calculator.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.calculator_button.setIcon(icon14)
+        self.calculator_button.setIconSize(QSize(35, 35))
+        self.calculator_button.setCheckable(True)
+        self.calculator_button.setAutoExclusive(True)
+
+        self.horizontalLayout_3.addWidget(self.calculator_button)
+
+
+        self.horizontalLayout_39.addLayout(self.horizontalLayout_3)
+
+
+        self.gridLayout.addWidget(self.top_bar_widget, 0, 0, 1, 3)
+
         self.maximize_slider_menu_widget = QWidget(self.centralwidget)
         self.maximize_slider_menu_widget.setObjectName(u"maximize_slider_menu_widget")
         self.maximize_slider_menu_widget.setStyleSheet(u"QWidget{\n"
@@ -462,169 +624,6 @@ class Ui_MainWindow(object):
 
 
         self.gridLayout.addWidget(self.maximize_slider_menu_widget, 1, 1, 1, 1)
-        
-
-        self.top_bar_widget = QWidget(self.centralwidget)
-        self.top_bar_widget.setObjectName(u"top_bar_widget")
-        self.top_bar_widget.setStyleSheet(u"QWidget{\n"
-"	background-color:#070F2B;\n"
-"}\n"
-"QPushButton{\n"
-"	border:none;\n"
-"}\n"
-"")
-        self.horizontalLayout_39 = QHBoxLayout(self.top_bar_widget)
-        self.horizontalLayout_39.setObjectName(u"horizontalLayout_39")
-        self.horizontalLayout_2 = QHBoxLayout()
-        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
-        self.slider_button = QPushButton(self.top_bar_widget)
-        self.slider_button.setObjectName(u"slider_button")
-        font1 = QFont()
-        font1.setFamilies([u"Poppins"])
-        font1.setPointSize(14)
-        font1.setBold(True)
-        self.slider_button.setFont(font1)
-        self.slider_button.setStyleSheet(u"QPushButton{\n"
-"	color: white;\n"
-"	height:42px;\n"
-"	width: 32px;\n"
-"	padding-left: 10px;\n"
-"}")
-        icon10 = QIcon()
-        icon10.addFile(u":/img/img/menu.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.slider_button.setIcon(icon10)
-        self.slider_button.setIconSize(QSize(32, 32))
-        self.slider_button.setCheckable(True)
-        self.slider_button.setAutoRepeat(False)
-        self.slider_button.setAutoExclusive(False)
-
-        self.horizontalLayout_2.addWidget(self.slider_button)
-
-        self.fi_wallet_button = QPushButton(self.top_bar_widget)
-        self.fi_wallet_button.setObjectName(u"fi_wallet_button")
-        self.fi_wallet_button.setFont(font1)
-        self.fi_wallet_button.setStyleSheet(u"color: white;\n"
-"height:50px;\n"
-"text-align: left;")
-        icon11 = QIcon()
-        icon11.addFile(u":/img/img/fi_wallet.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.fi_wallet_button.setIcon(icon11)
-        self.fi_wallet_button.setIconSize(QSize(75, 75))
-        self.fi_wallet_button.setCheckable(True)
-        self.fi_wallet_button.setAutoRepeat(False)
-        self.fi_wallet_button.setAutoExclusive(False)
-
-        self.horizontalLayout_2.addWidget(self.fi_wallet_button)
-
-
-        self.horizontalLayout_39.addLayout(self.horizontalLayout_2)
-
-        self.horizontalSpacer_2 = QSpacerItem(503, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout_39.addItem(self.horizontalSpacer_2)
-
-        self.horizontalLayout = QHBoxLayout()
-        self.horizontalLayout.setSpacing(0)
-        self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.search_line_edit = QLineEdit(self.top_bar_widget)
-        self.search_line_edit.setObjectName(u"search_line_edit")
-        self.search_line_edit.setMinimumSize(QSize(700, 36))
-        self.search_line_edit.setMaximumSize(QSize(700, 36))
-        self.search_line_edit.setStyleSheet(u"background-color: rgb(146, 144, 195);\n"
-"font: 14pt \"Poppins\";\n"
-"color:rgba(255,255,255,0.4);\n"
-"border-top-left-radius: 10px;\n"
-"border-bottom-left-radius: 10px;\n"
-" width: 700px;")
-        self.search_line_edit.setFrame(False)
-        self.search_line_edit.setAlignment(Qt.AlignCenter)
-        self.search_line_edit.setReadOnly(False)
-        self.search_line_edit.setClearButtonEnabled(True)
-
-        self.horizontalLayout.addWidget(self.search_line_edit)
-
-        self.search_button = QPushButton(self.top_bar_widget)
-        self.search_button.setObjectName(u"search_button")
-        self.search_button.setMinimumSize(QSize(32, 36))
-        self.search_button.setMaximumSize(QSize(32, 36))
-        self.search_button.setStyleSheet(u"background-color: rgb(146, 144, 195);\n"
-"border-top-right-radius: 10px;\n"
-"border-bottom-right-radius: 10px;\n"
-"height:36px;")
-        icon12 = QIcon()
-        icon12.addFile(u":/img/img/search.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.search_button.setIcon(icon12)
-        self.search_button.setIconSize(QSize(28, 28))
-        self.search_button.setCheckable(True)
-        self.search_button.setAutoExclusive(True)
-
-        self.horizontalLayout.addWidget(self.search_button)
-
-
-        self.horizontalLayout_39.addLayout(self.horizontalLayout)
-
-        self.horizontalSpacer_55 = QSpacerItem(150, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout_39.addItem(self.horizontalSpacer_55)
-
-        self.horizontalLayout_3 = QHBoxLayout()
-        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
-        self.notification_button = QPushButton(self.top_bar_widget)
-        self.notification_button.setObjectName(u"notification_button")
-        self.notification_button.setMinimumSize(QSize(40, 40))
-        self.notification_button.setMaximumSize(QSize(40, 40))
-        self.notification_button.setStyleSheet(u"QPushButton{\n"
-"	wight: 40px;\n"
-"	height: 40px;\n"
-"	border-radius:5px;\n"
-"}\n"
-"QPushButton:checked{\n"
-"	background-color:#9290C3;\n"
-"	color: #9290C3;\n"
-"	font-weight:bold;\n"
-"}")
-        icon13 = QIcon()
-        icon13.addFile(u":/img/img/bell.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.notification_button.setIcon(icon13)
-        self.notification_button.setIconSize(QSize(25, 25))
-        self.notification_button.setCheckable(True)
-        self.notification_button.setAutoExclusive(True)
-
-        self.horizontalLayout_3.addWidget(self.notification_button)
-
-        self.calculator_button = QPushButton(self.top_bar_widget)
-        self.calculator_button.setObjectName(u"calculator_button")
-        sizePolicy = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.calculator_button.sizePolicy().hasHeightForWidth())
-        self.calculator_button.setSizePolicy(sizePolicy)
-        self.calculator_button.setMinimumSize(QSize(40, 40))
-        self.calculator_button.setMaximumSize(QSize(40, 40))
-        self.calculator_button.setStyleSheet(u"QPushButton{\n"
-"	wight: 40px;\n"
-"	height: 40px;\n"
-"	border-radius:5px;\n"
-"}\n"
-"QPushButton:checked{\n"
-"	background-color:#9290C3;\n"
-"	color: #9290C3;\n"
-"	font-weight:bold;\n"
-"}")
-        icon14 = QIcon()
-        icon14.addFile(u":/img/img/calculator.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.calculator_button.setIcon(icon14)
-        self.calculator_button.setIconSize(QSize(35, 35))
-        self.calculator_button.setCheckable(True)
-        self.calculator_button.setAutoExclusive(True)
-
-        self.horizontalLayout_3.addWidget(self.calculator_button)
-
-
-        self.horizontalLayout_39.addLayout(self.horizontalLayout_3)
-
-
-        self.gridLayout.addWidget(self.top_bar_widget, 0, 0, 1, 3)
 
         self.main_screen_stacked_widget = QStackedWidget(self.centralwidget)
         self.main_screen_stacked_widget.setObjectName(u"main_screen_stacked_widget")
@@ -2420,199 +2419,33 @@ class Ui_MainWindow(object):
         self.main_screen_stacked_widget.addWidget(self.bills_page)
         self.wallet_page = QWidget()
         self.wallet_page.setObjectName(u"wallet_page")
-        self.total_balance_widget_2 = QWidget(self.wallet_page)
-        self.total_balance_widget_2.setObjectName(u"total_balance_widget_2")
-        self.total_balance_widget_2.setGeometry(QRect(40, 110, 500, 350))
-        self.total_balance_widget_2.setMinimumSize(QSize(500, 350))
-        self.total_balance_widget_2.setMaximumSize(QSize(500, 350))
-        self.total_balance_widget_2.setStyleSheet(u"background-color: #535C91;\n"
-"border-radius: 25px;")
-        self.label = QLabel(self.total_balance_widget_2)
-        self.label.setObjectName(u"label")
-        self.label.setGeometry(QRect(70, 130, 291, 51))
+        self.total_balance_label_2 = QLabel(self.wallet_page)
+        self.total_balance_label_2.setObjectName(u"total_balance_label_2")
+        self.total_balance_label_2.setGeometry(QRect(40, 40, 131, 41))
         font17 = QFont()
         font17.setFamilies([u"Poppins"])
         font17.setPointSize(17)
         font17.setBold(True)
-        self.label.setFont(font17)
-        self.label.setStyleSheet(u"background-color:transparent;\n"
-"\n"
-"border-radius:5px;\n"
-"color: white;")
-        self.label_3 = QLabel(self.total_balance_widget_2)
-        self.label_3.setObjectName(u"label_3")
-        self.label_3.setGeometry(QRect(60, 110, 151, 31))
-        self.label_3.setFont(font5)
-        self.label_3.setStyleSheet(u"background-color:transparent;\n"
-"\n"
-"border-radius:5px;\n"
-"color:rgba(255,255,255,0.4);")
-        self.label_4 = QLabel(self.total_balance_widget_2)
-        self.label_4.setObjectName(u"label_4")
-        self.label_4.setGeometry(QRect(70, 210, 291, 41))
-        self.label_4.setFont(font17)
-        self.label_4.setStyleSheet(u"background-color:transparent;\n"
-"\n"
-"border-radius:5px;\n"
-"color: white;")
-        self.label_5 = QLabel(self.total_balance_widget_2)
-        self.label_5.setObjectName(u"label_5")
-        self.label_5.setGeometry(QRect(60, 180, 151, 31))
-        self.label_5.setFont(font5)
-        self.label_5.setStyleSheet(u"background-color:transparent;\n"
-"\n"
-"border-radius:5px;\n"
-"color:rgba(255,255,255,0.4);")
-        self.label_7 = QLabel(self.total_balance_widget_2)
-        self.label_7.setObjectName(u"label_7")
-        self.label_7.setGeometry(QRect(10, 80, 470, 1))
-        self.label_7.setMinimumSize(QSize(470, 1))
-        self.label_7.setMaximumSize(QSize(470, 1))
-        self.label_7.setStyleSheet(u"background-color :rgba(255,255,255,0.4);")
-        self.layoutWidget = QWidget(self.total_balance_widget_2)
-        self.layoutWidget.setObjectName(u"layoutWidget")
-        self.layoutWidget.setGeometry(QRect(40, 20, 416, 53))
-        self.horizontalLayout_42 = QHBoxLayout(self.layoutWidget)
-        self.horizontalLayout_42.setObjectName(u"horizontalLayout_42")
-        self.horizontalLayout_42.setContentsMargins(0, 0, 0, 0)
-        self.label_2 = QLabel(self.layoutWidget)
-        self.label_2.setObjectName(u"label_2")
-        font18 = QFont()
-        font18.setFamilies([u"Poppins"])
-        font18.setPointSize(12)
-        self.label_2.setFont(font18)
-        self.label_2.setStyleSheet(u"background-color:transparent;\n"
-"\n"
-"border-radius:5px;\n"
-"color: white;")
-
-        self.horizontalLayout_42.addWidget(self.label_2)
-
-        self.horizontalSpacer_60 = QSpacerItem(228, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout_42.addItem(self.horizontalSpacer_60)
-
-        self.label_6 = QLabel(self.layoutWidget)
-        self.label_6.setObjectName(u"label_6")
-        self.label_6.setMinimumSize(QSize(81, 51))
-        self.label_6.setMaximumSize(QSize(81, 51))
-        self.label_6.setStyleSheet(u"background-color:transparent;\n"
-"image: url(:/img/img/MasterCard.png);")
-
-        self.horizontalLayout_42.addWidget(self.label_6)
-
-        self.layoutWidget1 = QWidget(self.total_balance_widget_2)
-        self.layoutWidget1.setObjectName(u"layoutWidget1")
-        self.layoutWidget1.setGeometry(QRect(40, 270, 443, 53))
-        self.horizontalLayout_43 = QHBoxLayout(self.layoutWidget1)
-        self.horizontalLayout_43.setObjectName(u"horizontalLayout_43")
-        self.horizontalLayout_43.setContentsMargins(0, 0, 0, 0)
-        self.toolButton_4 = QToolButton(self.layoutWidget1)
-        self.toolButton_4.setObjectName(u"toolButton_4")
-        self.toolButton_4.setMinimumSize(QSize(100, 51))
-        self.toolButton_4.setMaximumSize(QSize(100, 51))
-        font19 = QFont()
-        font19.setFamilies([u"Poppins"])
-        font19.setPointSize(12)
-        font19.setBold(True)
-        font19.setItalic(False)
-        font19.setUnderline(False)
-        font19.setStrikeOut(False)
-        self.toolButton_4.setFont(font19)
-        self.toolButton_4.setStyleSheet(u"background-color:transparent;\n"
-"\n"
-"border-radius:5px;\n"
-"color: white;")
-
-        self.horizontalLayout_43.addWidget(self.toolButton_4)
-
-        self.horizontalSpacer_61 = QSpacerItem(148, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout_43.addItem(self.horizontalSpacer_61)
-
-        self.toolButton_3 = QToolButton(self.layoutWidget1)
-        self.toolButton_3.setObjectName(u"toolButton_3")
-        self.toolButton_3.setMinimumSize(QSize(181, 51))
-        self.toolButton_3.setMaximumSize(QSize(181, 51))
-        self.toolButton_3.setFont(font19)
-        self.toolButton_3.setStyleSheet(u"background-color:#1B1A55;\n"
-"border-radius:5px;\n"
-"color: white;")
-
-        self.horizontalLayout_43.addWidget(self.toolButton_3)
-
-        self.total_balance_widget_3 = QWidget(self.wallet_page)
-        self.total_balance_widget_3.setObjectName(u"total_balance_widget_3")
-        self.total_balance_widget_3.setGeometry(QRect(580, 110, 500, 350))
-        self.total_balance_widget_3.setMinimumSize(QSize(500, 350))
-        self.total_balance_widget_3.setMaximumSize(QSize(500, 350))
-        self.total_balance_widget_3.setStyleSheet(u"background-color: #535C91;\n"
-"border-radius: 25px;")
-        self.layoutWidget2 = QWidget(self.total_balance_widget_3)
-        self.layoutWidget2.setObjectName(u"layoutWidget2")
-        self.layoutWidget2.setGeometry(QRect(0, 120, 501, 53))
-        self.horizontalLayout_40 = QHBoxLayout(self.layoutWidget2)
-        self.horizontalLayout_40.setObjectName(u"horizontalLayout_40")
-        self.horizontalLayout_40.setContentsMargins(0, 0, 0, 0)
-        self.horizontalSpacer_56 = QSpacerItem(148, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout_40.addItem(self.horizontalSpacer_56)
-
-        self.toolButton = QToolButton(self.layoutWidget2)
-        self.toolButton.setObjectName(u"toolButton")
-        self.toolButton.setMinimumSize(QSize(181, 51))
-        self.toolButton.setMaximumSize(QSize(181, 51))
-        font20 = QFont()
-        font20.setFamilies([u"Poppins"])
-        font20.setPointSize(11)
-        font20.setBold(True)
-        font20.setItalic(False)
-        font20.setUnderline(False)
-        font20.setStrikeOut(False)
-        self.toolButton.setFont(font20)
-        self.toolButton.setStyleSheet(u"background-color:#1B1A55;\n"
-"border-radius:5px;\n"
-"color: white;")
-
-        self.horizontalLayout_40.addWidget(self.toolButton)
-
-        self.horizontalSpacer_57 = QSpacerItem(168, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout_40.addItem(self.horizontalSpacer_57)
-
-        self.layoutWidget3 = QWidget(self.total_balance_widget_3)
-        self.layoutWidget3.setObjectName(u"layoutWidget3")
-        self.layoutWidget3.setGeometry(QRect(0, 190, 501, 53))
-        self.horizontalLayout_41 = QHBoxLayout(self.layoutWidget3)
-        self.horizontalLayout_41.setObjectName(u"horizontalLayout_41")
-        self.horizontalLayout_41.setContentsMargins(0, 0, 0, 0)
-        self.horizontalSpacer_58 = QSpacerItem(148, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout_41.addItem(self.horizontalSpacer_58)
-
-        self.toolButton_2 = QToolButton(self.layoutWidget3)
-        self.toolButton_2.setObjectName(u"toolButton_2")
-        self.toolButton_2.setMinimumSize(QSize(181, 51))
-        self.toolButton_2.setMaximumSize(QSize(181, 51))
-        self.toolButton_2.setFont(font20)
-        self.toolButton_2.setStyleSheet(u"background-color:transparent;\n"
-"\n"
-"border-radius:5px;\n"
-"color: white;")
-
-        self.horizontalLayout_41.addWidget(self.toolButton_2)
-
-        self.horizontalSpacer_59 = QSpacerItem(168, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout_41.addItem(self.horizontalSpacer_59)
-
-        self.total_balance_label_2 = QLabel(self.wallet_page)
-        self.total_balance_label_2.setObjectName(u"total_balance_label_2")
-        self.total_balance_label_2.setGeometry(QRect(40, 40, 131, 41))
         self.total_balance_label_2.setFont(font17)
         self.total_balance_label_2.setStyleSheet(u"color: white;\n"
 "text-align: left;\n"
 "background-color:transparent;")
+        self.toolButton = QToolButton(self.wallet_page)
+        self.toolButton.setObjectName(u"toolButton")
+        self.toolButton.setGeometry(QRect(1460, 10, 181, 51))
+        self.toolButton.setMinimumSize(QSize(181, 51))
+        self.toolButton.setMaximumSize(QSize(181, 51))
+        font18 = QFont()
+        font18.setFamilies([u"Poppins"])
+        font18.setPointSize(11)
+        font18.setBold(True)
+        font18.setItalic(False)
+        font18.setUnderline(False)
+        font18.setStrikeOut(False)
+        self.toolButton.setFont(font18)
+        self.toolButton.setStyleSheet(u"background-color:#1B1A55;\n"
+"border-radius:15px;\n"
+"color: white;")
         self.main_screen_stacked_widget.addWidget(self.wallet_page)
         self.goal_page = QWidget()
         self.goal_page.setObjectName(u"goal_page")
@@ -2672,7 +2505,7 @@ class Ui_MainWindow(object):
         self.fi_wallet_button.toggled.connect(self.minimize_slider_menu_widget.setHidden)
         self.fi_wallet_button.toggled.connect(self.maximize_slider_menu_widget.setVisible)
 
-        self.main_screen_stacked_widget.setCurrentIndex(0)
+        self.main_screen_stacked_widget.setCurrentIndex(4)
         self.cards_stacked_widget.setCurrentIndex(0)
 
 
@@ -2692,6 +2525,13 @@ class Ui_MainWindow(object):
         self.settings_minimize_button.setText("")
         self.logout_minimize_button.setText("")
         self.profile_minimize_button.setText("")
+        self.slider_button.setText("")
+        self.fi_wallet_button.setText(QCoreApplication.translate("MainWindow", u"Fi-Wallet", None))
+        self.search_line_edit.setText("")
+        self.search_line_edit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Search", None))
+        self.search_button.setText("")
+        self.notification_button.setText("")
+        self.calculator_button.setText("")
         self.profiles_combobox.setItemText(0, QCoreApplication.translate("MainWindow", u"Add Profile", None))
         self.profiles_combobox.setItemText(1, QCoreApplication.translate("MainWindow", u"Deneme", None))
 
@@ -2705,13 +2545,6 @@ class Ui_MainWindow(object):
         self.settings_button.setText(QCoreApplication.translate("MainWindow", u"Settings", None))
         self.logout_button.setText(QCoreApplication.translate("MainWindow", u"Log Out", None))
         self.profile_button.setText(QCoreApplication.translate("MainWindow", u"User Name", None))
-        self.slider_button.setText("")
-        self.fi_wallet_button.setText(QCoreApplication.translate("MainWindow", u"Fi-Wallet", None))
-        self.search_line_edit.setText("")
-        self.search_line_edit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Search", None))
-        self.search_button.setText("")
-        self.notification_button.setText("")
-        self.calculator_button.setText("")
         self.total_balance_green_wallet_icon_button.setText("")
         self.total_balance_label.setText(QCoreApplication.translate("MainWindow", u"Total Balance", None))
         self.tota_balance_value_label.setText(QCoreApplication.translate("MainWindow", u"$13256.20", None))
@@ -2807,18 +2640,8 @@ class Ui_MainWindow(object):
         self.label_8.setText(QCoreApplication.translate("MainWindow", u"ANALIST PAGE", None))
         self.label_9.setText(QCoreApplication.translate("MainWindow", u"PERFORMANCE PAGE", None))
         self.label_10.setText(QCoreApplication.translate("MainWindow", u"BILLS PAGE", None))
-        self.label.setText(QCoreApplication.translate("MainWindow", u"3388 4556 8860 8*** ", None))
-        self.label_3.setText(QCoreApplication.translate("MainWindow", u"Account Number", None))
-        self.label_4.setText(QCoreApplication.translate("MainWindow", u"$250000", None))
-        self.label_5.setText(QCoreApplication.translate("MainWindow", u"Total Amount", None))
-        self.label_7.setText("")
-        self.label_2.setText(QCoreApplication.translate("MainWindow", u"Credit Card", None))
-        self.label_6.setText("")
-        self.toolButton_4.setText(QCoreApplication.translate("MainWindow", u"REMOVE", None))
-        self.toolButton_3.setText(QCoreApplication.translate("MainWindow", u"DETAILS           >", None))
-        self.toolButton.setText(QCoreApplication.translate("MainWindow", u"ADD ACCOUNT", None))
-        self.toolButton_2.setText(QCoreApplication.translate("MainWindow", u"EDIT ACCOUNT", None))
         self.total_balance_label_2.setText(QCoreApplication.translate("MainWindow", u"BALANCES", None))
+        self.toolButton.setText(QCoreApplication.translate("MainWindow", u"ADD WALLET", None))
         self.label_11.setText(QCoreApplication.translate("MainWindow", u"GOAL PAGE", None))
         self.label_12.setText(QCoreApplication.translate("MainWindow", u"SETTINGS PAGE", None))
         self.label_13.setText(QCoreApplication.translate("MainWindow", u"PROFILE PAGE", None))
