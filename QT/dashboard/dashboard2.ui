@@ -1216,7 +1216,7 @@ padding-left: 10px;</string>
        <string notr="true">background-color:#070F2B;</string>
       </property>
       <property name="currentIndex">
-       <number>4</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="dashboard_widget">
        <layout class="QVBoxLayout" name="verticalLayout_26">

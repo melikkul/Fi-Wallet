@@ -30,6 +30,13 @@ class Data:
         else:
             print("E-mail not found in the database.")
 
+    def regis_db(self, email):
+        found = self.data[self.data['eMail'] == email]
+        if not found.empty:
+            return 1
+        else:
+            return 0
+
     def sign_db(self, email, password):
         found = self.data[self.data['eMail'] == email]
         if not found.empty:
@@ -69,10 +76,10 @@ class Data:
         
         new_entries_df = pd.DataFrame(new_data)
         self.data = pd.concat([self.data, new_entries_df], ignore_index=True)
-
+        userid = self.data[self.data['userID'] == email]
         # Veritabanını kaydet
         self.save()
-        return 1
+        return userid
 
     def update_keep_me_signed_in(self, email, keep):
         self.data.loc[self.data['eMail'] == email, 'keepMeSign'] = keep

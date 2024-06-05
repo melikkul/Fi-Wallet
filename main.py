@@ -3,6 +3,8 @@ from PySide6.QtCore import QTimer, Qt
 from PySide6.QtWidgets import QApplication, QMainWindow, QDialog
 from firmy_db import Data
 from widget_manager import WidgetManager
+from user_db import User
+import time
 
 ##########################  PAGES  ##########################
 from GUI.ui_dashboard import Ui_MainWindow as Ui_Dashboard
@@ -11,6 +13,7 @@ from GUI.ui_login_screen import Ui_Login_Screen
 from GUI.ui_register import Ui_Register
 from GUI.ui_start_screen import Ui_Start_Screen
 from GUI.ui_logout import Ui_Logout
+from GUI.ui_add_account import Ui_Add_Account
 ##############################################################
 
 from PySide6.QtGui import QBrush, QColor, QPainterPath
@@ -43,6 +46,24 @@ class LogoutDialog(QDialog, Ui_Logout):
         self.parent().close()
         self.close()
 
+class Add_Account(QMainWindow, Ui_Add_Account):
+    def __init__(self, parent=None):
+        super(Add_Account, self).__init__(parent)
+        self.setupUi(self)
+        self.setWindowFlags(Qt.FramelessWindowHint)
+        self.card_cancel_button.clicked.connect(self.close)
+        self.cash_cancel_button.clicked.connect(self.close)
+        self.card_save_button.clicked.connect(self.save_card_account)
+        self.cash_save_button.clicked.connect(self.save_cash_account)
+
+    def save_card_account(self):
+        print('save card account')
+
+    def save_cash_account(self):
+        print('save cash account')
+
+
+
 
 class ChartyApp(QMainWindow, Ui_Dashboard):
     def __init__(self, parent=None):
@@ -51,7 +72,7 @@ class ChartyApp(QMainWindow, Ui_Dashboard):
         self.minimize_slider_menu_widget.setHidden(True)
         self.bar_graph()
 
-        self.toolButton.clicked.connect(self.add_new_widget)
+        self.toolButton.clicked.connect(self.open_addaccount)
 
         # Widget yönetimini sağlamak için WidgetManager örneği oluştur
         self.widget_manager = WidgetManager(self.wallet_page)
@@ -84,6 +105,11 @@ class ChartyApp(QMainWindow, Ui_Dashboard):
 
     def add_new_widget(self):
         self.widget_manager.add_widget()
+
+    def open_addaccount(self):
+        self.dashboard_window = Add_Account()
+        self.dashboard_window.setWindowFlags(Qt.FramelessWindowHint)
+        self.dashboard_window.show()
 
 
     def open_logout(self):
@@ -241,6 +267,7 @@ class MainWindow(QMainWindow):
         surname = self.ui.soyadi.text()
         email = self.ui.mail.text()
         password = self.ui.sifre.text()
+        keep = self.ui.onayla.isChecked()
 
         self.reset_styles_register()
 
@@ -271,16 +298,25 @@ class MainWindow(QMainWindow):
                                         "border-radius: 5px;")
             self.ui.error.setText("Please enter your password!")
             return
+        
+        if keep == False:
+            self.ui.onayla.setStyleSheet("background-color:transparent;\n"
+                                         "color: red;\n"
+                                       "font-weight: bold;\n")
+            self.ui.error.setText("Please check the box!")
+            return
 
         data_instance = Data('firmy_db.xlsx')
-        result = data_instance.update_db(name, surname, email, password)
-        if result == 1:
+        result = data_instance.regis_db(email)
+        if result == 0:
             self.ui.error.setText("User registration successful!")
+            data_instance.update_db(name, surname, email, password)
             self.login()
-        elif result == 0:
-            self.ui.error.setText("This email is already registered!")
         else:
-            print("Hata!")
+            self.ui.error.setText("This email is already registered!")
+            userid = User("user_db.xlsx")
+            userid.save_user_id(result)
+            self.login()
 
         
 

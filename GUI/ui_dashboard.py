@@ -2505,7 +2505,7 @@ class Ui_MainWindow(object):
         self.fi_wallet_button.toggled.connect(self.minimize_slider_menu_widget.setHidden)
         self.fi_wallet_button.toggled.connect(self.maximize_slider_menu_widget.setVisible)
 
-        self.main_screen_stacked_widget.setCurrentIndex(4)
+        self.main_screen_stacked_widget.setCurrentIndex(0)
         self.cards_stacked_widget.setCurrentIndex(0)
 
 

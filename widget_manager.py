@@ -173,8 +173,3 @@ class WidgetManager:
                 self.widget_counter += 1
                 # Set both column and row spacing
                 self.grid_layout.setSpacing(self.column_spacing)
-
-
-
-
-
